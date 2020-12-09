@@ -1,0 +1,11 @@
+# 取消idea文件
+.idea/
+# Dependency directories
+node_modules/
+
+
+# 取消临时文件及编译文件
+# secretKeyConf.js
+docs/.vuepress/dist
+docs/.vuepress/dist/
+.temp
