@@ -11,4 +11,4 @@ deploy:
   # target-branch: gh-pages # 集成发布到gh-pages上
   keep-history: true
   on:
-    branch: main  #这里指的是部署前的源文件分支
+    branch: master  #这里指的是部署前的源文件分支
