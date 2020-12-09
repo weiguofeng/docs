@@ -1,6 +1,7 @@
 module.exports = {
     title: '锋格blog',
     description: '锋格blog',
+    base: '/',
     // dest: './dist', 默认在.vuepress目录下生成
     port: '7777',
     head: [
