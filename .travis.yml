@@ -3,7 +3,6 @@ node_js:
   - lts/*
 script:
   - npm run docs:build  # 执行命令
-  - npm run cname
 deploy:
   provider: pages
   skip-cleanup: true
@@ -12,4 +11,4 @@ deploy:
   # target-branch: gh-pages # 集成发布到gh-pages上
   keep-history: true
   on:
-    branch: master
+    branch: main  #这里指的是部署前的源文件分支
