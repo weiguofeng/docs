@@ -231,15 +231,15 @@ self.__precacheManifest = [
   },
   {
     "url": "categories/backEnd/index.html",
-    "revision": "5ba96cce40a2f09c35db18e5ebea4792"
+    "revision": "4df1240b7563acf06abaa07325d1d748"
   },
   {
     "url": "categories/BackEnd/index.html",
-    "revision": "ee91c0d5ad1b204754503f8d7e41d85e"
+    "revision": "808d1fa2769ecbf6ced5d7f3702fa4ac"
   },
   {
     "url": "categories/frontEnd/index.html",
-    "revision": "fc93a05e89713a314d5e6eb675189054"
+    "revision": "ddd4c4a6821ab41635525538cfb8d1c8"
   },
   {
     "url": "categories/index.html",
@@ -247,23 +247,23 @@ self.__precacheManifest = [
   },
   {
     "url": "categories/Java/index.html",
-    "revision": "ab8831562a4bf96d10e2485cd8c17277"
+    "revision": "399b3c47e91ba87a724346db655ec75c"
   },
   {
     "url": "categories/js/index.html",
-    "revision": "bb33273bfd0f09859330376ca3a3b48b"
+    "revision": "835ab29264915754f5c0df4d4e8db8bb"
   },
   {
     "url": "categories/linux/index.html",
-    "revision": "56c07270f91fb291741dc5dc22e49ec6"
+    "revision": "ba3b7480a989954f35de654f50d1d6c4"
   },
   {
     "url": "categories/vue/index.html",
-    "revision": "07bf420ef9922df22846e46bcba00c1f"
+    "revision": "ccdb62922e8fb00f9e92bc011b31996e"
   },
   {
     "url": "categories/wechat/index.html",
-    "revision": "fc6143f0d379c03a74456d867f815432"
+    "revision": "6a6a36ce356c557bcc06c28dbff930fe"
   },
   {
     "url": "css/style.css",
@@ -307,7 +307,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "8e93ede2e7a81e31c4e84553a79d79e8"
+    "revision": "78c65edb1c481d32441e3dc31b2eaea4"
   },
   {
     "url": "java/index.html",
@@ -323,39 +323,39 @@ self.__precacheManifest = [
   },
   {
     "url": "tag/css/index.html",
-    "revision": "fc1599fd2574f9fe1a1ad4823b318026"
+    "revision": "9dd5268b6897fa9de7e4b6dd70aed89b"
   },
   {
     "url": "tag/elementUI/index.html",
-    "revision": "87166c7d772fbdd59e8daca23a95d2b3"
+    "revision": "dd868594a3a3a9ec907fef50f1d644ee"
   },
   {
     "url": "tag/index.html",
-    "revision": "e7e1e09ba0428fac69481a67edbb9f98"
+    "revision": "c0a52e4f41561f8c8863d68f93cc9880"
   },
   {
     "url": "tag/java/index.html",
-    "revision": "4cf48679aec7b13f7e1afa216054cc12"
+    "revision": "4bf7c11fedcc1d11fd2b447af61b742b"
   },
   {
     "url": "tag/Java/index.html",
-    "revision": "711580f4b9379facd583fb5cb0b348c0"
+    "revision": "05428a0bb1fafec1127762a655768639"
   },
   {
     "url": "tag/js/index.html",
-    "revision": "7179b741ed048c0f07699930862442c1"
+    "revision": "d6519e7ea6364f6c26f396c435e627ff"
   },
   {
     "url": "tag/linux/index.html",
-    "revision": "061eae359cef9df95162ffa003a6e394"
+    "revision": "f0a43d300245f762d1eca00a03001e65"
   },
   {
     "url": "tag/vue/index.html",
-    "revision": "c612ca228a28409b31f8fab433670298"
+    "revision": "26f8cf1798f719d1a98a5972b6425915"
   },
   {
     "url": "tag/wechat/index.html",
-    "revision": "18750295a25bfa347ecae7a3950e9a5d"
+    "revision": "fb4a8b3bcd5c609d538016d482fbd850"
   },
   {
     "url": "timeline/index.html",
