@@ -110,7 +110,7 @@ module.exports = {
         // 动态标题
         ["dynamic-title",
             {
-                showIcon: "vuepress/smile.ico",
+                showIcon: "vuepress/favicon.ico",
                 showText: "欢迎帅哥美女！",
                 hideIcon: "favicon.ico",
                 hideText: "(●—●)关注我哦！！",
