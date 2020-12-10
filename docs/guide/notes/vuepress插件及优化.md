@@ -1,10 +1,8 @@
 ---
-title: vuePress
+title: vuePress插件及优化
 date: 2020-12-10
-categories:
- - vuePress
 tags:
- - vuePress
+ - vuePress搭建指南
 ---
 
 
