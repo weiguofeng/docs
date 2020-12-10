@@ -37,10 +37,9 @@ module.exports = [
         ]
     },
     {
-        text: 'Tools', link: '/baodian/',icon: 'reco-blog',
+        text: 'Tools', link: '/tools/',icon: 'reco-blog',
         items: [
-            {text: 'Linux', link: '/baodian/zero/'},
-            {text: 'Windows', link: '/baodian/high/'},
+            {text: 'tools', link: '/tools/'}
         ]
     },
     { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },

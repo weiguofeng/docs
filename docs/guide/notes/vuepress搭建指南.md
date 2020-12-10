@@ -1,10 +1,8 @@
 ---
 title: vuePress
 date: 2020-12-10
-categories:
- - vuePress
 tags:
- - vuePress
+ - vuePress搭建指南
 ---
 
 # vuePress搭建指南
