@@ -169,7 +169,9 @@ Vuepress是Vue作者尤雨溪开发的文档工具，本文采用Vuepress的reco
 
 在 Settings --> Developer settings --> Personal access tokens 右上角 Generate new toekn 生成新 Token 名字随便写，权限不清楚的可以全部选上，也可以参考我下面的配置
 
-![1607612108349](D:\idea-workSpace\docs\docs\.vuepress\public\images\1607612108349.png)
+![1607613623180](../../images/1607613623180.png)
+
+
 
 
 
