@@ -59,7 +59,7 @@ module.exports = {
             },
             // ...
         ],
-        record: '皖ICP备2020019108号-1',
+        record: '京ICP备2018019108号-1',
         recordLink: 'http://beian.miit.gov.cn/',
     },
     theme: 'reco',
