@@ -107,12 +107,13 @@ module.exports = {
                 buttonText: "刷新"
             }
         }],
+        // 动态标题
         ["dynamic-title",
             {
                 showIcon: "vuepress/smile.ico",
-                showText: "(/≧▽≦/)欢迎帅哥美女！",
-                hideIcon: "vuepress/1.jsp",
-                hideText: "(●—●)呜呜，不要走嘛！！",
+                showText: "欢迎帅哥美女！",
+                hideIcon: "favicon.ico",
+                hideText: "(●—●)关注我哦！！",
                 recoverTime: 2000
             }],
         ['meting', {
@@ -120,8 +121,8 @@ module.exports = {
             meting: {
                 server: "netease",
                 type: "playlist",
-                mid: "5361802856",
-                auto: "http://music.163.com/playlist?id=5361802856"
+                mid: "5374044223",
+                auto: "https://music.163.com/#/playlist?id=5374044223"
             },
             // 不配置该项的话不会出现全局播放器
             aplayer: {
@@ -147,7 +148,7 @@ module.exports = {
             }
         }],
         ['@vuepress-reco/vuepress-plugin-kan-ban-niang',{
-            theme: 'shizuku',
+            theme: ['blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
             modelStyle:{
                 left: '50px',
                 bottom: '-20px',
