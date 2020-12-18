@@ -31,7 +31,7 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "645a38846f23fc611177c564b5bfd436"
+    "revision": "390a461316bc8d1036bfb3bee9a51bb9"
   },
   {
     "url": "assets/css/0.styles.1ee5bdb0.css",
@@ -238,40 +238,40 @@ self.__precacheManifest = [
     "revision": "0a464b90e51a95b7150b07f16b5b5ffd"
   },
   {
-    "url": "assets/js/app.913aee2e.js",
-    "revision": "a7d00332cc1282f6c2a5733bddb1bb47"
+    "url": "assets/js/app.efeab007.js",
+    "revision": "e4bc8d03f7dd9f78ccff8910a6e56668"
   },
   {
     "url": "baodian/high/index.html",
-    "revision": "1383bc6f8e59c51dbd14df91b0ce5e12"
+    "revision": "42134db75be83c1d3ce93f5a508e5104"
   },
   {
     "url": "baodian/high/notes/high.html",
-    "revision": "c25235f917725b1bb28534a3b42ac100"
+    "revision": "c8df2a1858fc319cce95e328e6695bd3"
   },
   {
     "url": "baodian/zero/index.html",
-    "revision": "391cd0578bd83417b66bab68ea4ae25f"
+    "revision": "dd0dfb48071dbb801c42004a0b80eb80"
   },
   {
     "url": "baodian/zero/notes/02 String、Long 源码解析和面试题.html",
-    "revision": "210fc5ceb3480e24df4603b1cad9f9f2"
+    "revision": "53f634d9e6cd9286a5a2fed099411b41"
   },
   {
     "url": "baodian/zero/notes/03 Java 常用关键字理解.html",
-    "revision": "c24081c5e986bf422e38ff5c596bc0b9"
+    "revision": "5897c9ada9bd2efab3c7c17b1a3f3e6f"
   },
   {
     "url": "baodian/zero/notes/04 Arrays、Collections、Objects 常用方法源码解析.html",
-    "revision": "3b8dc32917a1e38979ec763b7f533920"
+    "revision": "da5707cb11e6e03055f080f2714bea13"
   },
   {
     "url": "baodian/zero/notes/05 ArrayList 源码解析和设计思路.html",
-    "revision": "77d08b1694e45fee63768cf50f0e333c"
+    "revision": "86cd8a5c9ba8a09d8a7f4e0c6c0a9f27"
   },
   {
     "url": "baodian/zero/notes/06 LinkedList 源码解析.html",
-    "revision": "d785379ffd996122881bcaa0af419e10"
+    "revision": "40b929e23e702fe683970a6faa7fa7d6"
   },
   {
     "url": "beijing1.png",
@@ -295,39 +295,35 @@ self.__precacheManifest = [
   },
   {
     "url": "categories/backEnd/index.html",
-    "revision": "e2919c01d4e30e361035089f7eedf655"
-  },
-  {
-    "url": "categories/BackEnd/index.html",
-    "revision": "fb2b97a47e15a0acde288750ca8209bb"
+    "revision": "a90c6fdc540412c6e69b15795381e43e"
   },
   {
     "url": "categories/frontEnd/index.html",
-    "revision": "4053831416a25f67edcac23da36ffa38"
+    "revision": "705d9b7666fe1e98a57e383c5d0b4282"
   },
   {
     "url": "categories/index.html",
-    "revision": "37866013190661d45715e8a59f2d3144"
+    "revision": "ac56ff872bafbb87dcf23e4b3a62f6e9"
   },
   {
     "url": "categories/Java/index.html",
-    "revision": "4805226b24d464af3675a9334ec7d21b"
+    "revision": "76b4280ae3922d658dc95d373411e6c7"
   },
   {
     "url": "categories/js/index.html",
-    "revision": "5154925aefbb5339b12254f05ce9f72e"
+    "revision": "1e985c99b5e38c9727cff6fe1626d1b2"
   },
   {
     "url": "categories/linux/index.html",
-    "revision": "13f1ec1703f4f0c2f6eb0ff9d943657d"
+    "revision": "8135d7386927fe34e24e8212a2260004"
   },
   {
     "url": "categories/vue/index.html",
-    "revision": "3b63ed2d84862ee145bbe235e89a3dc7"
+    "revision": "61b658b8ce1b25ce8cfcc69d1168d855"
   },
   {
     "url": "categories/wechat/index.html",
-    "revision": "d815c73b170742b343bf982a00be804c"
+    "revision": "2ae735694b300d9be3b051a409a296cd"
   },
   {
     "url": "css/style.css",
@@ -339,47 +335,47 @@ self.__precacheManifest = [
   },
   {
     "url": "guide/index.html",
-    "revision": "51a6327004b34c196b0add1e925a3252"
+    "revision": "9faf82fda676f71055cb3457af55705b"
   },
   {
     "url": "guide/notes/css.html",
-    "revision": "c21c3f054e8c2c239e9d0b40c13d7dc4"
+    "revision": "5e1af81fb156dfffe2ce128b523c8ed7"
   },
   {
     "url": "guide/notes/ele.html",
-    "revision": "1a8ccab1e03229ffb229cd281c1926b3"
+    "revision": "547dff95d43fe04ef33e43c12092d45e"
   },
   {
     "url": "guide/notes/github秘钥配置.html",
-    "revision": "79558318de8988fca2278a84527d17a7"
+    "revision": "bd4966532a8288be5435066df2f98010"
   },
   {
     "url": "guide/notes/js1.html",
-    "revision": "711ae12b654d3fe969acb03465bdd7ef"
+    "revision": "9a8bd5e6984f7d24008016712d527433"
   },
   {
     "url": "guide/notes/js2.html",
-    "revision": "351263a4186a195bccce91957acdbc08"
+    "revision": "17013923464c4b457e066364c10e07eb"
   },
   {
     "url": "guide/notes/linux.html",
-    "revision": "3b7f243233f0004685b6bb2020ddc4f9"
+    "revision": "44666190ebf9a7bb6dbb177790f15d63"
   },
   {
     "url": "guide/notes/vue.html",
-    "revision": "733fd8a5a709636b55dddd4d3777b920"
+    "revision": "77a8562f19f14245a53f076cf629d8be"
   },
   {
     "url": "guide/notes/vuepress插件及优化.html",
-    "revision": "d7392910c5024eee6b35781e0005be5b"
+    "revision": "f7928406e4d81a516c5596c90d671949"
   },
   {
     "url": "guide/notes/vuepress搭建指南.html",
-    "revision": "c3843552adf726b4ee2ff555f276e3a8"
+    "revision": "021f390f70a0df196006a43c08528774"
   },
   {
     "url": "guide/notes/微信小程序.html",
-    "revision": "bd71fbc481042d8ce0974e7db676bf08"
+    "revision": "b3c8ce08b73b010abe73afa1ed0c31b8"
   },
   {
     "url": "images/1607613623180.png",
@@ -435,15 +431,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "ecc6bc0b029ca6aa998b497681e738a7"
+    "revision": "a6a97d5741e7a504fefc529f01c1e49d"
   },
   {
     "url": "java/index.html",
-    "revision": "dd1ffd0c042d2b019a1d95481121f5ed"
+    "revision": "69e73f3dac23c49a120b005d2e9678b8"
   },
   {
     "url": "java/notes/filter.html",
-    "revision": "45ec5db00514ff02095809283b4d79d6"
+    "revision": "665e222f4f0807310f82bce877ceb3d8"
   },
   {
     "url": "logo.png",
@@ -451,51 +447,51 @@ self.__precacheManifest = [
   },
   {
     "url": "tag/css/index.html",
-    "revision": "3d80fdb3fea2ac056bfde6edb39de724"
+    "revision": "d8c5b090316aca0c1704e1b40589bd12"
   },
   {
     "url": "tag/elementUI/index.html",
-    "revision": "002ea28e8ff1ca832c1a14e72f7f7654"
+    "revision": "881bb194eb96facb196712e67d88b5ab"
   },
   {
     "url": "tag/index.html",
-    "revision": "e38e911cb7a5bdf12c2e7ad8b8f1c930"
+    "revision": "c9d440ee70f9341b141df4d565cd87df"
   },
   {
     "url": "tag/java/index.html",
-    "revision": "44f6b5479bcb42a6f111e63b466882dc"
+    "revision": "21012233d68c5d4c748fc4e21855049e"
   },
   {
     "url": "tag/Java/index.html",
-    "revision": "00539267b1a1b01165dd6edd2f26e904"
+    "revision": "44d2de65a6c7eec5e0090437d57606b6"
   },
   {
     "url": "tag/js/index.html",
-    "revision": "00e32981283e156ad759e75ea5dbc510"
+    "revision": "f3d33ce584775b3f280ef38f26c1f214"
   },
   {
     "url": "tag/linux/index.html",
-    "revision": "8adaf0d0fb442d2e68b0b311a7c660a1"
+    "revision": "c0e1015c1551d67ff0b73be4746112f2"
   },
   {
     "url": "tag/vue/index.html",
-    "revision": "6d2057d2d7124421117a9f252df8cbef"
+    "revision": "5b5347558f401e8e4411e7182a35011e"
   },
   {
     "url": "tag/vuePress搭建指南/index.html",
-    "revision": "5fc29b86861a525dd2de1685630c9d62"
+    "revision": "c8c0e2fbfd09fa43809979af824acb6a"
   },
   {
     "url": "tag/wechat/index.html",
-    "revision": "15fbab97a2b9822d7fa22f8d4bf93d6f"
+    "revision": "eb79d6d2a91c6f40dd11ccb9cd4067c2"
   },
   {
     "url": "timeline/index.html",
-    "revision": "3f45313e3c99f79768917f2517a8badf"
+    "revision": "f11f03d009690105dbcb1e628c4503ab"
   },
   {
     "url": "tools/vuePress遇到的问题.html",
-    "revision": "fb0a564ad94c4d88d51db854f11000b2"
+    "revision": "013b204751a307acb39aa2597fb22b73"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
