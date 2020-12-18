@@ -6,9 +6,9 @@ module.exports = {
     port: '7777',
     head: [
         // 网页标签栏图标
-        ['link', { rel: 'icon', href: '/vuepress/favicon.ico' }],
+        ['link', {rel: 'icon', href: '/vuepress/favicon.ico'}],
         // 移动栏优化
-        ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+        ['meta', {name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no'}]
     ],
     //配置语言
     locales: {
@@ -21,14 +21,24 @@ module.exports = {
     },
     themeConfig: {
         type: 'blog',
+        //自动侧边栏
         subSidebar: 'auto',
+        //logo配置
         logo: '/fenggelogo.jpg',
         authorAvatar: '/fenggelogo.jpg',
+        //导航栏配置
         nav: require('./nav.js'),
+
+        //侧边栏配置
         sidebar: require('./sidebar'),
+        //左右侧边栏
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
+
+        //最大查询展示10个
         searchMaxSuggestoins: 10,
+
+        //pwa的更新提示
         serviceWorker: {
             updatePopup: {
                 message: "有新的内容.",
@@ -44,6 +54,8 @@ module.exports = {
         //     clientId: 'YOUR_CLIENT_ID',
         //     clientSecret: 'YOUR_CLIENT_SECRET',
         // }
+
+        //友链
         friendLink: [
             {
                 title: 'vuepress-theme-reco',
@@ -59,30 +71,17 @@ module.exports = {
             },
             // ...
         ],
+
+        //备案号
         record: '京ICP备2018019108号-1',
+        //备案查询连接
         recordLink: 'http://beian.miit.gov.cn/',
     },
+    //主题
     theme: 'reco',
+
+    //插件
     plugins: [
-        // ["@vuepress-reco/vuepress-plugin-bgm-player",
-        //     {
-        //         audios: [
-        //             // 网络文件示例
-        //             {
-        //                 name: 'mojito',
-        //                 artist: '周杰伦',
-        //                 url: 'http://storage.chqyys.top/music/3.mp3',
-        //                 cover: './1.jpg'
-        //             }
-        //         ] ,
-        //         // 自动缩小
-        //         autoShrink:true ,
-        //         // 悬浮窗模式，吸边
-        //         shrinkMode: 'float' ,
-        //         // 悬浮窗位置
-        //         floatStyle:{ bottom: '10px', 'z-index': '999999' },
-        //
-        //     }],
         [
             'vuepress-plugin-comment',
             {
@@ -116,6 +115,8 @@ module.exports = {
                 hideText: "(●—●)关注我哦！！",
                 recoverTime: 2000
             }],
+
+        //音乐插件
         ['meting', {
             // metingApi: "http://music.163.com/playlist?id=417639577&userid=301312374",
             meting: {
@@ -132,7 +133,7 @@ module.exports = {
                 // 自动播放
                 autoplay: true,
                 // 歌曲栏折叠
-                listFolded:true,
+                listFolded: true,
                 // 颜色
                 theme: '#f9bcdd',
                 // 播放顺序为随机
@@ -142,28 +143,57 @@ module.exports = {
                 // 关闭歌词显示
                 lrcType: 0
             },
-            mobile :{
+            mobile: {
                 // 手机端去掉cover图
                 cover: false,
             }
         }],
-        ['@vuepress-reco/vuepress-plugin-kan-ban-niang',{
+
+        //看板娘插件
+        ['@vuepress-reco/vuepress-plugin-kan-ban-niang', {
             theme: ['blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
-            modelStyle:{
+            modelStyle: {
                 left: '50px',
                 bottom: '-20px',
                 opacity: '0.9'
             },
-            messageStyle:{ left: '28px', bottom: '190px' },
-            btnStyle:{left: '50px', bottom: '40px'}
+            messageStyle: {left: '28px', bottom: '190px'},
+            btnStyle: {left: '50px', bottom: '40px'}
         }],
 
+        //代码复制插件
         ["vuepress-plugin-nuggets-style-copy", {
             copyText: "复制代码",
             tip: {
                 content: "复制成功!"
             }
         }],
-]
+
+        ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
+            body: [
+                {
+                    type: 'title',
+                    content: '欢迎加入QQ交流群 🎉🎉🎉',
+                    style: 'text-aligin: center;'
+                },
+                {
+                    type: 'image',
+                    src: '/fenggelogo.jpg'
+                }
+            ],
+            footer: [
+                {
+                    type: 'button',
+                    text: '打赏',
+                    link: '/donate'
+                },
+                {
+                    type: 'button',
+                    text: '打赏',
+                    link: '/donate'
+                }
+            ]
+        }],
+    ]
 }
 
