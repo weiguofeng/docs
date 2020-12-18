@@ -1,6 +1,6 @@
 ---
 title: js基础知识
-date: 2020-12-3
+date: 2020-12-06
 categories:
  - js
  - frontEnd

@@ -1,6 +1,6 @@
 ---
 title: linux
-date: 2020-12-2
+date: 2020-12-02
 categories:
  - linux
 tags:
