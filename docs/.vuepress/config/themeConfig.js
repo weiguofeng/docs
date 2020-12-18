@@ -1,134 +1,61 @@
-module.exports = {
-    locales: {
-        '/': {
-            recoLocales: {
-                homeBlog: {
-                    article: '美文', // 默认 文章
-                    tag: '标识', // 默认 标签
-                    category: '类别', // 默认 分类
-                    friendLink: '友链' // 默认 友情链接
-                },
-                pagation: {
-                    prev: '上一页',
-                    next: '下一页',
-                    go: '前往',
-                    jump: '跳转至'
-                }
-            }
-        }
-    },
-    "nav": [
-        {
-            "text": "主页",
-            "link": "/",
-            "icon": "reco-home"
-        },
-        {
-            "text": "时间线",
-            "link": "/timeline/",
-            "icon": "reco-date"
-        },
-        {
-            "text": "前端",
-            "icon": "reco-message",
-            "items": [
-                {
-                    "text": "vue",
-                    "link": "/docs/vue/"
-                },
-                {
-                    "text": "angular",
-                    "link": "/docs/angular/"
-                }
-            ]
-        },
-        {
-            "text": "关于",
-            "icon": "reco-message",
-            "items": [
-                {
-                    "text": "GitHub",
-                    "link": "",
-                    "icon": "reco-github"
-                },
-                {
-                    "text": "微信",
-                    "link": "",
-                    "icon": "reco-github"
-                }
-            ]
-        }
-    ],
+const navConf = require('./../nav.js');
+const sidebar = require('./../sidebar.js');
 
-    //带侧边栏的
-    "sidebar": {
-        "/docs/theme-reco/": [
-            "",
-            "theme",
-            "plugin",
-            "api"
-        ],
-        "/docs/vue/": [
-            "",
-            "theme",
-            "plugin",
-            "api"
-        ],
-    },
-    "type": "blog",
-    // 博客设置
-    blogConfig: {
-        category: {
-            location: 2, // 在导航栏菜单中所占的位置，默认2
-            text: '后端' // 默认 “分类”
-        },
-        tag: {
-            location: 3, // 在导航栏菜单中所占的位置，默认3
-            text: '标签' // 默认 “标签”
-        },
-        socialLinks: [
-            {icon: 'reco-github', link: 'https://github.com'},
-            {icon: 'fa-camera', link: 'https://www.npmjs.com/~reco_luan'}
-        ]
-    },
-    //友链
-    "friendLink": [
-        {
-            "title": "午后南杂",
-            "desc": "Enjoy when you can, and endure when you must.",
-            "email": "1156743527@qq.com",
-            "link": "https://www.recoluan.com"
-        },
-        {
-            "title": "vuepress-theme-reco",
-            "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-            "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-            "link": ""
-        }
-    ],
+module.exports = {
+    type: 'blog',
+    //自动侧边栏
+    subSidebar: 'auto',
+    //logo配置
     logo: '/fenggelogo.jpg',
     authorAvatar: '/fenggelogo.jpg',
-    // 搜索设置
-    search: true,
-    searchMaxSuggestions: 10,
-    // 自动形成侧边导航
-    subSidebar: 'auto',
-    sidebarDepth: 10,
-    // 最后更新时间
-    lastUpdated: 'Last Updated',
-    // 作者
-    author: '锋格',
-    // 备案号
-    record: '京（备1111111）',
-    // 项目开始时间
-    startYear: '2017',
+    //导航栏配置
+    nav: navConf,
 
-    //  添加评论
-    vssueConfig: {
-        platform: 'github',
-        owner: 'OWNER_OF_REPO',
-        repo: 'NAME_OF_REPO',
-        clientId: 'YOUR_CLIENT_ID',
-        clientSecret: 'YOUR_CLIENT_SECRET',
-    }
+    //侧边栏配置
+    sidebar: sidebar,
+    //左右侧边栏
+    sidebarDepth: 2,
+    lastUpdated: 'Last Updated',
+
+    //最大查询展示10个
+    searchMaxSuggestoins: 10,
+
+    //pwa的更新提示
+    serviceWorker: {
+        updatePopup: {
+            message: "有新的内容.",
+            buttonText: '更新'
+        }
+    },
+    editLinks: true,
+    editLinkText: '在 GitHub 上编辑此页 ！',
+    // vssueConfig: {
+    //     platform: 'github',
+    //     owner: 'OWNER_OF_REPO',
+    //     repo: 'NAME_OF_REPO',
+    //     clientId: 'YOUR_CLIENT_ID',
+    //     clientSecret: 'YOUR_CLIENT_SECRET',
+    // }
+
+    //友链
+    friendLink: [
+        {
+            title: 'vuepress-theme-reco',
+            desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+            logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+            link: 'https://vuepress-theme-reco.recoluan.com'
+        },
+        {
+            title: '午后南杂',
+            desc: 'Enjoy when you can, and endure when you must.',
+            email: 'recoluan@qq.com',
+            link: 'https://www.recoluan.com'
+        },
+        // ...
+    ],
+
+    //备案号
+    record: '京ICP备2018019108号-1',
+    //备案查询连接
+    recordLink: 'http://beian.miit.gov.cn/',
 };

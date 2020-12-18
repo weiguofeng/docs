@@ -1,9 +1,9 @@
 module.exports = [
     {
-        title:'Java知识点',
+        title:'Java基础知识',
         collapsable: true,
         children:[
-            '/java/notes/filter',
+            '/java/base/notes/filter',
         ]
     }
 ]

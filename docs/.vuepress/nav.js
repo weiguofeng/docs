@@ -5,28 +5,28 @@ module.exports = [
     {
         text: 'Java', link: '/java/',icon: 'reco-blog',
         items: [
-            {text: '基础部分', link: '/baodian/high/'},
-            {text: '多线程', link: '/baodian/zero/'},
-            {text: 'Spring系列', link: '/baodian/zero/'},
-            {text: 'Mybatis系列', link: '/baodian/zero/'},
-            {text: '其他', link: '/baodian/zero/'},
+            {text: '基础部分', link: '/java/base/'},
+            {text: '多线程', link: '/java/thread/'},
+            {text: 'Spring系列', link: '/java/spring/'},
+            {text: 'Mybatis系列', link: '/java/mybatis/'},
+            {text: '其他', link: '/java/other/'},
         ]
     },
     {
-        text: '数据库', link: '/baodian/',icon: 'reco-blog',
+        text: '数据库', link: '/db/',icon: 'reco-blog',
         items: [
-            {text: 'MySQL', link: '/baodian/zero/'},
-            {text: 'Oracle', link: '/baodian/high/'},
-            {text: 'Redis', link: '/baodian/high/'},
-            {text: 'MongoDB', link: '/baodian/high/'},
+            {text: 'MySQL', link: '/db/mysql/'},
+            {text: 'Oracle', link: '/db/oracle/'},
+            {text: 'Redis', link: '/db/redis/'},
+            {text: 'MongoDB', link: '/db/mongo/'},
         ]
     },
     {
-        text: '前端', link: '/guide/',icon: 'reco-tag',
+        text: '前端', link: '/front/',icon: 'reco-tag',
         items: [
-            {text: 'Vue', link: '/baodian/zero/'},
-            {text: 'AngularJs', link: '/baodian/high/'},
-            {text: 'LayUI', link: '/baodian/high/'},
+            {text: 'Vue', link: '/front/vue/'},
+            {text: 'AngularJs', link: '/front/vue/'},
+            {text: 'LayUI', link: '/front/vue/'},
         ]
     },
     {
@@ -37,11 +37,20 @@ module.exports = [
         ]
     },
     {
-        text: 'Tools', link: '/tools/',icon: 'reco-blog',
+        text: '问题', link: '/question/',icon: 'reco-blog',
         items: [
-            {text: 'tools', link: '/tools/'}
+            {text: 'tools', link: '/question/'}
         ]
     },
+    {
+        text: 'Tools', link: '/tools/',icon: 'reco-blog',
+        items: [
+            {text: 'tools', link: '/tools/tool/'}
+        ]
+    },
+
+
+
     { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
     {
         text: '关于',icon: 'reco-message',
