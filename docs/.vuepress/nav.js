@@ -39,13 +39,13 @@ module.exports = [
     {
         text: '问题', link: '/question/',icon: 'reco-blog',
         items: [
-            {text: 'tools', link: '/question/'}
+            {text: '问题', link: '/question/'}
         ]
     },
     {
         text: 'Tools', link: '/tools/',icon: 'reco-blog',
         items: [
-            {text: 'tools', link: '/tools/tool/'}
+            {text: 'Tools', link: '/tools/tool/'}
         ]
     },
 

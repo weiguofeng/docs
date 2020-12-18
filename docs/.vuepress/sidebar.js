@@ -20,9 +20,9 @@ module.exports = {
 
     //数据库系列
     '/db/mysql': require('../db/mysql/sidebar'),
-    '/db/mysql': require('../db/oracle/sidebar'),
-    '/db/mysql': require('../db/redis/sidebar'),
-    '/db/mysql': require('../db/mongo/sidebar'),
+    '/db/oracle': require('../db/oracle/sidebar'),
+    '/db/redis': require('../db/redis/sidebar'),
+    '/db/mongo': require('../db/mongo/sidebar'),
 
     //前端系列
     '/front/vue': require('../front/vue/sidebar'),
@@ -32,4 +32,4 @@ module.exports = {
 
     //杂谈及问题
     '/question/': require('../question/sidebar'),
-}
+};
