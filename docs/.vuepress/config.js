@@ -22,6 +22,6 @@ module.exports = {
     themeConfig: themeConf,
 
     //插件
-    plugins: pluginsConf
+    plugins: pluginsConf,
 };
 
