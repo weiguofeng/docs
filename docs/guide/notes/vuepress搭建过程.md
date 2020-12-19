@@ -1,13 +1,19 @@
 ---
-title: vuePress搭建指南
+title: vuePress搭建过程
 date: 2020-12-10
+categories:
+ - front
 tags:
- - vuePress搭建指南
+ - vuepress
 ---
 
 # vuePress搭建指南
 
+
+
 ### 1.github创建项目
+
+	**创建docs项目**
 
 ![1607615380655](../../images/1607615380655.png)
 
@@ -432,21 +438,20 @@ module.exports = [
 
 一个完整的 `Front Matter` 案例：
 
-```yaml
----
-title: 烤鸭的做法
-date: 2019-08-08
-sidebar: 'auto'
-categories:
- - 烹饪
- - 爱好
-tags:
- - 烤
- - 鸭子
-keys:
- - '123456'
-publish: false
----
+```text
+    title: 烤鸭的做法
+    date: 2019-08-08
+    sidebar: 'auto'
+    categories:
+     - 烹饪
+     - 爱好
+    tags:
+     - 烤
+     - 鸭子
+    keys:
+     - '123456'
+    publish: false
+    
 ```
 
 常用变量说明：
@@ -473,8 +478,7 @@ publish: false
 
 > 在markdown代码中，您将看到注释，注释前面的代码将显示在列表页面上的文章摘要中。
 
-```markdown
----
+```text
 title: Vuepress使用指南(reco)
 date: 2020-08-16
 sidebar: 'auto'
@@ -483,7 +487,8 @@ categories:
 tags:
  - vue
 publish: true
----
+
+```
 
 ::: tip 
 Vuepress是Vue作者尤雨溪开发的文档工具，本文采用Vuepress的reco主题进行相关配置说明
@@ -506,7 +511,7 @@ Vuepress是Vue作者尤雨溪开发的文档工具，本文采用Vuepress的reco
 
 	#### 主要使用的插件package.json
 
-```json
+​```json
 {
   "name": "vuepressBlog",
   "version": "1.0.0",
@@ -555,7 +560,7 @@ Vuepress是Vue作者尤雨溪开发的文档工具，本文采用Vuepress的reco
 
 #### 部署脚本 gh-pages需要提前在github创建分支
 
-​	用于自动构建 将构建完成的静态资源 发布到gh-pages分支
+	用于自动构建 将构建完成的静态资源 发布到gh-pages分支
 
 ```sh
 #!/usr/bin/env sh
@@ -596,7 +601,7 @@ https://travis-ci.com/signin
 
 
 
-### [#](https://tsanfer.xyz/views/frontEnd/VuePress + GithubPages + TravisCI .html#生成和使用-token)先在github生成和使用 Token
+### [地址](https://tsanfer.xyz/views/frontEnd/VuePress + GithubPages + TravisCI .html#生成和使用-token)先在github生成和使用 Token
 
 #### 生成 Token
 
@@ -608,7 +613,7 @@ https://travis-ci.com/signin
 
 
 
-个人账户令牌---然后创建新的令牌
+个人账户令牌-----然后创建新的令牌
 
 ![1607618400759](../../images/1607618400759.png)
 
@@ -664,7 +669,7 @@ https://travis-ci.com/signin
 
 - 最后是成功部署。
 
-​	[可参考地址](https://tsanfer.xyz/views/frontEnd/VuePress%20+%20GithubPages%20+%20TravisCI%20.html#travis-ci-%E7%BB%91%E5%AE%9A%E5%92%8C%E9%85%8D%E7%BD%AE)
+	[可参考地址](https://tsanfer.xyz/views/frontEnd/VuePress%20+%20GithubPages%20+%20TravisCI%20.html#travis-ci-%E7%BB%91%E5%AE%9A%E5%92%8C%E9%85%8D%E7%BD%AE)
 
 
 
@@ -723,18 +728,70 @@ typora设置--点击 文件---》偏好设置---》图片插入设置D:\idea-wor
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200504190922992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MjUyMjgz,size_16,color_FFFFFF,t_70)
 
+### 注意
+
+	如果使用同一个标签和同一种类型的话，要放到一个侧边栏分组里
+
+```
+{
+        title:'vuePress搭建指南',
+        collapsable: true,
+        children:[
+            '/guide/notes/vuepress搭建指南',
+            '/guide/notes/vuePress插件及优化',
+        ]
+    },
+```
+
 
 
 
 
 ### 其他参考博文
 
-先附上博客效果http://chqyys.top/
+先附上博客效果
+
+http://chqyys.top/
 
 https://blog.csdn.net/qq_38390669/article/details/110859800
 
 https://lovelijunyi.gitee.io/blog/
 
 https://docs.shanyuhai.top/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

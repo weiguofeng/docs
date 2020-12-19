@@ -2,7 +2,7 @@
 title: vue
 date: 2020-12-03
 categories:
- - vue
+ - front
 tags:
  - vue
 ---

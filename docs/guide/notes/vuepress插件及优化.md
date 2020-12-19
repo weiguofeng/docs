@@ -1,8 +1,10 @@
 ---
 title: vuePress插件及优化
-date: 2020-12-10
+date: 2020-12-19 
+categories:
+ - front
 tags:
- - vuePress搭建指南
+ - vuepress
 ---
 
 

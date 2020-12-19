@@ -3,7 +3,7 @@ title: js基础知识
 date: 2020-12-06
 categories:
  - js
- - frontEnd
+ - front
 tags:
  - js
 ---

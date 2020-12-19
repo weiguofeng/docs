@@ -2,7 +2,7 @@
 title: elementUI
 date: 2020-12-03
 categories:
- - frontEnd
+ - front
 tags:
  - elementUI
 ---
