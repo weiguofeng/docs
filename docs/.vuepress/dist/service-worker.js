@@ -202,7 +202,7 @@ self.__precacheManifest = [
     "revision": "2cfdbb338a1d44d700b493d7ecbe65d3"
   },
   {
-    "url": "bgm/1.jpg",
+    "url": "fenggelogo.jpg",
     "revision": "cb4d1ab0531d3e777419a247e9b39784"
   },
   {

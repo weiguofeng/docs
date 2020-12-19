@@ -26,9 +26,9 @@ module.exports = [
     // 动态标题
     ["dynamic-title",
         {
-            showIcon: "../favicon.ico",
+            showIcon: "/favicon.ico",
             showText: "欢迎帅哥美女！",
-            hideIcon: "../favicon.ico",
+            hideIcon: "/favicon.ico",
             hideText: "(●—●)关注我哦！！",
             recoverTime: 2000
         }],
@@ -37,10 +37,16 @@ module.exports = [
     ['meting', {
         // metingApi: "http://music.163.com/playlist?id=417639577&userid=301312374",
         meting: {
+            // 歌单地址-> 如果输入可忽略server|type|mid
+            // 但是不知道为什么不写上这三个会报错, 所以我都写上了
+            auto: "https://music.163.com/#/playlist?id=5374044223",
+
+            // 当前服务为netease -> 网易
             server: "netease",
+            // 类型为歌单
             type: "playlist",
-            mid: "5374044223",
-            auto: "https://music.163.com/#/playlist?id=5374044223"
+            // 歌单id
+            mid: "5374044223"
         },
         // 不配置该项的话不会出现全局播放器
         aplayer: {
@@ -68,7 +74,7 @@ module.exports = [
 
     //看板娘插件
     ['@vuepress-reco/vuepress-plugin-kan-ban-niang', {
-        theme: ['blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'shizuku', 'wanko', 'miku', 'z16'],
+        theme: ['shizuku', 'blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi',  'wanko', 'miku', 'z16'],
         modelStyle: {
             left: '50px',
             bottom: '-20px',

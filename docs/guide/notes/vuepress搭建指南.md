@@ -173,7 +173,7 @@ module.exports = {
         //                 name: 'mojito',
         //                 artist: '周杰伦',
         //                 url: 'http://storage.chqyys.top/music/3.mp3',
-        //                 cover: './1.jpg'
+        //                 cover: './fenggelogo.jpg'
         //             }
         //         ] ,
         //         // 自动缩小

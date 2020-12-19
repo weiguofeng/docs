@@ -25,8 +25,8 @@ module.exports = [
         text: '前端', link: '/front/',icon: 'reco-tag',
         items: [
             {text: 'Vue', link: '/front/vue/'},
-            {text: 'AngularJs', link: '/front/vue/'},
-            {text: 'LayUI', link: '/front/vue/'},
+            {text: 'AngularJs', link: '/front/angular/'},
+            {text: 'LayUI', link: '/front/layui/'},
         ]
     },
     {
