@@ -91,20 +91,20 @@ module.exports = [
             content: "复制成功!"
         }
     }],
-    ["@vuepress-yard/vuepress-plugin-window",{
-        title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
-        contentInfo: {
-            title: "欢迎进来的朋友们 🎉🎉🎉",
-            needImg: true,
-            imgUrl: "https://weiguofeng.github.io/docs/fenggelogo.jpg",
-            content: "喜欢博皮可以关注收藏",
-            contentStyle: ""
-        },
-        bottomInfo: {
-            btnText: '关于',
-            linkTo: 'https://cnblogs.com/glassysky'
-        },
-        closeOnce: false
-    }],
+    // ["@vuepress-yard/vuepress-plugin-window",{
+    //     title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
+    //     contentInfo: {
+    //         title: "欢迎进来的朋友们 🎉🎉🎉",
+    //         needImg: true,
+    //         imgUrl: "https://weiguofeng.github.io/docs/fenggelogo.jpg",
+    //         content: "喜欢博皮可以关注收藏",
+    //         contentStyle: ""
+    //     },
+    //     bottomInfo: {
+    //         btnText: '关于',
+    //         linkTo: 'https://cnblogs.com/glassysky'
+    //     },
+    //     closeOnce: false
+    // }],
 
 ];
