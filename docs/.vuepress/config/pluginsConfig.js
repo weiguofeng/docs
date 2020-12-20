@@ -4,11 +4,11 @@ module.exports = [
         {
             choosen: 'valine',
             visitor: true, // 阅读量统计
-            // options选项中的所有参数，会传给Valine的配置
+            // options选项中的所有参数，会传给valine的配置
             options: {
                 el: '#valine-vuepress-comment',
-                appId: 'SCjUYdngFE4sn6mE1DgcogTl-gzGzoHsz',
-                appKey: 'TWtsjTW1FIVtin239k7GHV8f'
+                appid: 'scjuydngfe4sn6me1dgcogtl-gzgzohsz',
+                appkey: 'twtsjtw1fivtin239k7ghv8f'
             }
         }
     ],
@@ -17,25 +17,25 @@ module.exports = [
         "ribbon"
     ],
     ['@vuepress/pwa', {
-        serviceWorker: true,
-        updatePopup: {
+        serviceworker: true,
+        updatepopup: {
             message: "发现新内容可用",
-            buttonText: "刷新"
+            buttontext: "刷新"
         }
     }],
     // 动态标题
     ["dynamic-title",
         {
-            showIcon: "/favicon.ico",
-            showText: "欢迎帅哥美女！",
-            hideIcon: "/favicon.ico",
-            hideText: "(●—●)关注我哦！！",
-            recoverTime: 2000
+            showicon: "/favicon.ico",
+            showtext: "欢迎帅哥美女！",
+            hideicon: "/favicon.ico",
+            hidetext: "(●—●)关注我哦！！",
+            recovertime: 2000
         }],
 
     //音乐插件
     ['meting', {
-        // metingApi: "http://music.163.com/playlist?id=417639577&userid=301312374",
+        // metingapi: "http://music.163.com/playlist?id=417639577&userid=301312374",
         meting: {
             // 歌单地址-> 如果输入可忽略server|type|mid
             // 但是不知道为什么不写上这三个会报错, 所以我都写上了
@@ -56,7 +56,7 @@ module.exports = [
             // 自动播放
             autoplay: true,
             // 歌曲栏折叠
-            listFolded: true,
+            listfolded: true,
             // 颜色
             theme: '#f9bcdd',
             // 播放顺序为随机
@@ -64,7 +64,7 @@ module.exports = [
             // 初始音量
             volume: 0.3,
             // 关闭歌词显示
-            lrcType: 0
+            lrctype: 0
         },
         mobile: {
             // 手机端去掉cover图
@@ -74,14 +74,14 @@ module.exports = [
 
     //看板娘插件
     ['@vuepress-reco/vuepress-plugin-kan-ban-niang', {
-        theme: ['shizuku', 'blackCat', 'whiteCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi',  'wanko', 'miku', 'z16'],
-        modelStyle: {
+        theme: ['shizuku', 'blackcat', 'whitecat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi',  'wanko', 'miku', 'z16'],
+        modelstyle: {
             left: '50px',
             bottom: '-20px',
             opacity: '0.9'
         },
-        messageStyle: {left: '28px', bottom: '190px'},
-        btnStyle: {left: '50px', bottom: '40px'}
+        messagestyle: {left: '28px', bottom: '190px'},
+        btnstyle: {left: '50px', bottom: '40px'}
     }],
 
     //代码复制插件
@@ -91,30 +91,20 @@ module.exports = [
             content: "复制成功!"
         }
     }],
-
-    ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
-        body: [
-            {
-                type: 'title',
-                content: '欢迎加入QQ交流群 🎉🎉🎉',
-                style: 'text-aligin: center;'
-            },
-            {
-                type: 'image',
-                src: '/fenggelogo.jpg'
-            }
-        ],
-        footer: [
-            {
-                type: 'button',
-                text: '打赏',
-                link: '/donate'
-            },
-            {
-                type: 'button',
-                text: '打赏',
-                link: '/donate'
-            }
-        ]
+    ["@vuepress-yard/vuepress-plugin-window",{
+        title: "公告",  //vuepress公告插件 先安装在配置 npm install @vuepress-yard/vuepress-plugin-window --save
+        contentInfo: {
+            title: "欢迎进来的朋友们 🎉🎉🎉",
+            needImg: true,
+            imgUrl: "https://weiguofeng.github.io/docs/fenggelogo.jpg",
+            content: "喜欢博皮可以关注收藏",
+            contentStyle: ""
+        },
+        bottomInfo: {
+            btnText: '关于',
+            linkTo: 'https://cnblogs.com/glassysky'
+        },
+        closeOnce: false
     }],
+
 ];

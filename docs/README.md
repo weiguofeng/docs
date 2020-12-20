@@ -2,7 +2,7 @@
 home: true
 heroText: 锋格blog
 tagline: 要么孤独，要么庸俗~~
-bgImage: '/beijing3.svg'
+bgImage: '/beijing5.jpg'
 actionText: 快速上手 →
 actionLink: /zh/guide/
 features:
