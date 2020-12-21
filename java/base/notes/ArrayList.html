@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ArrayList | 锋格blog</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/docs/favicon.ico">
+    <meta name="description" content="锋格blog">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.0415235c.css" as="style"><link rel="preload" href="/docs/assets/js/app.3613cf97.js" as="script"><link rel="preload" href="/docs/assets/js/3.3636d6ec.js" as="script"><link rel="preload" href="/docs/assets/js/1.918f4b60.js" as="script"><link rel="preload" href="/docs/assets/js/80.fa51dcb3.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.894afc78.js"><link rel="prefetch" href="/docs/assets/js/100.6c9cea29.js"><link rel="prefetch" href="/docs/assets/js/101.7040d1c7.js"><link rel="prefetch" href="/docs/assets/js/102.9c899c61.js"><link rel="prefetch" href="/docs/assets/js/103.803f892a.js"><link rel="prefetch" href="/docs/assets/js/104.ed4e2830.js"><link rel="prefetch" href="/docs/assets/js/105.8e0549c2.js"><link rel="prefetch" href="/docs/assets/js/106.31738466.js"><link rel="prefetch" href="/docs/assets/js/107.f04c30a4.js"><link rel="prefetch" href="/docs/assets/js/108.d68eda99.js"><link rel="prefetch" href="/docs/assets/js/109.978cc78d.js"><link rel="prefetch" href="/docs/assets/js/11.fe8e275c.js"><link rel="prefetch" href="/docs/assets/js/110.b605498c.js"><link rel="prefetch" href="/docs/assets/js/111.9fdc5fc2.js"><link rel="prefetch" href="/docs/assets/js/112.fb7e5888.js"><link rel="prefetch" href="/docs/assets/js/113.c24e438b.js"><link rel="prefetch" href="/docs/assets/js/114.49998657.js"><link rel="prefetch" href="/docs/assets/js/115.099f0eeb.js"><link rel="prefetch" href="/docs/assets/js/116.12083e0f.js"><link rel="prefetch" href="/docs/assets/js/117.3c5093c8.js"><link rel="prefetch" href="/docs/assets/js/118.869da8e6.js"><link rel="prefetch" href="/docs/assets/js/119.d29074e8.js"><link rel="prefetch" href="/docs/assets/js/12.debfe377.js"><link rel="prefetch" href="/docs/assets/js/120.aed272f0.js"><link rel="prefetch" href="/docs/assets/js/121.2c5c137d.js"><link rel="prefetch" href="/docs/assets/js/122.e90707af.js"><link rel="prefetch" href="/docs/assets/js/123.7a23a576.js"><link rel="prefetch" href="/docs/assets/js/124.03ea16ab.js"><link rel="prefetch" href="/docs/assets/js/125.8adb1b02.js"><link rel="prefetch" href="/docs/assets/js/126.9643dfaa.js"><link rel="prefetch" href="/docs/assets/js/127.f0598307.js"><link rel="prefetch" href="/docs/assets/js/128.25a18a88.js"><link rel="prefetch" href="/docs/assets/js/129.96c2f2fe.js"><link rel="prefetch" href="/docs/assets/js/13.a7b5b2e3.js"><link rel="prefetch" href="/docs/assets/js/130.be3f81c1.js"><link rel="prefetch" href="/docs/assets/js/131.6b8c2452.js"><link rel="prefetch" href="/docs/assets/js/132.d30ac7c0.js"><link rel="prefetch" href="/docs/assets/js/133.d66129f3.js"><link rel="prefetch" href="/docs/assets/js/134.6dd3f397.js"><link rel="prefetch" href="/docs/assets/js/14.c71e64f6.js"><link rel="prefetch" href="/docs/assets/js/15.cd3f836c.js"><link rel="prefetch" href="/docs/assets/js/16.7bddc846.js"><link rel="prefetch" href="/docs/assets/js/17.8c0b0130.js"><link rel="prefetch" href="/docs/assets/js/18.5f2a9efe.js"><link rel="prefetch" href="/docs/assets/js/19.d76a3b4a.js"><link rel="prefetch" href="/docs/assets/js/20.d9dbc549.js"><link rel="prefetch" href="/docs/assets/js/21.5aad6e01.js"><link rel="prefetch" href="/docs/assets/js/22.2d27475e.js"><link rel="prefetch" href="/docs/assets/js/23.577f9f68.js"><link rel="prefetch" href="/docs/assets/js/24.18eb4258.js"><link rel="prefetch" href="/docs/assets/js/25.cecc0155.js"><link rel="prefetch" href="/docs/assets/js/26.618d959e.js"><link rel="prefetch" href="/docs/assets/js/27.201b4edc.js"><link rel="prefetch" href="/docs/assets/js/28.6accec07.js"><link rel="prefetch" href="/docs/assets/js/29.3b4a7a5d.js"><link rel="prefetch" href="/docs/assets/js/30.316a9201.js"><link rel="prefetch" href="/docs/assets/js/31.4455bd92.js"><link rel="prefetch" href="/docs/assets/js/32.8cdf2e77.js"><link rel="prefetch" href="/docs/assets/js/33.8b0267bd.js"><link rel="prefetch" href="/docs/assets/js/34.8c6e7d05.js"><link rel="prefetch" href="/docs/assets/js/35.cfd58411.js"><link rel="prefetch" href="/docs/assets/js/36.64c65ac8.js"><link rel="prefetch" href="/docs/assets/js/37.ad062ae2.js"><link rel="prefetch" href="/docs/assets/js/38.4d2ddf1f.js"><link rel="prefetch" href="/docs/assets/js/39.f1149ee0.js"><link rel="prefetch" href="/docs/assets/js/4.37217264.js"><link rel="prefetch" href="/docs/assets/js/40.3d125d4d.js"><link rel="prefetch" href="/docs/assets/js/41.4347c26d.js"><link rel="prefetch" href="/docs/assets/js/42.59a1032f.js"><link rel="prefetch" href="/docs/assets/js/43.934de5e7.js"><link rel="prefetch" href="/docs/assets/js/44.ca1f2f38.js"><link rel="prefetch" href="/docs/assets/js/45.1f010dfb.js"><link rel="prefetch" href="/docs/assets/js/46.61204139.js"><link rel="prefetch" href="/docs/assets/js/47.4b85de0d.js"><link rel="prefetch" href="/docs/assets/js/48.3eecb0c7.js"><link rel="prefetch" href="/docs/assets/js/49.c575daaa.js"><link rel="prefetch" href="/docs/assets/js/5.2f34d53f.js"><link rel="prefetch" href="/docs/assets/js/50.d346e3d0.js"><link rel="prefetch" href="/docs/assets/js/51.bcf7cb73.js"><link rel="prefetch" href="/docs/assets/js/52.ad7dba86.js"><link rel="prefetch" href="/docs/assets/js/53.ed8e7344.js"><link rel="prefetch" href="/docs/assets/js/54.e5956fda.js"><link rel="prefetch" href="/docs/assets/js/55.412e1663.js"><link rel="prefetch" href="/docs/assets/js/56.447a859d.js"><link rel="prefetch" href="/docs/assets/js/57.d562b661.js"><link rel="prefetch" href="/docs/assets/js/58.7efa02db.js"><link rel="prefetch" href="/docs/assets/js/59.7e1cc189.js"><link rel="prefetch" href="/docs/assets/js/6.5535682b.js"><link rel="prefetch" href="/docs/assets/js/60.c4b4e81a.js"><link rel="prefetch" href="/docs/assets/js/61.b1fc019a.js"><link rel="prefetch" href="/docs/assets/js/62.c2f93140.js"><link rel="prefetch" href="/docs/assets/js/63.bab8ae3e.js"><link rel="prefetch" href="/docs/assets/js/64.e58369af.js"><link rel="prefetch" href="/docs/assets/js/65.c0f6ccd1.js"><link rel="prefetch" href="/docs/assets/js/66.86eb3601.js"><link rel="prefetch" href="/docs/assets/js/67.06d30035.js"><link rel="prefetch" href="/docs/assets/js/68.f00bf82b.js"><link rel="prefetch" href="/docs/assets/js/69.55d2d2cc.js"><link rel="prefetch" href="/docs/assets/js/7.1b56c1dc.js"><link rel="prefetch" href="/docs/assets/js/70.91c713d7.js"><link rel="prefetch" href="/docs/assets/js/71.56ffaa65.js"><link rel="prefetch" href="/docs/assets/js/72.1b02bdd8.js"><link rel="prefetch" href="/docs/assets/js/73.1306c4fe.js"><link rel="prefetch" href="/docs/assets/js/74.585dd556.js"><link rel="prefetch" href="/docs/assets/js/75.9c8d4169.js"><link rel="prefetch" href="/docs/assets/js/76.545f9428.js"><link rel="prefetch" href="/docs/assets/js/77.1e1f16ff.js"><link rel="prefetch" href="/docs/assets/js/78.afc46436.js"><link rel="prefetch" href="/docs/assets/js/79.9003a35e.js"><link rel="prefetch" href="/docs/assets/js/8.99cb285f.js"><link rel="prefetch" href="/docs/assets/js/81.440be21a.js"><link rel="prefetch" href="/docs/assets/js/82.4926354d.js"><link rel="prefetch" href="/docs/assets/js/83.0b769f9e.js"><link rel="prefetch" href="/docs/assets/js/84.70ff732b.js"><link rel="prefetch" href="/docs/assets/js/85.f6f099fd.js"><link rel="prefetch" href="/docs/assets/js/86.608fe26e.js"><link rel="prefetch" href="/docs/assets/js/87.9d9f0a7a.js"><link rel="prefetch" href="/docs/assets/js/88.1cb23c8a.js"><link rel="prefetch" href="/docs/assets/js/89.6f689379.js"><link rel="prefetch" href="/docs/assets/js/9.5eda1122.js"><link rel="prefetch" href="/docs/assets/js/90.1a961d49.js"><link rel="prefetch" href="/docs/assets/js/91.a8b2272c.js"><link rel="prefetch" href="/docs/assets/js/92.3911373d.js"><link rel="prefetch" href="/docs/assets/js/93.ca899620.js"><link rel="prefetch" href="/docs/assets/js/94.9d38e563.js"><link rel="prefetch" href="/docs/assets/js/95.4d12c873.js"><link rel="prefetch" href="/docs/assets/js/96.e13e7e1a.js"><link rel="prefetch" href="/docs/assets/js/97.529f5c1b.js"><link rel="prefetch" href="/docs/assets/js/98.36061bb7.js"><link rel="prefetch" href="/docs/assets/js/99.667fecf9.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.0415235c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>锋格blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>锋格blog</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><img src="/docs/fenggelogo.jpg" alt="锋格blog" class="logo"> <span class="site-name">锋格blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/base/" class="nav-link router-link-active"><i class="iconfont undefined"></i>
+  基础部分
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/thread/" class="nav-link"><i class="iconfont undefined"></i>
+  多线程
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/mybatis/" class="nav-link"><i class="iconfont undefined"></i>
+  Mybatis系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/other/" class="nav-link"><i class="iconfont undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      数据库
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/db/mysql/" class="nav-link"><i class="iconfont undefined"></i>
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/oracle/" class="nav-link"><i class="iconfont undefined"></i>
+  Oracle
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/mongo/" class="nav-link"><i class="iconfont undefined"></i>
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/dataStructure/" class="nav-link"><i class="iconfont undefined"></i>
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-tag"></i>
+      前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/front/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/angular/" class="nav-link"><i class="iconfont undefined"></i>
+  AngularJs
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/layui/" class="nav-link"><i class="iconfont undefined"></i>
+  LayUI
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      面试宝典
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/baodian/zero/" class="nav-link"><i class="iconfont undefined"></i>
+  初级开发篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/high/" class="nav-link"><i class="iconfont undefined"></i>
+  中高进阶篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/must/" class="nav-link"><i class="iconfont undefined"></i>
+  面试必备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      问题
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/questions/question/" class="nav-link"><i class="iconfont undefined"></i>
+  问题
+</a></li><li class="dropdown-item"><!----> <a href="/docs/questions/talk/" class="nav-link"><i class="iconfont undefined"></i>
+  闲谈
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Tools
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/tools/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/docs/tools/computerNetwork/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络与数据通信
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>在线编辑</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  图片压缩
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>在线服务</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.aliyun.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  阿里云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://cloud.tencent.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  腾讯云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>博客指南</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://juejin.im/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://blog.csdn.net/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="/docs/fenggelogo.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    锋格blog
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>49</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>12</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/base/" class="nav-link router-link-active"><i class="iconfont undefined"></i>
+  基础部分
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/thread/" class="nav-link"><i class="iconfont undefined"></i>
+  多线程
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/mybatis/" class="nav-link"><i class="iconfont undefined"></i>
+  Mybatis系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/other/" class="nav-link"><i class="iconfont undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      数据库
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/db/mysql/" class="nav-link"><i class="iconfont undefined"></i>
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/oracle/" class="nav-link"><i class="iconfont undefined"></i>
+  Oracle
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/mongo/" class="nav-link"><i class="iconfont undefined"></i>
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/dataStructure/" class="nav-link"><i class="iconfont undefined"></i>
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-tag"></i>
+      前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/front/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/angular/" class="nav-link"><i class="iconfont undefined"></i>
+  AngularJs
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/layui/" class="nav-link"><i class="iconfont undefined"></i>
+  LayUI
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      面试宝典
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/baodian/zero/" class="nav-link"><i class="iconfont undefined"></i>
+  初级开发篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/high/" class="nav-link"><i class="iconfont undefined"></i>
+  中高进阶篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/must/" class="nav-link"><i class="iconfont undefined"></i>
+  面试必备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      问题
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/questions/question/" class="nav-link"><i class="iconfont undefined"></i>
+  问题
+</a></li><li class="dropdown-item"><!----> <a href="/docs/questions/talk/" class="nav-link"><i class="iconfont undefined"></i>
+  闲谈
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Tools
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/tools/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/docs/tools/computerNetwork/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络与数据通信
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>在线编辑</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  图片压缩
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>在线服务</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.aliyun.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  阿里云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://cloud.tencent.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  腾讯云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>博客指南</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://juejin.im/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://blog.csdn.net/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java基础知识</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/java/base/notes/filter.html" class="sidebar-link">过滤器、拦截器和监听器</a></li><li><a href="/docs/java/base/notes/ArrayList.html" aria-current="page" class="active sidebar-link">ArrayList</a></li><li><a href="/docs/java/base/notes/ArrayList-Grow.html" class="sidebar-link">ArrayList 的构造函数</a></li><li><a href="/docs/java/base/notes/BIO,NIO,AIO summary.html" class="sidebar-link">BIO,NIO,AIO 的基本概念</a></li><li><a href="/docs/java/base/notes/final、static、this、super.html" class="sidebar-link">final,static,this,super 关键字总结</a></li><li><a href="/docs/java/base/notes/HashMap.html" class="sidebar-link">HashMap</a></li><li><a href="/docs/java/base/notes/J2EE基础知识.html" class="sidebar-link">J2EE基础知识</a></li><li><a href="/docs/java/base/notes/Java IO与NIO.html" class="sidebar-link">Java IO与NIO</a></li><li><a href="/docs/java/base/notes/Java基础知识.html" class="sidebar-link">Java基础知识</a></li><li><a href="/docs/java/base/notes/Java虚拟机（jvm）.html" class="sidebar-link">Java虚拟机</a></li><li><a href="/docs/java/base/notes/Java集合框架常见面试题总结.html" class="sidebar-link">Java集合框架常见面试</a></li><li><a href="/docs/java/base/notes/LinkedList.html" class="sidebar-link">linkedlist</a></li><li><a href="/docs/java/base/notes/synchronized.html" class="sidebar-link">synchronized关键字最主要的三种使用方式</a></li><li><a href="/docs/java/base/notes/可能是把Java内存区域讲的最清楚的一篇文章.html" class="sidebar-link">Java 内存区域</a></li><li><a href="/docs/java/base/notes/多线程系列.html" class="sidebar-link">多线程系列</a></li><li><a href="/docs/java/base/notes/搞定JVM垃圾回收就是这么简单.html" class="sidebar-link">搞定JVM垃圾回收就是这么简单</a></li><li><a href="/docs/java/base/notes/设计模式.html" class="sidebar-link">设计模式</a></li><li><a href="/docs/java/base/notes/这几道Java集合框架面试题几乎必问.html" class="sidebar-link">这几道Java集合框架面试题几乎必问</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>ArrayList</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>锋格blog</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">ArrayList</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>锋格blog</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2020-12-18</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Java</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><ul><li><a href="#arraylist%E7%AE%80%E4%BB%8B">ArrayList简介</a></li> <li><a href="#arraylist%E6%A0%B8%E5%BF%83%E6%BA%90%E7%A0%81">ArrayList核心源码</a></li> <li><a href="#arraylist%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">ArrayList源码分析</a> <ul><li><a href="#systemarraycopy%E5%92%8Carrayscopyof%E6%96%B9%E6%B3%95">System.arraycopy()和Arrays.copyOf()方法</a> <ul><li><a href="#%E4%B8%A4%E8%80%85%E8%81%94%E7%B3%BB%E4%B8%8E%E5%8C%BA%E5%88%AB">两者联系与区别</a></li></ul></li> <li><a href="#arraylist%E6%A0%B8%E5%BF%83%E6%89%A9%E5%AE%B9%E6%8A%80%E6%9C%AF">ArrayList核心扩容技术</a></li> <li><a href="#%E5%86%85%E9%83%A8%E7%B1%BB">内部类</a></li></ul></li> <li><a href="#arraylist%E7%BB%8F%E5%85%B8demo">ArrayList经典Demo</a></li></ul> <h3 id="arraylist简介"><a href="#arraylist简介" class="header-anchor">#</a> ArrayList简介</h3> <p>ArrayList 的底层是数组队列，相当于动态数组。与 Java 中的数组相比，它的容量能动态增长。在添加大量元素前，应用程序可以使用<code>ensureCapacity</code>操作来增加 ArrayList 实例的容量。这可以减少递增式再分配的数量。</p> <p>它继承于 <strong>AbstractList</strong>，实现了 <strong>List</strong>, <strong>RandomAccess</strong>, <strong>Cloneable</strong>, <strong>java.io.Serializable</strong> 这些接口。</p> <p>在我们学数据结构的时候就知道了线性表的顺序存储，插入删除元素的时间复杂度为<strong>O（n）</strong>,求表长以及增加元素，取第 i   元素的时间复杂度为<strong>O（1）</strong></p> <p>ArrayList 继承了AbstractList，实现了List。它是一个数组队列，提供了相关的添加、删除、修改、遍历等功能。</p> <p>ArrayList 实现了<strong>RandomAccess 接口</strong>， RandomAccess 是一个标志接口，表明实现这个这个接口的 List 集合是支持<strong>快速随机访问</strong>的。在 ArrayList 中，我们即可以通过元素的序号快速获取元素对象，这就是快速随机访问。</p> <p>ArrayList 实现了<strong>Cloneable 接口</strong>，即覆盖了函数 clone()，<strong>能被克隆</strong>。</p> <p>ArrayList 实现<strong>java.io.Serializable 接口</strong>，这意味着ArrayList<strong>支持序列化</strong>，<strong>能通过序列化去传输</strong>。</p> <p>和 Vector 不同，<strong>ArrayList 中的操作不是线程安全的</strong>！所以，建议在单线程中才使用 ArrayList，而在多线程中可以选择 Vector 或者  CopyOnWriteArrayList。</p> <h3 id="arraylist核心源码"><a href="#arraylist核心源码" class="header-anchor">#</a> ArrayList核心源码</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+
+package java.util;
+
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
+
+
+public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt;
+        implements List&lt;E&gt;, RandomAccess, Cloneable, java.io.Serializable
+{
+    private static final long serialVersionUID = 8683452581122892189L;
+
+    /**
+     * 默认初始容量大小
+     */
+    private static final int DEFAULT_CAPACITY = 10;
+
+    /**
+     * 空数组（用于空实例）。
+     */
+    private static final Object[] EMPTY_ELEMENTDATA = {};
+
+     //用于默认大小空实例的共享空数组实例。
+      //我们把它从EMPTY_ELEMENTDATA数组中区分出来，以知道在添加第一个元素时容量需要增加多少。
+    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+
+    /**
+     * 保存ArrayList数据的数组
+     */
+    transient Object[] elementData; // non-private to simplify nested class access
+
+    /**
+     * ArrayList 所包含的元素个数
+     */
+    private int size;
+
+    /**
+     * 带初始容量参数的构造函数。（用户自己指定容量）
+     */
+    public ArrayList(int initialCapacity) {
+        if (initialCapacity &gt; 0) {
+            //创建initialCapacity大小的数组
+            this.elementData = new Object[initialCapacity];
+        } else if (initialCapacity == 0) {
+            //创建空数组
+            this.elementData = EMPTY_ELEMENTDATA;
+        } else {
+            throw new IllegalArgumentException(&quot;Illegal Capacity: &quot;+
+                                               initialCapacity);
+        }
+    }
+
+    /**
+     *默认构造函数，DEFAULTCAPACITY_EMPTY_ELEMENTDATA 为0.初始化为10，也就是说初始其实是空数组 当添加第一个元素的时候数组容量才变成10
+     */
+    public ArrayList() {
+        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+    }
+
+    /**
+     * 构造一个包含指定集合的元素的列表，按照它们由集合的迭代器返回的顺序。
+     */
+    public ArrayList(Collection&lt;? extends E&gt; c) {
+        //
+        elementData = c.toArray();
+        //如果指定集合元素个数不为0
+        if ((size = elementData.length) != 0) {
+            // c.toArray 可能返回的不是Object类型的数组所以加上下面的语句用于判断，
+            //这里用到了反射里面的getClass()方法
+            if (elementData.getClass() != Object[].class)
+                elementData = Arrays.copyOf(elementData, size, Object[].class);
+        } else {
+            // 用空数组代替
+            this.elementData = EMPTY_ELEMENTDATA;
+        }
+    }
+
+    /**
+     * 修改这个ArrayList实例的容量是列表的当前大小。 应用程序可以使用此操作来最小化ArrayList实例的存储。 
+     */
+    public void trimToSize() {
+        modCount++;
+        if (size &lt; elementData.length) {
+            elementData = (size == 0)
+              ? EMPTY_ELEMENTDATA
+              : Arrays.copyOf(elementData, size);
+        }
+    }
+//下面是ArrayList的扩容机制
+//ArrayList的扩容机制提高了性能，如果每次只扩充一个，
+//那么频繁的插入会导致频繁的拷贝，降低性能，而ArrayList的扩容机制避免了这种情况。
+    /**
+     * 如有必要，增加此ArrayList实例的容量，以确保它至少能容纳元素的数量
+     * @param   minCapacity   所需的最小容量
+     */
+    public void ensureCapacity(int minCapacity) {
+        int minExpand = (elementData != DEFAULTCAPACITY_EMPTY_ELEMENTDATA)
+            // any size if not default element table
+            ? 0
+            // larger than default for default empty table. It's already
+            // supposed to be at default size.
+            : DEFAULT_CAPACITY;
+
+        if (minCapacity &gt; minExpand) {
+            ensureExplicitCapacity(minCapacity);
+        }
+    }
+   //得到最小扩容量
+    private void ensureCapacityInternal(int minCapacity) {
+        if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+              // 获取默认的容量和传入参数的较大值
+            minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity);
+        }
+
+        ensureExplicitCapacity(minCapacity);
+    }
+  //判断是否需要扩容
+    private void ensureExplicitCapacity(int minCapacity) {
+        modCount++;
+
+        // overflow-conscious code
+        if (minCapacity - elementData.length &gt; 0)
+            //调用grow方法进行扩容，调用此方法代表已经开始扩容了
+            grow(minCapacity);
+    }
+
+    /**
+     * 要分配的最大数组大小
+     */
+    private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
+
+    /**
+     * ArrayList扩容的核心方法。
+     */
+    private void grow(int minCapacity) {
+        // oldCapacity为旧容量，newCapacity为新容量
+        int oldCapacity = elementData.length;
+        //将oldCapacity 右移一位，其效果相当于oldCapacity /2，
+        //我们知道位运算的速度远远快于整除运算，整句运算式的结果就是将新容量更新为旧容量的1.5倍，
+        int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);
+        //然后检查新容量是否大于最小需要容量，若还是小于最小需要容量，那么就把最小需要容量当作数组的新容量，
+        if (newCapacity - minCapacity &lt; 0)
+            newCapacity = minCapacity;
+        //再检查新容量是否超出了ArrayList所定义的最大容量，
+        //若超出了，则调用hugeCapacity()来比较minCapacity和 MAX_ARRAY_SIZE，
+        //如果minCapacity大于MAX_ARRAY_SIZE，则新容量则为Interger.MAX_VALUE，否则，新容量大小则为 MAX_ARRAY_SIZE。
+        if (newCapacity - MAX_ARRAY_SIZE &gt; 0)
+            newCapacity = hugeCapacity(minCapacity);
+        // minCapacity is usually close to size, so this is a win:
+        elementData = Arrays.copyOf(elementData, newCapacity);
+    }
+    //比较minCapacity和 MAX_ARRAY_SIZE
+    private static int hugeCapacity(int minCapacity) {
+        if (minCapacity &lt; 0) // overflow
+            throw new OutOfMemoryError();
+        return (minCapacity &gt; MAX_ARRAY_SIZE) ?
+            Integer.MAX_VALUE :
+            MAX_ARRAY_SIZE;
+    }
+
+    /**
+     *返回此列表中的元素数。 
+     */
+    public int size() {
+        return size;
+    }
+
+    /**
+     * 如果此列表不包含元素，则返回 true 。
+     */
+    public boolean isEmpty() {
+        //注意=和==的区别
+        return size == 0;
+    }
+
+    /**
+     * 如果此列表包含指定的元素，则返回true 。
+     */
+    public boolean contains(Object o) {
+        //indexOf()方法：返回此列表中指定元素的首次出现的索引，如果此列表不包含此元素，则为-1 
+        return indexOf(o) &gt;= 0;
+    }
+
+    /**
+     *返回此列表中指定元素的首次出现的索引，如果此列表不包含此元素，则为-1 
+     */
+    public int indexOf(Object o) {
+        if (o == null) {
+            for (int i = 0; i &lt; size; i++)
+                if (elementData[i]==null)
+                    return i;
+        } else {
+            for (int i = 0; i &lt; size; i++)
+                //equals()方法比较
+                if (o.equals(elementData[i]))
+                    return i;
+        }
+        return -1;
+    }
+
+    /**
+     * 返回此列表中指定元素的最后一次出现的索引，如果此列表不包含元素，则返回-1。.
+     */
+    public int lastIndexOf(Object o) {
+        if (o == null) {
+            for (int i = size-1; i &gt;= 0; i--)
+                if (elementData[i]==null)
+                    return i;
+        } else {
+            for (int i = size-1; i &gt;= 0; i--)
+                if (o.equals(elementData[i]))
+                    return i;
+        }
+        return -1;
+    }
+
+    /**
+     * 返回此ArrayList实例的浅拷贝。 （元素本身不被复制。） 
+     */
+    public Object clone() {
+        try {
+            ArrayList&lt;?&gt; v = (ArrayList&lt;?&gt;) super.clone();
+            //Arrays.copyOf功能是实现数组的复制，返回复制后的数组。参数是被复制的数组和复制的长度
+            v.elementData = Arrays.copyOf(elementData, size);
+            v.modCount = 0;
+            return v;
+        } catch (CloneNotSupportedException e) {
+            // 这不应该发生，因为我们是可以克隆的
+            throw new InternalError(e);
+        }
+    }
+
+    /**
+     *以正确的顺序（从第一个到最后一个元素）返回一个包含此列表中所有元素的数组。 
+     *返回的数组将是“安全的”，因为该列表不保留对它的引用。 （换句话说，这个方法必须分配一个新的数组）。
+     *因此，调用者可以自由地修改返回的数组。 此方法充当基于阵列和基于集合的API之间的桥梁。
+     */
+    public Object[] toArray() {
+        return Arrays.copyOf(elementData, size);
+    }
+
+    /**
+     * 以正确的顺序返回一个包含此列表中所有元素的数组（从第一个到最后一个元素）; 
+     *返回的数组的运行时类型是指定数组的运行时类型。 如果列表适合指定的数组，则返回其中。 
+     *否则，将为指定数组的运行时类型和此列表的大小分配一个新数组。 
+     *如果列表适用于指定的数组，其余空间（即数组的列表数量多于此元素），则紧跟在集合结束后的数组中的元素设置为null 。
+     *（这仅在调用者知道列表不包含任何空元素的情况下才能确定列表的长度。） 
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public &lt;T&gt; T[] toArray(T[] a) {
+        if (a.length &lt; size)
+            // 新建一个运行时类型的数组，但是ArrayList数组的内容
+            return (T[]) Arrays.copyOf(elementData, size, a.getClass());
+            //调用System提供的arraycopy()方法实现数组之间的复制
+        System.arraycopy(elementData, 0, a, 0, size);
+        if (a.length &gt; size)
+            a[size] = null;
+        return a;
+    }
+
+    // Positional Access Operations
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    E elementData(int index) {
+        return (E) elementData[index];
+    }
+
+    /**
+     * 返回此列表中指定位置的元素。
+     */
+    public E get(int index) {
+        rangeCheck(index);
+
+        return elementData(index);
+    }
+
+    /**
+     * 用指定的元素替换此列表中指定位置的元素。 
+     */
+    public E set(int index, E element) {
+        //对index进行界限检查
+        rangeCheck(index);
+
+        E oldValue = elementData(index);
+        elementData[index] = element;
+        //返回原来在这个位置的元素
+        return oldValue;
+    }
+
+    /**
+     * 将指定的元素追加到此列表的末尾。 
+     */
+    public boolean add(E e) {
+        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        //这里看到ArrayList添加元素的实质就相当于为数组赋值
+        elementData[size++] = e;
+        return true;
+    }
+
+    /**
+     * 在此列表中的指定位置插入指定的元素。 
+     *先调用 rangeCheckForAdd 对index进行界限检查；然后调用 ensureCapacityInternal 方法保证capacity足够大；
+     *再将从index开始之后的所有成员后移一个位置；将element插入index位置；最后size加1。
+     */
+    public void add(int index, E element) {
+        rangeCheckForAdd(index);
+
+        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        //arraycopy()这个实现数组之间复制的方法一定要看一下，下面就用到了arraycopy()方法实现数组自己复制自己
+        System.arraycopy(elementData, index, elementData, index + 1,
+                         size - index);
+        elementData[index] = element;
+        size++;
+    }
+
+    /**
+     * 删除该列表中指定位置的元素。 将任何后续元素移动到左侧（从其索引中减去一个元素）。 
+     */
+    public E remove(int index) {
+        rangeCheck(index);
+
+        modCount++;
+        E oldValue = elementData(index);
+
+        int numMoved = size - index - 1;
+        if (numMoved &gt; 0)
+            System.arraycopy(elementData, index+1, elementData, index,
+                             numMoved);
+        elementData[--size] = null; // clear to let GC do its work
+      //从列表中删除的元素 
+        return oldValue;
+    }
+
+    /**
+     * 从列表中删除指定元素的第一个出现（如果存在）。 如果列表不包含该元素，则它不会更改。
+     *返回true，如果此列表包含指定的元素
+     */
+    public boolean remove(Object o) {
+        if (o == null) {
+            for (int index = 0; index &lt; size; index++)
+                if (elementData[index] == null) {
+                    fastRemove(index);
+                    return true;
+                }
+        } else {
+            for (int index = 0; index &lt; size; index++)
+                if (o.equals(elementData[index])) {
+                    fastRemove(index);
+                    return true;
+                }
+        }
+        return false;
+    }
+
+    /*
+     * Private remove method that skips bounds checking and does not
+     * return the value removed.
+     */
+    private void fastRemove(int index) {
+        modCount++;
+        int numMoved = size - index - 1;
+        if (numMoved &gt; 0)
+            System.arraycopy(elementData, index+1, elementData, index,
+                             numMoved);
+        elementData[--size] = null; // clear to let GC do its work
+    }
+
+    /**
+     * 从列表中删除所有元素。 
+     */
+    public void clear() {
+        modCount++;
+
+        // 把数组中所有的元素的值设为null
+        for (int i = 0; i &lt; size; i++)
+            elementData[i] = null;
+
+        size = 0;
+    }
+
+    /**
+     * 按指定集合的Iterator返回的顺序将指定集合中的所有元素追加到此列表的末尾。
+     */
+    public boolean addAll(Collection&lt;? extends E&gt; c) {
+        Object[] a = c.toArray();
+        int numNew = a.length;
+        ensureCapacityInternal(size + numNew);  // Increments modCount
+        System.arraycopy(a, 0, elementData, size, numNew);
+        size += numNew;
+        return numNew != 0;
+    }
+
+    /**
+     * 将指定集合中的所有元素插入到此列表中，从指定的位置开始。
+     */
+    public boolean addAll(int index, Collection&lt;? extends E&gt; c) {
+        rangeCheckForAdd(index);
+
+        Object[] a = c.toArray();
+        int numNew = a.length;
+        ensureCapacityInternal(size + numNew);  // Increments modCount
+
+        int numMoved = size - index;
+        if (numMoved &gt; 0)
+            System.arraycopy(elementData, index, elementData, index + numNew,
+                             numMoved);
+
+        System.arraycopy(a, 0, elementData, index, numNew);
+        size += numNew;
+        return numNew != 0;
+    }
+
+    /**
+     * 从此列表中删除所有索引为fromIndex （含）和toIndex之间的元素。
+     *将任何后续元素移动到左侧（减少其索引）。
+     */
+    protected void removeRange(int fromIndex, int toIndex) {
+        modCount++;
+        int numMoved = size - toIndex;
+        System.arraycopy(elementData, toIndex, elementData, fromIndex,
+                         numMoved);
+
+        // clear to let GC do its work
+        int newSize = size - (toIndex-fromIndex);
+        for (int i = newSize; i &lt; size; i++) {
+            elementData[i] = null;
+        }
+        size = newSize;
+    }
+
+    /**
+     * 检查给定的索引是否在范围内。
+     */
+    private void rangeCheck(int index) {
+        if (index &gt;= size)
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+    }
+
+    /**
+     * add和addAll使用的rangeCheck的一个版本
+     */
+    private void rangeCheckForAdd(int index) {
+        if (index &gt; size || index &lt; 0)
+            throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
+    }
+
+    /**
+     * 返回IndexOutOfBoundsException细节信息
+     */
+    private String outOfBoundsMsg(int index) {
+        return &quot;Index: &quot;+index+&quot;, Size: &quot;+size;
+    }
+
+    /**
+     * 从此列表中删除指定集合中包含的所有元素。 
+     */
+    public boolean removeAll(Collection&lt;?&gt; c) {
+        Objects.requireNonNull(c);
+        //如果此列表被修改则返回true
+        return batchRemove(c, false);
+    }
+
+    /**
+     * 仅保留此列表中包含在指定集合中的元素。
+     *换句话说，从此列表中删除其中不包含在指定集合中的所有元素。 
+     */
+    public boolean retainAll(Collection&lt;?&gt; c) {
+        Objects.requireNonNull(c);
+        return batchRemove(c, true);
+    }
+
+
+    /**
+     * 从列表中的指定位置开始，返回列表中的元素（按正确顺序）的列表迭代器。
+     *指定的索引表示初始调用将返回的第一个元素为next 。 初始调用previous将返回指定索引减1的元素。 
+     *返回的列表迭代器是fail-fast 。 
+     */
+    public ListIterator&lt;E&gt; listIterator(int index) {
+        if (index &lt; 0 || index &gt; size)
+            throw new IndexOutOfBoundsException(&quot;Index: &quot;+index);
+        return new ListItr(index);
+    }
+
+    /**
+     *返回列表中的列表迭代器（按适当的顺序）。 
+     *返回的列表迭代器是fail-fast 。
+     */
+    public ListIterator&lt;E&gt; listIterator() {
+        return new ListItr(0);
+    }
+
+    /**
+     *以正确的顺序返回该列表中的元素的迭代器。 
+     *返回的迭代器是fail-fast 。 
+     */
+    public Iterator&lt;E&gt; iterator() {
+        return new Itr();
+    }
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br><span class="line-number">402</span><br><span class="line-number">403</span><br><span class="line-number">404</span><br><span class="line-number">405</span><br><span class="line-number">406</span><br><span class="line-number">407</span><br><span class="line-number">408</span><br><span class="line-number">409</span><br><span class="line-number">410</span><br><span class="line-number">411</span><br><span class="line-number">412</span><br><span class="line-number">413</span><br><span class="line-number">414</span><br><span class="line-number">415</span><br><span class="line-number">416</span><br><span class="line-number">417</span><br><span class="line-number">418</span><br><span class="line-number">419</span><br><span class="line-number">420</span><br><span class="line-number">421</span><br><span class="line-number">422</span><br><span class="line-number">423</span><br><span class="line-number">424</span><br><span class="line-number">425</span><br><span class="line-number">426</span><br><span class="line-number">427</span><br><span class="line-number">428</span><br><span class="line-number">429</span><br><span class="line-number">430</span><br><span class="line-number">431</span><br><span class="line-number">432</span><br><span class="line-number">433</span><br><span class="line-number">434</span><br><span class="line-number">435</span><br><span class="line-number">436</span><br><span class="line-number">437</span><br><span class="line-number">438</span><br><span class="line-number">439</span><br><span class="line-number">440</span><br><span class="line-number">441</span><br><span class="line-number">442</span><br><span class="line-number">443</span><br><span class="line-number">444</span><br><span class="line-number">445</span><br><span class="line-number">446</span><br><span class="line-number">447</span><br><span class="line-number">448</span><br><span class="line-number">449</span><br><span class="line-number">450</span><br><span class="line-number">451</span><br><span class="line-number">452</span><br><span class="line-number">453</span><br><span class="line-number">454</span><br><span class="line-number">455</span><br><span class="line-number">456</span><br><span class="line-number">457</span><br><span class="line-number">458</span><br><span class="line-number">459</span><br><span class="line-number">460</span><br><span class="line-number">461</span><br><span class="line-number">462</span><br><span class="line-number">463</span><br><span class="line-number">464</span><br><span class="line-number">465</span><br><span class="line-number">466</span><br><span class="line-number">467</span><br><span class="line-number">468</span><br><span class="line-number">469</span><br><span class="line-number">470</span><br><span class="line-number">471</span><br><span class="line-number">472</span><br><span class="line-number">473</span><br><span class="line-number">474</span><br><span class="line-number">475</span><br><span class="line-number">476</span><br><span class="line-number">477</span><br><span class="line-number">478</span><br><span class="line-number">479</span><br><span class="line-number">480</span><br><span class="line-number">481</span><br><span class="line-number">482</span><br><span class="line-number">483</span><br><span class="line-number">484</span><br><span class="line-number">485</span><br><span class="line-number">486</span><br><span class="line-number">487</span><br><span class="line-number">488</span><br><span class="line-number">489</span><br><span class="line-number">490</span><br><span class="line-number">491</span><br><span class="line-number">492</span><br><span class="line-number">493</span><br><span class="line-number">494</span><br><span class="line-number">495</span><br><span class="line-number">496</span><br><span class="line-number">497</span><br><span class="line-number">498</span><br><span class="line-number">499</span><br><span class="line-number">500</span><br><span class="line-number">501</span><br></div></div><h3 id="arraylist源码分析"><a href="#arraylist源码分析" class="header-anchor">#</a> <font face="楷体" id="5">ArrayList源码分析</font></h3> <h4 id="system-arraycopy-和arrays-copyof-方法"><a href="#system-arraycopy-和arrays-copyof-方法" class="header-anchor">#</a> System.arraycopy()和Arrays.copyOf()方法</h4> <p>通过上面源码我们发现这两个实现数组复制的方法被广泛使用而且很多地方都特别巧妙。比如下面<font color="red">add(int index, E element)</font>方法就很巧妙的用到了<font color="red">arraycopy()方法</font>让数组自己复制自己实现让index开始之后的所有成员后移一个位置:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>    /**
+     * 在此列表中的指定位置插入指定的元素。 
+     *先调用 rangeCheckForAdd 对index进行界限检查；然后调用 ensureCapacityInternal 方法保证capacity足够大；
+     *再将从index开始之后的所有成员后移一个位置；将element插入index位置；最后size加1。
+     */
+    public void add(int index, E element) {
+        rangeCheckForAdd(index);
+
+        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        //arraycopy()方法实现数组自己复制自己
+        //elementData:源数组;index:源数组中的起始位置;elementData：目标数组；index + 1：目标数组中的起始位置； size - index：要复制的数组元素的数量；
+        System.arraycopy(elementData, index, elementData, index + 1, size - index);
+        elementData[index] = element;
+        size++;
+    }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>又如toArray()方法中用到了copyOf()方法</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+    /**
+     *以正确的顺序（从第一个到最后一个元素）返回一个包含此列表中所有元素的数组。 
+     *返回的数组将是“安全的”，因为该列表不保留对它的引用。 （换句话说，这个方法必须分配一个新的数组）。
+     *因此，调用者可以自由地修改返回的数组。 此方法充当基于阵列和基于集合的API之间的桥梁。
+     */
+    public Object[] toArray() {
+    //elementData：要复制的数组；size：要复制的长度
+        return Arrays.copyOf(elementData, size);
+    }
+    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h5 id="两者联系与区别"><a href="#两者联系与区别" class="header-anchor">#</a> 两者联系与区别</h5> <p><strong>联系：</strong>
+看两者源代码可以发现<code>copyOf()</code>内部调用了<code>System.arraycopy()</code>方法
+<strong>区别：</strong></p> <ol><li>arraycopy()需要目标数组，将原数组拷贝到你自己定义的数组里，而且可以选择拷贝的起点和长度以及放入新数组中的位置</li> <li>copyOf()是系统自动在内部新建一个数组，并返回该数组。</li></ol> <h4 id="arraylist-核心扩容技术"><a href="#arraylist-核心扩容技术" class="header-anchor">#</a> ArrayList 核心扩容技术</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>        //下面是ArrayList的扩容机制
+        //ArrayList的扩容机制提高了性能，如果每次只扩充一个，
+        //那么频繁的插入会导致频繁的拷贝，降低性能，而ArrayList的扩容机制避免了这种情况。
+    /**
+     * 如有必要，增加此ArrayList实例的容量，以确保它至少能容纳元素的数量
+     * @param   minCapacity   所需的最小容量
+     */
+    public void ensureCapacity(int minCapacity) {
+        int minExpand = (elementData != DEFAULTCAPACITY_EMPTY_ELEMENTDATA)
+            // any size if not default element table
+            ? 0
+            // larger than default for default empty table. It's already
+            // supposed to be at default size.
+            : DEFAULT_CAPACITY;
+
+        if (minCapacity &gt; minExpand) {
+            ensureExplicitCapacity(minCapacity);
+        }
+    }
+   //得到最小扩容量
+    private void ensureCapacityInternal(int minCapacity) {
+        if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+              // 获取默认的容量和传入参数的较大值
+            minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity);
+        }
+
+        ensureExplicitCapacity(minCapacity);
+    }
+  //判断是否需要扩容,上面两个方法都要调用
+    private void ensureExplicitCapacity(int minCapacity) {
+        modCount++;
+
+        // 如果说minCapacity也就是所需的最小容量大于保存ArrayList数据的数组的长度的话，就需要调用grow(minCapacity)方法扩容。
+        //这个minCapacity到底为多少呢？举个例子在添加元素(add)方法中这个minCapacity的大小就为现在数组的长度加1
+        if (minCapacity - elementData.length &gt; 0)
+            //调用grow方法进行扩容，调用此方法代表已经开始扩容了
+            grow(minCapacity);
+    }
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>    /**
+     * ArrayList扩容的核心方法。
+     */
+    private void grow(int minCapacity) {
+       //elementData为保存ArrayList数据的数组
+       ///elementData.length求数组长度elementData.size是求数组中的元素个数
+        // oldCapacity为旧容量，newCapacity为新容量
+        int oldCapacity = elementData.length;
+        //将oldCapacity 右移一位，其效果相当于oldCapacity /2，
+        //我们知道位运算的速度远远快于整除运算，整句运算式的结果就是将新容量更新为旧容量的1.5倍，
+        int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);
+        //然后检查新容量是否大于最小需要容量，若还是小于最小需要容量，那么就把最小需要容量当作数组的新容量，
+        if (newCapacity - minCapacity &lt; 0)
+            newCapacity = minCapacity;
+        //再检查新容量是否超出了ArrayList所定义的最大容量，
+        //若超出了，则调用hugeCapacity()来比较minCapacity和 MAX_ARRAY_SIZE，
+        //如果minCapacity大于MAX_ARRAY_SIZE，则新容量则为Interger.MAX_VALUE，否则，新容量大小则为 MAX_ARRAY_SIZE。
+        if (newCapacity - MAX_ARRAY_SIZE &gt; 0)
+            newCapacity = hugeCapacity(minCapacity);
+        // minCapacity is usually close to size, so this is a win:
+        elementData = Arrays.copyOf(elementData, newCapacity);
+    }
+    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>扩容机制代码已经做了详细的解释。另外值得注意的是大家很容易忽略的一个运算符：<strong>移位运算符</strong> <strong>简介</strong>：移位运算符就是在二进制的基础上对数字进行平移。按照平移的方向和填充数字的规则分为三种:<font color="red">&lt;&lt;(左移)</font>、<font color="red">&gt;&gt;(带符号右移)</font>和<font color="red">&gt;&gt;&gt;(无符号右移)</font>。
+　　<strong>作用</strong>：<strong>对于大数据的2进制运算,位移运算符比那些普通运算符的运算要快很多,因为程序仅仅移动一下而已,不去计算,这样提高了效率,节省了资源</strong>
+　　比如这里：int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);
+右移一位相当于除2，右移n位相当于除以 2 的 n 次方。这里 oldCapacity 明显右移了1位所以相当于oldCapacity /2。</p> <p><strong>另外需要注意的是：</strong></p> <ol><li><p>java 中的<strong>length 属性</strong>是针对数组说的,比如说你声明了一个数组,想知道这个数组的长度则用到了 length 这个属性.</p></li> <li><p>java 中的<strong>length()方法</strong>是针对字  符串String说的,如果想看这个字符串的长度则用到 length()这个方法.</p></li> <li><p>.java 中的<strong>size()方法</strong>是针对泛型集合说的,如果想看这个泛型有多少个元素,就调用此方法来查看!</p></li></ol> <h4 id="内部类"><a href="#内部类" class="header-anchor">#</a> 内部类</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>    (1)private class Itr implements Iterator&lt;E&gt;  
+    (2)private class ListItr extends Itr implements ListIterator&lt;E&gt;  
+    (3)private class SubList extends AbstractList&lt;E&gt; implements RandomAccess  
+    (4)static final class ArrayListSpliterator&lt;E&gt; implements Spliterator&lt;E&gt;  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>ArrayList有四个内部类，其中的<strong>Itr是实现了Iterator接口</strong>，同时重写了里面的<strong>hasNext()</strong>，<strong>next()</strong>，<strong>remove()<strong>等方法；其中的</strong>ListItr</strong>继承<strong>Itr</strong>，实现了<strong>ListIterator接口</strong>，同时重写了<strong>hasPrevious()</strong>，<strong>nextIndex()</strong>，<strong>previousIndex()</strong>，<strong>previous()</strong>，<strong>set(E e)</strong>，**add(E e)**等方法，所以这也可以看出了 **Iterator和ListIterator的区别:**ListIterator在Iterator的基础上增加了添加对象，修改对象，逆向遍历等方法，这些是Iterator不能实现的。</p> <h3 id="arraylist经典demo"><a href="#arraylist经典demo" class="header-anchor">#</a> <font face="楷体" id="6"> ArrayList经典Demo</font></h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>package list;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayListDemo {
+
+    public static void main(String[] srgs){
+         ArrayList&lt;Integer&gt; arrayList = new ArrayList&lt;Integer&gt;();
+
+         System.out.printf(&quot;Before add:arrayList.size() = %d\n&quot;,arrayList.size());
+
+         arrayList.add(1);
+         arrayList.add(3);
+         arrayList.add(5);
+         arrayList.add(7);
+         arrayList.add(9);
+         System.out.printf(&quot;After add:arrayList.size() = %d\n&quot;,arrayList.size());
+
+         System.out.println(&quot;Printing elements of arrayList&quot;);
+         // 三种遍历方式打印元素
+         // 第一种：通过迭代器遍历
+         System.out.print(&quot;通过迭代器遍历:&quot;);
+         Iterator&lt;Integer&gt; it = arrayList.iterator();
+         while(it.hasNext()){
+             System.out.print(it.next() + &quot; &quot;);
+         }
+         System.out.println();
+
+         // 第二种：通过索引值遍历
+         System.out.print(&quot;通过索引值遍历:&quot;);
+         for(int i = 0; i &lt; arrayList.size(); i++){
+             System.out.print(arrayList.get(i) + &quot; &quot;);
+         }
+         System.out.println();
+
+         // 第三种：for循环遍历
+         System.out.print(&quot;for循环遍历:&quot;);
+         for(Integer number : arrayList){
+             System.out.print(number + &quot; &quot;);
+         }
+
+         // toArray用法
+         // 第一种方式(最常用)
+         Integer[] integer = arrayList.toArray(new Integer[0]);
+
+         // 第二种方式(容易理解)
+         Integer[] integer1 = new Integer[arrayList.size()];
+         arrayList.toArray(integer1);
+
+         // 抛出异常，java不支持向下转型
+         //Integer[] integer2 = new Integer[arrayList.size()];
+         //integer2 = arrayList.toArray();
+         System.out.println();
+
+         // 在指定位置添加元素
+         arrayList.add(2,2);
+         // 删除指定位置上的元素
+         arrayList.remove(2);    
+         // 删除指定元素
+         arrayList.remove((Object)3);
+         // 判断arrayList是否包含5
+         System.out.println(&quot;ArrayList contains 5 is: &quot; + arrayList.contains(5));
+
+         // 清空ArrayList
+         arrayList.clear();
+         // 判断ArrayList是否为空
+         System.out.println(&quot;ArrayList is empty: &quot; + arrayList.isEmpty());
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2020/12/21 下午4:48:56</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div></div><canvas id="vuepress-canvas-cursor"></canvas><canvas id="vuepress-canvas-ribbon"></canvas><div></div><APlayer audio="" fixed="true" mini="true" autoplay="autoplay" theme="#f9bcdd" loop="loop" order="random" preload="auto" volume="0.3" mutex="true" lrc-type="0" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 锋格blog
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/docs/assets/js/app.3613cf97.js" defer></script><script src="/docs/assets/js/3.3636d6ec.js" defer></script><script src="/docs/assets/js/1.918f4b60.js" defer></script><script src="/docs/assets/js/80.fa51dcb3.js" defer></script>
+  </body>
+</html>
