@@ -1,8 +1,8 @@
 ---
 title: 06 LinkedList 源码解析
-date: 2020-12-2
+date: 2020-12-02
 categories:
- - backEnd
+ - java
 tags:
  - java
 ---

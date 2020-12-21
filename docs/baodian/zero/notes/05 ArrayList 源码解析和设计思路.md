@@ -1,8 +1,8 @@
 ---
 title: 05 ArrayList 源码解析和设计思路
-date: 2020-12-2
+date: 2020-12-02
 categories:
- - backEnd
+ - java
 tags:
  - java
 ---
