@@ -19,6 +19,7 @@ module.exports = [
             {text: 'Oracle', link: '/db/oracle/'},
             {text: 'Redis', link: '/db/redis/'},
             {text: 'MongoDB', link: '/db/mongo/'},
+            {text: '数据结构与算法', link: '/db/数据结构与算法/'},
         ]
     },
     {
@@ -34,18 +35,21 @@ module.exports = [
         items: [
             {text: '初级开发篇', link: '/baodian/zero/'},
             {text: '中高进阶篇', link: '/baodian/high/'},
+            {text: '面试必备', link: '/baodian/面试必备/'},
         ]
     },
     {
         text: '问题', link: '/question/',icon: 'reco-blog',
         items: [
-            {text: '问题', link: '/question/'}
+            {text: '问题', link: '/question/'},
+            {text: '闲谈', link: '/question/闲谈/'},
         ]
     },
     {
         text: 'Tools', link: '/tools/',icon: 'reco-blog',
         items: [
-            {text: 'Tools', link: '/tools/tool/'}
+            {text: 'Tools', link: '/tools/tool/'},
+            {text: 'Tools', link: '/tools/计算机网络与数据通信/'}
         ]
     },
 
