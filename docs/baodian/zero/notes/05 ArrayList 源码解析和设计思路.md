@@ -1,10 +1,10 @@
 ---
 title: 05 ArrayList 源码解析和设计思路
-date: 2020-12-02
+date: 2020-12-18
 categories:
- - java
+  - Java
 tags:
- - java
+ - Java
 ---
 
 ![](https://i.loli.net/2020/11/25/ZKdOWaDG1Un9Mp3.jpg)

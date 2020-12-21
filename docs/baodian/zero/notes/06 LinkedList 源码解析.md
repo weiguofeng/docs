@@ -1,10 +1,10 @@
 ---
 title: 06 LinkedList 源码解析
-date: 2020-12-02
+date: 2020-12-18
 categories:
- - java
+  - Java
 tags:
- - java
+ - Java
 ---
 
 ![](https://i.loli.net/2020/11/25/3nBPbqzJvWauGCR.jpg)
