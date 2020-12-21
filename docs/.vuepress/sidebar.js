@@ -26,6 +26,7 @@ module.exports = {
     '/db/oracle': require('../db/oracle/sidebar'),
     '/db/redis': require('../db/redis/sidebar'),
     '/db/mongo': require('../db/mongo/sidebar'),
+    '/db/数据库与算法': require('../db/数据库与算法/sidebar'),
 
     //前端系列
     '/front/vue': require('../front/vue/sidebar'),
@@ -36,4 +37,5 @@ module.exports = {
 
     //杂谈及问题
     '/question/': require('../question/sidebar'),
+    '/question/闲谈': require('../question/闲谈/sidebar'),
 };
