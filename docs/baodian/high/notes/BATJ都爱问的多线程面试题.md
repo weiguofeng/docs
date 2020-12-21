@@ -1,4 +1,11 @@
-
+---
+title: Atomic
+date: 2020-12-19 
+categories:
+ - 面试
+tags:
+ - 面试
+---
 
 
 # 一 面试中关于 synchronized 关键字的 5 连击

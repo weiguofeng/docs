@@ -7,6 +7,7 @@ module.exports = [
         collapsable: true,
         children:[
             '/db/mysql/notes/mysql',
+            '/db/mysql/notes/MySQL Index',
         ]
     }
 

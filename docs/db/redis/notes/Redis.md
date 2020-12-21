@@ -1,3 +1,12 @@
+---
+title: Redis
+date: 2020-12-20 
+categories:
+ - Redis
+tags:
+ - Redis
+---
+
 <!-- MarkdownTOC -->
 
 - [redis 简介](#redis-简介)
