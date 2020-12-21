@@ -3,7 +3,7 @@ module.exports = [
         title:'首页'
     },
     {
-        title:'mysql',
+        title:'mongo',
         collapsable: true,
         children:[
             '/db/mysql/notes/mysql',

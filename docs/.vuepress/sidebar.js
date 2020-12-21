@@ -9,6 +9,9 @@ module.exports = {
     //面试宝典高级
     '/baodian/high': require('../baodian/high/sidebar'),
 
+    //面试必备
+    '/baodian/面试必备': require('../baodian/面试必备/sidebar'),
+
 
     //java系列
     '/java/base': require('../java/base/sidebar'),
@@ -29,6 +32,7 @@ module.exports = {
 
     //工具系列
     '/tools/tool': require('../tools/tool/sidebar'),
+    '/tools/计算机网络与数据通信': require('../tools/计算机网络与数据通信/sidebar'),
 
     //杂谈及问题
     '/question/': require('../question/sidebar'),
