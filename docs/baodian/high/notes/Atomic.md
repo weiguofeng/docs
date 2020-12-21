@@ -70,7 +70,7 @@ Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是�
 
  **AtomicInteger 类常用方法**
  
-```java
+```
 public final int get() //获取当前的值
 public final int getAndSet(int newValue)//获取当前的值，并设置新的值
 public final int getAndIncrement()//获取当前的值，并自增
@@ -82,7 +82,7 @@ public final void lazySet(int newValue)//最终设置为newValue,使用 lazySet 
 
 #### 2.2 AtomicInteger 常见方法使用
 
-```java
+```
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerTest {
@@ -108,7 +108,7 @@ public class AtomicIntegerTest {
 
 **①多线程环境不使用原子类保证线程安全（基本数据类型）**
 
-```java
+```
 class Test {
         private volatile int count = 0;
         //若要线程安全执行执行count++，需要加锁
@@ -123,7 +123,7 @@ class Test {
 ```
 **②多线程环境使用原子类保证线程安全（基本数据类型）**
 
-```java
+```
 class Test2 {
         private AtomicInteger count = new AtomicInteger();
 
@@ -141,7 +141,7 @@ class Test2 {
 
 AtomicInteger 类的部分源码：
 
-```java
+```
     // setup to use Unsafe.compareAndSwapInt for updates（更新操作时提供“比较并替换”的作用）
     private static final Unsafe unsafe = Unsafe.getUnsafe();
     private static final long valueOffset;
@@ -176,7 +176,7 @@ CAS的原理是拿期望的值和原本的一个值作比较，如果相同则�
 
 **AtomicIntegerArray 类常用方法**
 
-```java
+```
 public final int get(int i) //获取 index=i 位置元素的值
 public final int getAndSet(int i, int newValue)//返回 index=i 位置的当前的值，并将其设置为新值：newValue
 public final int getAndIncrement(int i)//获取 index=i 位置元素的值，并让该位置的元素自增
@@ -187,7 +187,7 @@ public final void lazySet(int i, int newValue)//最终 将index=i 位置的元�
 ```
 #### 3.2 AtomicIntegerArray 常见方法使用
 
-```java
+```
 
 import java.util.concurrent.atomic.AtomicIntegerArray;
 
@@ -226,7 +226,7 @@ public class AtomicIntegerArrayTest {
 
 #### 4.2 AtomicReference 类使用示例
 
-```java
+```
 import java.util.concurrent.atomic.AtomicReference;
 
 public class AtomicReferenceTest {
@@ -295,7 +295,7 @@ Daisy
 
 #### 5.2 AtomicIntegerFieldUpdater 类使用示例
 
-```java
+```
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 public class AtomicIntegerFieldUpdaterTest {

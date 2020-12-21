@@ -18,7 +18,7 @@ SpringMVC 框架是以请求为驱动，围绕 Servlet 设计，将请求发给�
 
 需要在 web.xml 中配置 DispatcherServlet 。并且需要配置 Spring 监听器ContextLoaderListener
 
-```xml
+```
 
 <listener>
 	<listener-class>org.springframework.web.context.ContextLoaderListener
@@ -113,7 +113,7 @@ View是一个接口，实现类支持不同的View类型（jsp、freemarker、pd
 
 首先看下源码：
 
-```java
+```
 package org.springframework.web.servlet;
  
 @SuppressWarnings("serial")

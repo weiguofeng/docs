@@ -33,7 +33,7 @@ synchronized关键字解决的是多个线程之间访问资源的同步性，sy
 
 **双重校验锁实现对象单例（线程安全）**
 
-```java
+```
 public class Singleton {
 
     private volatile static Singleton uniqueInstance;
@@ -73,7 +73,7 @@ uniqueInstance 采用 volatile 关键字修饰也是很有必要的， uniqueIns
 
 **① synchronized 同步语句块的情况**
 
-```java
+```
 public class SynchronizedDemo {
 	public void method() {
 		synchronized (this) {
@@ -94,7 +94,7 @@ public class SynchronizedDemo {
 
 **② synchronized 修饰方法的的情况**
 
-```java
+```
 public class SynchronizedDemo2 {
 	public synchronized void method() {
 		System.out.println("synchronized 方法");
@@ -263,7 +263,7 @@ Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是�
 
  **AtomicInteger 类常用方法**
  
-```java
+```
 public final int get() //获取当前的值
 public final int getAndSet(int newValue)//获取当前的值，并设置新的值
 public final int getAndIncrement()//获取当前的值，并自增
@@ -276,7 +276,7 @@ public final void lazySet(int newValue)//最终设置为newValue,使用 lazySet 
  **AtomicInteger 类的使用示例**
 
 使用 AtomicInteger 之后，不用对 increment() 方法加锁也可以保证线程安全。
-```java
+```
 class AtomicIntegerTest {
         private AtomicInteger count = new AtomicInteger();
       //使用AtomicInteger之后，不需要对该方法加锁，也可以实现线程安全。
@@ -297,7 +297,7 @@ AtomicInteger 线程安全原理简单分析
 
 AtomicInteger 类的部分源码：
 
-```java
+```
     // setup to use Unsafe.compareAndSwapInt for updates（更新操作时提供“比较并替换”的作用）
     private static final Unsafe unsafe = Unsafe.getUnsafe();
     private static final long valueOffset;
@@ -351,13 +351,13 @@ AQS 原理这部分参考了部分博客，在5.2节末尾放了链接。
 
 AQS使用一个int成员变量来表示同步状态，通过内置的FIFO队列来完成获取资源线程的排队工作。AQS使用CAS对该同步状态进行原子操作实现对其值的修改。
 
-```java
+```
 private volatile int state;//共享变量，使用volatile修饰保证线程可见性
 ```
 
 状态信息通过procted类型的getState，setState，compareAndSetState进行操作
 
-```java
+```
 
 //返回同步状态的当前值
 protected final int getState() {  
@@ -397,7 +397,7 @@ ReentrantReadWriteLock 可以看成是组合式，因为ReentrantReadWriteLock�
 
 **AQS使用了模板方法模式，自定义同步器时需要重写下面几个AQS提供的模板方法：**
 
-```java
+```
 isHeldExclusively()//该线程是否正在独占资源。只有用到condition才需要去实现它。
 tryAcquire(int)//独占方式。尝试获取资源，成功则返回true，失败则返回false。
 tryRelease(int)//独占方式。尝试释放资源，成功则返回true，失败则返回false。

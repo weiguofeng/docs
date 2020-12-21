@@ -26,7 +26,7 @@ Martin 指出首先你要明确你为什么使用分布式锁，为了性能还�
 这节里 Martin 先将 Redlock 放在了一边而是仅讨论总体上一个分布式锁是怎么工作的。在分布式环境下，锁比 mutex 这类复杂，因为涉及到不同节点、网络通信并且他们随时可能无征兆的 fail 。
 Martin 假设了一个场景，一个 client 要修改一个文件，它先申请得到锁，然后修改文件写回，放锁。另一个 client 再申请锁 ... 代码流程如下：
 
-```java
+```
 // THIS CODE IS BROKEN
 function writeData(filename, data) {
     var lock = lockService.acquireLock(filename);

@@ -1,5 +1,5 @@
 ---
-title: front1
+title: angular了解
 date: 2020-12-18
 categories:
   - front
@@ -7,8 +7,8 @@ tags:
  - front
 ---
 
-# Front
+# angular了解
 
-```text
+```
  todo 
 ```

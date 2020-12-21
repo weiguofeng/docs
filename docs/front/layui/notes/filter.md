@@ -1,5 +1,5 @@
 ---
-title: front2
+title: LayUI了解
 date: 2020-12-18
 categories:
   - front
@@ -7,8 +7,8 @@ tags:
  - front
 ---
 
-# Front
+# LayUI了解
 
-```text
+```
  todo 
 ```

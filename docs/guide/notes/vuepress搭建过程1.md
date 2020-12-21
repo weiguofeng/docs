@@ -107,7 +107,7 @@ npm run dev
 
 一个完整的 `Front Matter` 案例：
 
-```text
+```
     title: 烤鸭的做法
     date: 2019-08-08
     sidebar: 'auto'
@@ -147,7 +147,7 @@ npm run dev
 
 > 在markdown代码中，您将看到注释，注释前面的代码将显示在列表页面上的文章摘要中。
 
-```text
+```
 title: Vuepress使用指南(reco)
 date: 2020-08-16
 sidebar: 'auto'

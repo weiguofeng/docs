@@ -72,7 +72,7 @@ public class FilterUtil implements Filter{
 
 web.xml配置
 
-```xml
+```
 <filter> 
   <filter-name>encodingFilter</filter-name> 
   <!-- <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> --> 
@@ -189,7 +189,7 @@ public class InterceptorUtil implements HandlerInterceptor{
 
 spring-mvc.xml配置文件中：
 
-```xml
+```
  <!-- 拦截器配置 --> 
  <mvc:interceptors> 
      <!--多个拦截器,顺序执行 --> 
@@ -344,7 +344,7 @@ view.jsp
 
 在配置完然后我们在web.xml中诸如下面的配置即可：
 
-```xml
+```
 <listener> 
     <listener-class> 
         com.mycompany.mvc.listener.myServletContextListener  
@@ -421,7 +421,7 @@ public void contextInitialized(ServletContextEvent servletContext) {
 
 #### 5.1  过滤器只需要继承javax.servlet.filter即可，一般来说我们只要添加tomcat运行时环境就能够包含javax.servlet的jar包，但是eclipse在tomcat8中没有找到，实际上tomcat8中确实没有，只有通过maven来添加了：
 
-```xml
+```
  <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api --> 
  <dependency> 
  	<groupId>javax.servlet</groupId> 
@@ -490,7 +490,7 @@ public class urlEncodeFilter implements Filter{
 
 web.xml
 
-```xml
+```
  <filter> 
      <filter-name>urlEncodeFilter</filter-name> 
      <filter-class>com.mycompany.mvc.filter.urlEncodeFilter</filter-class> 
@@ -625,7 +625,7 @@ public class loginFilter implements Filter{
 
 web.xml
 
-```xml
+```
 <filter> 
    <filter-name>loginFilter</filter-name> 
    <filter-class>com.mycompany.mvc.filter.loginFilter</filter-class> 
@@ -790,7 +790,7 @@ public class timeInterceptor implements HandlerInterceptor{
 
 springMvc.xml
 
-```xml
+```
 <!--     拦截器配置 --> 
 <mvc:interceptors> 
   <bean class="com.mycompany.mvc.interceptor.logInterceptor"></bean> 
