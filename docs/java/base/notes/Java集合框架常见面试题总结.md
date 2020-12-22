@@ -35,7 +35,7 @@ tags:
 <!-- /MarkdownTOC -->
 
 
-## <font face="楷体">List，Set,Map三者的区别及总结</font>
+##  List，Set,Map三者的区别及总结 
 - **List：对付顺序的好帮手**
 
   List接口存储一组不唯一（可以有多个元素引用相同的对象），有序的对象
@@ -48,14 +48,14 @@ tags:
   使用键值对存储。Map会维护与Key有关联的值。两个Key可以引用相同的对象，但Key不能重复，典型的Key是String类型，但也可以是任何对象。
   
 
-## <font face="楷体">Arraylist 与 LinkedList 区别</font>
+##  Arraylist 与 LinkedList 区别 
 Arraylist底层使用的是数组（存读数据效率高，插入删除特定位置效率低），LinkedList 底层使用的是双向链表数据结构（插入，删除效率特别高）（JDK1.6之前为循环链表，JDK1.7取消了循环。注意双向链表和双向循环链表的区别：）； 详细可阅读JDK1.7-LinkedList循环链表优化。学过数据结构这门课后我们就知道采用链表存储，插入，删除元素时间复杂度不受元素位置的影响，都是近似O（1）而数组为近似O（n），因此当数据特别多，而且经常需要插入删除元素时建议选用LinkedList.一般程序只用Arraylist就够用了，因为一般数据量都不会蛮大，Arraylist是使用最多的集合类。
 
-## <font face="楷体">ArrayList 与 Vector 区别</font>
+##  ArrayList 与 Vector 区别 
 Vector类的所有方法都是同步的。可以由两个线程安全地访问一个Vector对象、但是一个线程访问Vector
 ，代码要在同步操作上耗费大量的时间。Arraylist不是同步的，所以在不需要同步时建议使用Arraylist。
 
-## <font face="楷体">HashMap 和 Hashtable 的区别</font>
+##  HashMap 和 Hashtable 的区别 
 1. HashMap是非线程安全的，HashTable是线程安全的；HashTable内部的方法基本都经过synchronized修饰。
 
 2. 因为线程安全的问题，HashMap要比HashTable效率高一点，HashTable基本被淘汰。
@@ -63,16 +63,16 @@ Vector类的所有方法都是同步的。可以由两个线程安全地访问�
 
 Hashtable和HashMap有几个主要的不同：线程安全以及速度。仅在你需要完全的线程安全的时候使用Hashtable，而如果你使用Java5或以上的话，请使用ConcurrentHashMap吧
 
-## <font face="楷体">HashSet 和 HashMap 区别</font>
+##  HashSet 和 HashMap 区别 
 ![1608657458607](../../../images/1608657458607.png)
 
-## <font face="楷体">HashMap 和 ConcurrentHashMap 的区别</font>
+##  HashMap 和 ConcurrentHashMap 的区别 
 [HashMap与ConcurrentHashMap的区别](https://blog.csdn.net/xuefeng0707/article/details/40834595)
 
 1. ConcurrentHashMap对整个桶数组进行了分割分段(Segment)，然后在每一个分段上都用lock锁进行保护，相对于HashTable的synchronized锁的粒度更精细了一些，并发性能更好，而HashMap没有锁机制，不是线程安全的。（JDK1.8之后ConcurrentHashMap启用了一种全新的方式实现,利用CAS算法。）
 2. HashMap的键值对允许有null，但是ConCurrentHashMap都不允许。
 
-## <font face="楷体">HashSet如何检查重复</font>
+##  HashSet如何检查重复 
 当你把对象加入HashSet时，HashSet会先计算对象的hashcode值来判断对象加入的位置，同时也会与其他加入的对象的hashcode值作比较，如果没有相符的hashcode，HashSet会假设对象没有重复出现。但是如果发现有相同hashcode值的对象，这时会调用equals（）方法来检查hashcode相等的对象是否真的相同。如果两者相同，HashSet就不会让加入操作成功。（摘自我的Java启蒙书《Head fist java》第二版）
 
 **hashCode（）与equals（）的相关规定：**
@@ -88,14 +88,14 @@ Hashtable和HashMap有几个主要的不同：线程安全以及速度。仅在�
 2. ==是指对内存地址进行比较    equals()是对字符串的内容进行比较
 3. ==指引用是否相同    equals()指的是值是否相同
 
-## <font face="楷体">comparable 和 comparator的区别</font>
+##  comparable 和 comparator的区别 
 - comparable接口实际上是出自java.lang包 它有一个 compareTo(Object obj)方法用来排序
 - comparator接口实际上是出自 java.util 包它有一个compare(Object obj1, Object obj2)方法用来排序
 
 一般我们需要对一个集合使用自定义排序时，我们就要重写compareTo方法或compare方法，当我们需要对某一个集合实现两种排序方式，比如一个song对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写compareTo方法和使用自制的Comparator方法或者以两个Comparator来实现歌名排序和歌星名排序，第二种代表我们只能使用两个参数版的Collections.sort().
 
-### <font face="楷体">Comparator定制排序<font face="楷体">
-```java
+###  Comparator定制排序 
+```
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -159,8 +159,8 @@ public class CollectionsSort {
 }
 
 ```
-### <font face="楷体">重写compareTo方法实现按年龄来排序</font>
-```java
+###  重写compareTo方法实现按年龄来排序 
+```
 package map;
 
 import java.util.Set;
@@ -230,14 +230,14 @@ class Person implements Comparable<Person> {
 }
 ```
 
-## <font face="楷体">如何对Object的list排序</font>
+##  如何对Object的list排序 
 -   对objects数组进行排序，我们可以用Arrays.sort()方法
 -   对objects的集合进行排序，需要使用Collections.sort()方法
 
 
-## <font face="楷体">如何实现数组与List的相互转换</font>
+##  如何实现数组与List的相互转换 
 List转数组：toArray(arraylist.size()方法；数组转List:Arrays的asList(a)方法
-```java
+```
 List<String> arrayList = new ArrayList<String>();
 		arrayList.add("s");
 		arrayList.add("e");
@@ -262,7 +262,7 @@ List<String> arrayList = new ArrayList<String>();
 		arrayList2.addAll(list);
 		System.out.println(list);
 ```
-## <font face="楷体">如何求ArrayList集合的交集 并集 差集 去重复并集</font>
+##  如何求ArrayList集合的交集 并集 差集 去重复并集 
 需要用到List接口中定义的几个方法：
 
 - addAll(Collection<? extends E> c) :按指定集合的Iterator返回的顺序将指定集合中的所有元素追加到此列表的末尾
@@ -314,16 +314,16 @@ public class MethodDemo {
 
 ```
 
-## <font face="楷体">HashMap 的工作原理及代码实现</font>
+##  HashMap 的工作原理及代码实现 
 
 [集合框架源码学习之HashMap(JDK1.8)](https://juejin.im/post/5ab0568b5188255580020e56)
 
-## <font face="楷体">ConcurrentHashMap 的工作原理及代码实现</font>
+##  ConcurrentHashMap 的工作原理及代码实现 
 
 [ConcurrentHashMap实现原理及源码分析](http://www.cnblogs.com/chengxiao/p/6842045.html)
 
 
-## <font face="楷体">集合框架底层数据结构总结</font>
+##  集合框架底层数据结构总结 
 ### - Collection
 
 ####  1. List
@@ -343,11 +343,11 @@ public class MethodDemo {
  -  TreeMap:红黑树（自平衡的排序二叉树）
 
 
-## <font face="楷体">集合的选用</font>
+##  集合的选用 
 主要根据集合的特点来选用，比如我们需要根据键值获取到元素值时就选用Map接口下的集合，需要排序时选择TreeMap,不需要排序时就选择HashMap,需要保证线程安全就选用ConcurrentHashMap.当我们只需要存放元素值时，就选择实现Collection接口的集合，需要保证元素唯一时选择实现Set接口的集合比如TreeSet或HashSet，不需要就选择实现List接口的比如ArrayList或LinkedList，然后再根据实现这些接口的集合的特点来选用。
 
 2018/3/11更新
-## <font face="楷体">集合的常用方法</font>
+##  集合的常用方法 
 今天下午无意看见一道某大厂的面试题，面试题的内容就是问你某一个集合常见的方法有哪些。虽然平时也经常见到这些集合，但是猛一下让我想某一个集合的常用的方法难免会有遗漏或者与其他集合搞混，所以建议大家还是照着API文档把常见的那几个集合的常用方法看一看。
 
 会持续更新。。。
