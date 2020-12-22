@@ -11,7 +11,7 @@ tags:
 
 Github 地址：[https://github.com/Snailclimb/JavaGuide/edit/master/Java相关/synchronized.md](https://github.com/Snailclimb/JavaGuide/edit/master/Java相关/synchronized.md)
 
-![Synchronized 关键字使用、底层原理、JDK1.6 之后的底层优化以及 和ReenTrantLock 的对比](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/Java%20%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/%E4%BA%8C%20%20Synchronized%20%E5%85%B3%E9%94%AE%E5%AD%97%E4%BD%BF%E7%94%A8%E3%80%81%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E3%80%81JDK1.6%20%E4%B9%8B%E5%90%8E%E7%9A%84%E5%BA%95%E5%B1%82%E4%BC%98%E5%8C%96%E4%BB%A5%E5%8F%8A%20%E5%92%8CReenTrantLock%20%E7%9A%84%E5%AF%B9%E6%AF%94.png)
+![1608657521948](../../../images/1608657521948.png)
 
 ###  synchronized关键字最主要的三种使用方式的总结
 
@@ -83,7 +83,7 @@ public class SynchronizedDemo {
 
 通过 JDK 自带的 javap 命令查看 SynchronizedDemo 类的相关字节码信息：首先切换到类的对应目录执行 `javac SynchronizedDemo.java` 命令生成编译后的 .class 文件，然后执行`javap -c -s -v -l SynchronizedDemo.class`。
 
-![synchronized 关键字原理](https://images.gitbook.cn/abc37c80-d21d-11e8-aab3-09d30029e0d5)
+![1608657539607](../../../images/1608657539607.png)
 
 从上面我们可以看出：
 
@@ -100,7 +100,7 @@ public class SynchronizedDemo2 {
 
 ```
 
-![synchronized 关键字原理](https://images.gitbook.cn/7d407bf0-d21e-11e8-b2d6-1188c7e0dd7e)
+![1608657555734](../../../images/1608657555734.png)
 
 synchronized 修饰的方法并没有 monitorenter 指令和 monitorexit 指令，取得代之的确实是 ACC_SYNCHRONIZED 标识，该标识指明了该方法是一个同步方法，JVM 通过该 ACC_SYNCHRONIZED 访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用。
 

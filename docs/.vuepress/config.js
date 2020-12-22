@@ -5,7 +5,7 @@ module.exports = {
     //主题
     theme: 'reco',
     title: '锋格blog',
-    description: '锋格blog',
+    description: '要么孤独、要么庸俗',
     base: '/docs/',
     // dest: './dist', 默认在.vuepress目录下生成
     port: '7777',

@@ -1,3 +1,4 @@
+# dubbo 
 本文是作者根据官方文档以及自己平时的使用情况，对 Dubbo 所做的一个总结。如果不懂 Dubbo 的使用的话，可以参考我的这篇文章[《超详细，新手都能看懂 ！使用SpringBoot+Dubbo 搭建一个简单的分布式服务》](https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&mid=2247484706&idx=1&sn=d413fc17023482f67ca17cb6756b9ff8&chksm=fd985343caefda555969568fdf4734536e0a1745f9de337d434a7dbd04e893bd2d75f3641aab&token=1902169190&lang=zh_CN#rd)
 
 Dubbo 官网：http://dubbo.apache.org/zh-cn/index.html
@@ -52,7 +53,9 @@ RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络�
 
 [http://www.importnew.com/22003.html](http://www.importnew.com/22003.html)
 
-![RPC原理图](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-6/37345851.jpg)
+![1608654127430](../../../images/1608654127430.png)
+
+
 
 
 1. 服务消费方（client）调用以本地调用方式调用服务；
@@ -67,7 +70,9 @@ RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络�
 
 下面再贴一个网上的时序图：
 
-![RPC原理时序图](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-6/32527396.jpg)
+![1608654191362](../../../images/1608654191362.png)
+
+
 
 **说了这么多，我们为什么要用 Dubbo 呢？**
 
@@ -75,7 +80,7 @@ RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络�
 
 Dubbo 的诞生和 SOA 分布式架构的流行有着莫大的关系。SOA 面向服务的架构（Service Oriented Architecture），也就是把工程按照业务逻辑拆分成服务层、表现层两个工程。服务层中包含业务逻辑，只需要对外提供服务即可。表现层只需要处理和页面的交互，业务逻辑都是调用服务层的服务来实现。SOA架构中有两个主要角色：服务提供者（Provider）和服务使用者（Consumer）。
 
-![为什么要用 Dubbo](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-26/43050183.jpg)
+![1608654219019](../../../images/1608654219019.png)
 
 **如果你要开发分布式程序，你也可以直接基于 HTTP 接口进行通信，但是为什么要用 Dubbo呢？**
 
@@ -104,7 +109,9 @@ Dubbo 的诞生和 SOA 分布式架构的流行有着莫大的关系。SOA 面�
 
 ### 2.1 Dubbo 的架构图解
 
-![Dubbo 架构](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-26/46816446.jpg)
+![1608654246987](../../../images/1608654246987.png)
+
+
 
 **上述节点简单说明：**
 
@@ -141,7 +148,7 @@ Dubbo 的诞生和 SOA 分布式架构的流行有着莫大的关系。SOA 面�
 ### 2.2 Dubbo 工作原理
 
 
-![Dubbo 工作原理](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-9-26/64702923.jpg)
+![1608654274800](../../../images/1608654274800.png)
 
 图中从下至上分为十层，各层均为单向依赖，右边的黑色箭头代表层之间的依赖关系，每一层都可以剥离上层被复用，其中，Service 和 Config 层为 API，其它各层均为 SPI。
 
@@ -179,11 +186,11 @@ Dubbo 的诞生和 SOA 分布式架构的流行有着莫大的关系。SOA 面�
 
 
 ####  3.2.1  Random LoadBalance(默认，基于权重的随机负载均衡机制)
- 
+
 - **随机，按权重设置随机概率。**
 - 在一个截面上碰撞的概率高，但调用量越大分布越均匀，而且按概率使用权重后也比较均匀，有利于动态调整提供者权重。
 
-![基于权重的随机负载均衡机制](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-7/77722327.jpg)
+![1608654290935](../../../images/1608654290935.png)
 
 
 
@@ -192,7 +199,7 @@ Dubbo 的诞生和 SOA 分布式架构的流行有着莫大的关系。SOA 面�
 - 轮循，按公约后的权重设置轮循比率。
 - 存在慢的提供者累积请求的问题，比如：第二台机器很慢，但没挂，当请求调到第二台时就卡在那，久而久之，所有请求都卡在调到第二台上。
 
-![基于权重的轮询负载均衡机制](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-7/97933247.jpg)
+![1608654302198](../../../images/1608654302198.png)
 
 ####  3.2.3 LeastActive LoadBalance
 

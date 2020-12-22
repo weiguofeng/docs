@@ -1,6 +1,6 @@
 module.exports = [
     {
-        title:'面试必备',
+        title:'面试必备1',
         collapsable: true,
         children:[
             '/baodian/must/notes/books',
@@ -19,9 +19,9 @@ module.exports = [
         collapsable: true,
         children:[
             //MostCommonJavaInterviewQuestions
-            '/baodian/must/notes/MostCommonJavaInterviewQuestions/第一周（2018-8-7）',
-            '/baodian/must/notes/MostCommonJavaInterviewQuestions/第二周(2018-8-13)',
-            '/baodian/must/notes/MostCommonJavaInterviewQuestions/第四周(2018-8-30)',
+            '/baodian/must/notes/MostCommonJavaInterviewQuestions/第一周',
+            '/baodian/must/notes/MostCommonJavaInterviewQuestions/第二周',
+            '/baodian/must/notes/MostCommonJavaInterviewQuestions/第四周',
         ]
     }
 ];

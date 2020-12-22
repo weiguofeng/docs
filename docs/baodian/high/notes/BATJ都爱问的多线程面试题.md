@@ -1,5 +1,5 @@
 ---
-title: Atomic
+title: BATJ都爱问的多线程面试题
 date: 2020-12-19 
 categories:
  - 面试

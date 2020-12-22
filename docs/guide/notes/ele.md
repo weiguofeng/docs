@@ -31,7 +31,6 @@ cnpm i element-ui -S
 //在main.js引入element插件以及样式
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-并且使用该插件
 Vue.use(ElementUI)
 ```
 
@@ -39,7 +38,7 @@ Vue.use(ElementUI)
 
 1.简单的button演示
 
-```html
+```
 <template>
   <div id="app">
     <el-button :plain="true" @click="show">按钮</el-button>
@@ -138,7 +137,7 @@ npm run serve
 
 
 
-```html
+```
 <template>
   <div id="app">
     <el-form inline :model="data">
@@ -181,7 +180,7 @@ npm run serve
 
 #### 表单校验基本用法
 
-```js
+```
 <template>
   <div id="app">
     <el-form inline :rules="rules" ref="form" :model="data">
@@ -259,7 +258,7 @@ npm run serve
 1. 动态改变校验规则
 2. 手动控制校验状态
 
-```vue
+```
 <template>
   <div id="app">
     <el-form
@@ -377,9 +376,8 @@ npm run serve
 
 #### 表单属性解析
 
-```vue
- <el-form
-            :inline="false"
+```
+ <el-form :inline="false"
             :rules="rules"
             ref="form"
             :model="data"
@@ -471,7 +469,7 @@ cnpm i -S vue-router
 安装vue-router
 ```
 
-```js
+```
 在src下创建router.js
 import Vue from 'vue'
 import Route from 'vue-router'
@@ -489,7 +487,7 @@ export default router
 
 ```
 
-```js
+```
 //在 main.js 中引用 router，并加入 vue 实例
 import Vue from 'vue'
 import App from './App.vue'
@@ -541,7 +539,7 @@ new Vue({
 
 ```
 
-```js
+```
 //在router.js中引入Start组件
 import Start from './components/Start'
 Vue.use(Route)
@@ -561,7 +559,7 @@ export default router
 
 #### 全局守卫
 
-```js
+```
 在router.js中定义全局守卫
 import Vue from 'vue'
 import Route from 'vue-router'
@@ -697,7 +695,7 @@ export default router
 
 router.js
 
-```js
+```
 const routes = [
     {path: '/start',component: Start, meta: {title: 'component start'}},
     {path: '/b',component: B},
@@ -717,7 +715,7 @@ router.beforeEach((to, from, next) => {
 
 
 
-```js
+```
 方法2 通过Vue.mixin实现
 Vue.mixin({
 	beforeCreate(){
@@ -994,7 +992,7 @@ cnpm i -S boom
 
 app.js
 
-```js
+```
 const express = require('express')
 const router = require('./router')
 
@@ -1017,7 +1015,7 @@ const server = app.listen(5000, function() {
 - index.js
 - user.js
 
-```js
+```
 const express = require('express')
 const boom = require('boom')
 const userRouter = require('./user')
@@ -1071,7 +1069,7 @@ module.exports = router
 
 
 
-```js
+```
 const express = require('express')
 
 const router = express.Router()
@@ -1090,7 +1088,7 @@ module.exports = router
 
 - constant.js
 
-```js
+```
 module.exports = {
     CODE_ERROR: -1
 }
@@ -1607,7 +1605,7 @@ cnpm run build
 
 目的是区分管理员和一般登录用户
 
-```js
+```
 {
     path: '/book',
     component: Layout,
@@ -1674,7 +1672,7 @@ meta: { title: '上传图书', icon: 'edit', roles: ['admin'] }
 
 在main.js中引用了permission.js
 
-```js
+```
 //查看permission.js源码
 //permission定义了全局路由守卫
 router.beforeEach(async(to, from, next) => {
@@ -1748,7 +1746,7 @@ router.afterEach(() => {
 
 生成动态路由的源码位于 `src/store/modules/permission.js` 中的 `generateRoutes` 方法
 
-```js
+```
 import { asyncRoutes, constantRoutes } from '@/router'
 
 /**
@@ -2229,7 +2227,7 @@ sidebar-item 最重要是展示逻辑，主要分为以下几步：
 - children：router 对象的 children 属性
 - item：router 对象
 
-```js
+```
 hasOneShowingChild(children = [], parent) {
   const showingChildren = children.filter(item => {
     // 如果 children 中的路由包含 hidden 属性，则返回 false
@@ -2264,7 +2262,7 @@ hasOneShowingChild(children = [], parent) {
 
 item 组件需要路由 meta 中包含 title 和 icon 属性，否则将渲染内容为空的 vnode 对象
 
-```html
+```
 <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
   <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
       <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title" />
@@ -2276,7 +2274,7 @@ item 组件需要路由 meta 中包含 title 和 icon 属性，否则将渲染�
 
 - 如果 template 菜单不展示，则展示 el-submenu 菜单，el-submenu 逻辑中采用了嵌套组件的做法，将 sidebar-item 嵌套在 el-submenu 中：
 
-```html
+```
 <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
   <template slot="title">
     <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
@@ -2305,7 +2303,7 @@ el-submenu 中的 sidebar-item 有两点区别：
 
 app-link 是一个动态组件，通过解析 to 参数，如果包含 http 前缀则变成一个 a 标签，否则变成一个 router-link 组件
 
-```html
+```
 <template>
   <!-- eslint-disable vue/require-component-is -->
   <component v-bind="linkProps(to)">
@@ -2347,7 +2345,7 @@ export default {
 
 `isExternal` 函数通过一个正则表达式匹配 http 链接：
 
-```js
+```
 export function isExternal(path) {
   return /^(https?:|mailto:|tel:)/.test(path)
 }
@@ -2359,7 +2357,7 @@ export function isExternal(path) {
 
 item 组件通过定义 render 函数完成组件渲染
 
-```html
+```
 <script>
 export default {
   name: 'MenuItem',
@@ -2423,7 +2421,7 @@ export default {
 
 login/index.vue中对 $route 进行监听
 
-```js
+```
 <script>
 watch: {
     $route: {
@@ -2452,7 +2450,7 @@ getOtherQuery(query) {
 
 `this.getOtherQuery(query)` 的用途是获取除 redirect 外的其他查询条件，登录成功后
 
-```js
+```
 handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
@@ -2485,7 +2483,7 @@ handleLogin() {
 
 vue-element-admin 提供了专门的重定向组件，redirect/index.vue源码如下
 
-```js
+```
 <script>
 export default {
   created() {
@@ -2502,7 +2500,7 @@ export default {
 
 重定向组件配置了动态路由：
 
-```js
+```
 {
     path: '/redirect',
     component: Layout,
@@ -2520,7 +2518,7 @@ export default {
 
 这里有一个细节：
 
-```js
+```
 path: '/redirect/:path*'
 ```
 
@@ -2528,7 +2526,7 @@ path: '/redirect/:path*'
 
 表示匹配零个或多个路由，比如路由为 `/redirect` 时，仍然能匹配到 redirect 组件。如果将路由改为：
 
-```js
+```
 path: '/redirect/:path'
 ```
 
@@ -2564,7 +2562,7 @@ path: '/redirect/:path'
 
 components/Breadcrumb/index.vue
 
-```js
+```
 getBreadcrumb() {
       // only show routes with meta.title
       let matched = this.$route.matched.filter(item => item.meta && item.meta.title)
@@ -2590,7 +2588,7 @@ getBreadcrumb() {
 
 `isDashboard` 实现如下：
 
-```js
+```
 isDashboard(route) {
       const name = route && route.name
       if (!name) {
@@ -2617,7 +2615,7 @@ isDashboard(route) {
 
 `el-breadcrumb-item` 内做了一个判断，如果是最后一个元素或者路由的 `redirect` 属性指定为 `noRedirect` 则不会生成链接，否则将使用 `a` 标签生成链接，但是这里使用了 `@click.prevent` 阻止了默认 `a` 标签事件触发，而使用自定义的 `handleLink` 方法处理路由跳转，`handleLink` 方法源码如下：
 
-```js
+```
 handleLink(item) {
       const { redirect, path } = item
       if (redirect) {
@@ -2628,7 +2626,7 @@ handleLink(item) {
     }
 ```
 
-```js
+```
 pathCompile(path) {
       // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
       const { params } = this.$route
@@ -2670,7 +2668,7 @@ pathCompile(path) {
 
 当按下 CapsLock 按键时，如果按下后是小写模式，则会立即消除提示文字
 
-```js
+```
 checkCapslock({ shiftKey, key } = {}) {
   if (key && key.length === 1) {
     if (shiftKey && (key >= 'a' && key <= 'z') || !shiftKey && (key >= 'A' && key <= 'Z')) {
@@ -2697,7 +2695,7 @@ checkCapslock({ shiftKey, key } = {}) {
 
 > 这里需要注意：由于 vuex 中的 user 指定了 namespaced 为 true，所以 dispatch 时需要加上 namespace，否则将无法调用 vuex 中的 action
 
-```js
+```
 handleLogin() {
   this.$refs.loginForm.validate(valid => {
     if (valid) {
@@ -2728,7 +2726,7 @@ this.$store.dispatch('user/login', this.loginForm)调用user/login action
 
 `user/login` 方法调用了 login API，传入 username 和 password 参数，请求成功后会从 response 中获取 token，然后将 token 保存到 Cookie 中，之后返回。如果请求失败，将调用 reject 方法，交由我们自定义的 request 模块来处理异常
 
-```js
+```
 login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
@@ -2750,7 +2748,7 @@ login({ commit }, userInfo) {
 
 login API 的方法如下：
 
-```js
+```
 import request from '@/utils/request'
 
 export function login(data) {
@@ -2786,7 +2784,7 @@ cnpm i -S axios
 
 我们先从一个普通的 axios 示例开始：
 
-```js
+```
 import axios from 'axios'
 
 const url = 'https://test.youbaobao.xyz:18081/book/home/v2?openId=1234'
@@ -2799,7 +2797,7 @@ axios.get(url).then(response => {
 
 上述代码可以改为：
 
-```js
+```
 const url = 'https://test.youbaobao.xyz:18081/book/home/v2'
 axios.get(url, { 
   params: { openId: '1234' }
@@ -2810,7 +2808,7 @@ axios.get(url, {
 
 如果我们在请求时需要在 http header 中添加一个 token，需要将代码修改为：
 
-```js
+```
 const url = 'https://test.youbaobao.xyz:18081/book/home/v2'
 axios.get(url, { 
   params: { openId: '1234' },
@@ -2824,7 +2822,7 @@ axios.get(url, {
 
 如果要捕获服务端抛出的异常，即返回非 200 请求，需要将代码修改为：
 
-```js
+```
 const url = 'https://test.youbaobao.xyz:18081/book/home/v2'
 axios.get(url, { 
   params: { openId: '1234' },
@@ -2849,7 +2847,7 @@ axios.get(url, {
 
 下面我们使用 axios.create 对整个请求进行重构：
 
-```js
+```
 const url = '/book/home/v2'
 const request = axios.create({
   baseURL: 'https://test.youbaobao.xyz:18081',
@@ -2877,7 +2875,7 @@ request({
 
 上述代码完成了基本请求的功能，下面我们需要为 http 请求的 headers 中添加 token，同时进行白名单校验，如 `/login` 不需要添加 token，并实现异步捕获和自定义处理：
 
-```js
+```
 const whiteUrl = [ '/login', '/book/home/v2' ]
 const url = '/book/home/v2'
 const request = axios.create({
@@ -2915,7 +2913,7 @@ request({
 
 下面我们进一步增强 axios 功能，我们在实际开发中除了需要保障 http statusCode 为 200，还需要保证业务代码正确，上述案例中，我定义了 error_code 为 0 时，表示业务返回正常，如果返回值不为 0 则说明业务处理出错，此时我们通过 `request.interceptors.response.use` 方法定义响应拦截器，它仍然需要2个参数，与请求拦截器类似，注意第二个参数主要处理 statusCode 非 200 的异常请求，源码如下
 
-```js
+```
 const whiteUrl = [ '/login', '/book/home/v2' ]
 const url = '/book/home/v2'
 const request = axios.create({
@@ -2970,7 +2968,7 @@ request({
 
 有了上述基础后，我们再看 request 库源码就非常容易了
 
-```js
+```
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000
@@ -3038,7 +3036,7 @@ export default service
 
 检查用户名或密码是否为空，如果发现为空，则自动聚焦到输入框：
 
-```js
+```
 mounted() {
     if (this.loginForm.username === '') {
       this.$refs.username.focus()
@@ -3052,7 +3050,7 @@ mounted() {
 
 切换密码显示状态后，自动聚焦 password 输入框：
 
-```js
+```
 showPwd() {
   if (this.passwordType === 'password') {
     this.passwordType = ''
@@ -3073,7 +3071,7 @@ showPwd() {
 
 http://localhost:9527/#/login?redirect=%2Fdashboard&a=1&b=2
 
-```js
+```
 watch: {
     $route: {
       handler: function(route) {
@@ -3101,7 +3099,7 @@ watch: {
 
 去掉 main.js 中 mock 相关代码：
 
-```js
+```
 import { mockXHR } from '../mock'
 if (process.env.NODE_ENV === 'production') {
   mockXHR()
@@ -3121,7 +3119,7 @@ qiniu.js
 
 删除 `vue.config.js` 中的相关配置：
 
-```js
+```
 proxy: {
   // change xxx-api/login => mock/login
   // detail: https://cli.vuejs.org/config/#devserver-proxy

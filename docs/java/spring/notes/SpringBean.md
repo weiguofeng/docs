@@ -1,3 +1,12 @@
+---
+title: SpringBean
+date: 2020-12-18
+categories:
+  - spring
+tags:
+ - spring
+---
+
 <!-- MarkdownTOC -->
 
 - [前言](#前言)
@@ -9,7 +18,7 @@
   - [5. globalSession](#5-globalsession)
 - [二  bean的生命周期](#二-bean的生命周期)
   - [initialization 和 destroy](#initialization-和-destroy)
-  - [实现*Aware接口 在Bean中使用Spring框架的一些对象](#实现aware接口-在bean中使用spring框架的一些对象)
+  - [实现*Aware接口 在Bean中使用Spring框架的一些对象](#实现*aware接口-在bean中使用spring框架的一些对象)
   - [BeanPostProcessor](#beanpostprocessor)
   - [总结](#总结)
   - [单例管理的对象](#单例管理的对象)
@@ -89,7 +98,7 @@ global session 作用域类似于标准的 HTTP session 作用域，不过仅仅
 <bean id="user" class="com.foo.Preferences "scope="globalSession"/>
 ```
 
-# 二  bean的生命周期
+# 二 bean的生命周期
 
 Spring Bean是Spring应用中最最重要的部分了。所以来看看Spring容器在初始化一个bean的时候会做那些事情，顺序是怎样的，在容器关闭的时候，又会做哪些事情。
 

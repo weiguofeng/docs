@@ -6,6 +6,8 @@ categories:
 tags:
  - Java
 ---
+# ArrayList
+
 <!-- MarkdownTOC -->
 
 - [ArrayList简介](#arraylist简介)

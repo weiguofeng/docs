@@ -6,8 +6,8 @@ module.exports = {
     //自动侧边栏
     subSidebar: 'auto',
     //logo配置
-    logo: '/fenggelogo.jpg',
-    authorAvatar: '/fenggelogo.jpg',
+    logo: '../fenggelogo.jpg',
+    authorAvatar: '../fenggelogo.jpg',
     //导航栏配置
     nav: navConf,
 
