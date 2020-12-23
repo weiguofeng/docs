@@ -86,7 +86,7 @@ public class SynchronizedDemo {
 
 通过 JDK 自带的 javap 命令查看 SynchronizedDemo 类的相关字节码信息：首先切换到类的对应目录执行 `javac SynchronizedDemo.java` 命令生成编译后的 .class 文件，然后执行`javap -c -s -v -l SynchronizedDemo.class`。
 
-![synchronized 关键字原理](https://user-gold-cdn.xitu.io/2018/10/26/166add616a292bcf?w=917&h=633&f=png&s=21863)
+![1608739285582](../../../images/1608739285582.png)
 
 从上面我们可以看出：
 
@@ -103,7 +103,7 @@ public class SynchronizedDemo2 {
 
 ```
 
-![synchronized 关键字原理](https://user-gold-cdn.xitu.io/2018/10/26/166add6169fc206d?w=875&h=421&f=png&s=16114)
+![1608739294131](../../../images/1608739294131.png)
 
 synchronized 修饰的方法并没有 monitorenter 指令和 monitorexit 指令，取得代之的确实是 ACC_SYNCHRONIZED 标识，该标识指明了该方法是一个同步方法，JVM 通过该 ACC_SYNCHRONIZED 访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用。
 
@@ -146,13 +146,13 @@ synchronized 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团�
 
 在 JDK1.2 之前，Java的内存模型实现总是从<font color="red">**主存**（即共享内存）读取变量</font>，是不需要进行特别的注意的。而在当前的 Java 内存模型下，线程可以把变量保存<font color="red">**本地内存**</font>（比如机器的寄存器）中，而不是直接在主存中进行读写。这就可能造成一个线程在主存中修改了一个变量的值，而另外一个线程还继续使用它在寄存器中的变量值的拷贝，造成<font color="red">**数据的不一致**</font>。
 
-![数据的不一致](https://user-gold-cdn.xitu.io/2018/10/30/166c46ede4423ba2?w=273&h=166&f=jpeg&s=7268)
+![1608739308766](../../../images/1608739308766.png)
 
 要解决这个问题，就需要把变量声明为<font color="red"> **volatile**</font>，这就指示 JVM，这个变量是不稳定的，每次使用它都到主存中进行读取。
 
 说白了，<font color="red"> **volatile**</font> 关键字的主要作用就是保证变量的可见性然后还有一个作用是防止指令重排序。
 
-![volatile关键字的可见性](https://user-gold-cdn.xitu.io/2018/10/30/166c46ede4b9f501?w=474&h=238&f=jpeg&s=9942)
+![1608739315243](../../../images/1608739315243.png)
 
 
 ### 2.2 说说 synchronized 关键字和 volatile 关键字的区别
@@ -188,9 +188,9 @@ synchronized 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团�
 ### 3.3 执行execute()方法和submit()方法的区别是什么呢？
 
   1)**`execute()` 方法用于提交不需要返回值的任务，所以无法判断任务是否被线程池执行成功与否；**
-  
+
   2)**submit()方法用于提交需要返回值的任务。线程池会返回一个future类型的对象，通过这个future对象可以判断任务是否执行成功**，并且可以通过future的get()方法来获取返回值，get()方法会阻塞当前线程直到任务完成，而使用 `get（long timeout，TimeUnit unit）`方法则会阻塞当前线程一段时间后立即返回，这时候有可能任务没有执行完。
-  
+
 
 ### 3.4 如何创建线程池
 
@@ -202,7 +202,7 @@ synchronized 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团�
 > - **CachedThreadPool 和 ScheduledThreadPool** ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。
 
 **方式一：通过构造方法实现**
-![通过构造方法实现](https://user-gold-cdn.xitu.io/2018/10/30/166c4a5baac923e9?w=925&h=158&f=jpeg&s=29190)
+![1608739327124](../../../images/1608739327124.png)
 **方式二：通过Executor 框架的工具类Executors来实现**
 我们可以创建三种类型的ThreadPoolExecutor：
 
@@ -211,7 +211,7 @@ synchronized 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团�
 - **CachedThreadPool：** 该方法返回一个可根据实际情况调整线程数量的线程池。线程池的线程数量不确定，但若有空闲线程可以复用，则会优先使用可复用的线程。若所有线程均在工作，又有新的任务提交，则会创建新的线程处理任务。所有线程在当前任务执行完毕后，将返回线程池进行复用。
 
 对应Executors工具类中的方法如图所示：
-![通过Executor 框架的工具类Executors来实现](https://user-gold-cdn.xitu.io/2018/10/30/166c4a5baa9ca5e9?w=645&h=222&f=jpeg&s=31710)
+![1608739334441](../../../images/1608739334441.png)
 
 
 # 四  面试中关于 Atomic 原子类的 4 连击
@@ -225,7 +225,7 @@ Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是�
 
 并发包 `java.util.concurrent` 的原子类都存放在`java.util.concurrent.atomic`下,如下图所示。
 
-![ JUC 原子类概览](https://user-gold-cdn.xitu.io/2018/10/30/166c4ac08d4c5547?w=317&h=367&f=png&s=13267)
+![1608739343286](../../../images/1608739343286.png)
 
 ### 4.2 JUC 包中的原子类是哪4类?
 
@@ -262,7 +262,7 @@ Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是�
 ### 4.3 讲讲 AtomicInteger 的使用
 
  **AtomicInteger 类常用方法**
- 
+
 ```
 public final int get() //获取当前的值
 public final int getAndSet(int newValue)//获取当前的值，并设置新的值
@@ -310,7 +310,7 @@ AtomicInteger 类的部分源码：
     }
 
     private volatile int value;
-``` 
+```
 
 AtomicInteger 类主要利用 CAS (compare and swap) + volatile 和 native 方法来保证原子操作，从而避免 synchronized 的高开销，执行效率大为提升。
 
@@ -324,7 +324,7 @@ CAS的原理是拿期望的值和原本的一个值作比较，如果相同则�
 
 AQS的全称为（AbstractQueuedSynchronizer），这个类在java.util.concurrent.locks包下面。
 
-![enter image description here](https://user-gold-cdn.xitu.io/2018/10/30/166c4bb575d4a690?w=317&h=338&f=png&s=14122)
+![1608739355979](../../../images/1608739355979.png)
 
 AQS是一个用来构建锁和同步器的框架，使用AQS能简单且高效地构造出应用广泛的大量的同步器，比如我们提到的ReentrantLock，Semaphore，其他的诸如ReentrantReadWriteLock，SynchronousQueue，FutureTask等等皆是基于AQS的。当然，我们自己也能利用AQS非常轻松容易地构造出符合我们自己需求的同步器。
 
@@ -347,7 +347,7 @@ AQS 原理这部分参考了部分博客，在5.2节末尾放了链接。
 看个AQS(AbstractQueuedSynchronizer)原理图：
 
 
-![enter image description here](https://user-gold-cdn.xitu.io/2018/10/30/166c4bbe4a9c5ae7?w=852&h=401&f=png&s=21797)
+![1608739365867](../../../images/1608739365867.png)
 
 AQS使用一个int成员变量来表示同步状态，通过内置的FIFO队列来完成获取资源线程的排队工作。AQS使用CAS对该同步状态进行原子操作实现对其值的修改。
 

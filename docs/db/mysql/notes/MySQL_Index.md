@@ -12,7 +12,7 @@ tags:
 
 > 系列思维导图源文件（数据库+架构）以及思维导图制作软件—XMind8 破解安装，公众号后台回复：**“思维导图”** 免费领取！（下面的图片不是很清楚，原图非常清晰，另外提供给大家源文件也是为了大家根据自己需要进行修改）
 
-![【思维导图-索引篇】](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/70973487.jpg)
+![1608738603907](../../../images/1608738603907.png)
 
 > **下面是我补充的一些内容**
 
@@ -26,9 +26,9 @@ tags:
 
 MySQL的基本存储结构是页(记录都存在页里边)：
 
-![MySQL的基本存储结构是页](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/28559421.jpg)
+![1608738697013](../../../images/1608738697013.png)
 
-![](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/82053134.jpg)
+![1608738714211](../../../images/1608738714211.png)
 
  - **各个数据页可以组成一个双向链表**
  -   **每个数据页中的记录又可以组成一个单向链表**
@@ -47,11 +47,11 @@ MySQL的基本存储结构是页(记录都存在页里边)：
 
 索引做了些什么可以让我们查询加快速度呢？其实就是将无序的数据变成有序(相对)：
 
-![](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/5373082.jpg)
+![1608738731374](../../../images/1608738731374.png)
 
 要找到id为8的记录简要步骤：
 
-![](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/89338047.jpg)
+![1608738740179](../../../images/1608738740179.png)
 
 很明显的是：没有用索引我们是需要遍历双向链表来定位对应的页，现在通过 **“目录”** 就可以很快地定位到对应的页上了！（二分查找，时间复杂度近似为O(logn)）
 
@@ -70,7 +70,7 @@ MySQL中的索引可以以一定顺序引用多列，这种索引叫作联合索
 select * from user where name=xx and city=xx ; ／／可以命中索引
 select * from user where name=xx ; // 可以命中索引
 select * from user where city=xx; // 无法命中索引            
-```                                                          
+```
 这里需要注意的是，查询的时候如果两个条件都用上了，但是顺序不同，如 `city= xx and name ＝xx`，那么现在的查询引擎会自动优化为匹配联合索引的顺序，这样是能够命中索引的.
 
 由于最左前缀原则，在创建联合索引时，索引字段的顺序需要考虑字段值去重之后的个数，较多的放前面。ORDERBY子句也遵循此规则。
@@ -93,19 +93,19 @@ ALTER TABLE `table_name` ADD PRIMARY KEY ( `column` )
 ```
 ALTER TABLE `table_name` ADD UNIQUE ( `column` ) 
 ```
- 
+
 3.添加INDEX(普通索引) 
 
 ```
 ALTER TABLE `table_name` ADD INDEX index_name ( `column` )
 ```
- 
+
 4.添加FULLTEXT(全文索引) 
 
 ```
 ALTER TABLE `table_name` ADD FULLTEXT ( `column`) 
 ```
- 
+
 5.添加多列索引
 
 ```

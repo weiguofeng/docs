@@ -19,6 +19,7 @@ module.exports = {
     '/java/mybatis': require('../java/mybatis/sidebar'),
     '/java/thread': require('../java/thread/sidebar'),
     '/java/other': require('../java/other/sidebar'),
+    '/java/zookeeper': require('../java/zookeeper/sidebar'),
 
 
     //数据库系列
@@ -30,6 +31,7 @@ module.exports = {
 
     //前端系列
     '/front/vue': require('../front/vue/sidebar'),
+    '/front/base': require('../front/base/sidebar'),
 
     //工具系列
     '/tools/tool': require('../tools/tool/sidebar'),

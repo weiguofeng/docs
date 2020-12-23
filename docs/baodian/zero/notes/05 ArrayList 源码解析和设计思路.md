@@ -7,7 +7,7 @@ tags:
  - Java
 ---
 
-![](https://i.loli.net/2020/11/25/ZKdOWaDG1Un9Mp3.jpg)
+![1608740162284](../../../images/1608740162284.png)
 
 
 耐心和恒心总会得到报酬的。
@@ -18,7 +18,7 @@ ArrayList 我们几乎每天都会使用到，但真正面试的时候，发现�
 
 ## 1 整体架构
 ArrayList 整体架构比较简单，就是一个数组结构，比较简单，如下图：
-![](https://cdn.nlark.com/yuque/0/2020/jpeg/1534454/1591251566972-757b7676-d36a-459e-bfab-beee19f2f97e.jpeg#align=left&display=inline&height=238&margin=%5Bobject%20Object%5D&originHeight=238&originWidth=1508&size=0&status=done&style=none&width=1508)图中展示是长度为 10 的数组，从 1 开始计数，index 表示数组的下标，从 0 开始计数，elementData 表示数组本身，源码中除了这两个概念，还有以下三个基本概念：
+![1608740190173](../../../images/1608740190173.png)图中展示是长度为 10 的数组，从 1 开始计数，index 表示数组的下标，从 0 开始计数，elementData 表示数组本身，源码中除了这两个概念，还有以下三个基本概念：
 
 - DEFAULT_CAPACITY 表示数组的初始大小，默认是 10，这个数字要记住；
 - size 表示当前数组的大小，类型 int，没有使用 volatile 修饰，非线程安全的；
@@ -64,7 +64,7 @@ public ArrayList(Collection<? extends E> c) {
 除了源码的中文注释，我们补充两点：
 1：ArrayList 无参构造器初始化时，默认大小是空数组，并不是大家常说的 10，10 是在第一次 add 的时候扩容的数组值。
 2：指定初始数据初始化时，我们发现一个这样子的注释 see 6260652，这是 Java 的一个 bug，意思是当给定集合内的元素不是 Object 类型时，我们会转化成 Object 的类型。一般情况下都不会触发此 bug，只有在下列场景下才会触发：ArrayList 初始化之后（ArrayList 元素非 Object 类型），再次调用 toArray 方法，得到 Object 数组，并且往 Object 数组赋值时，才会触发此 bug，代码和原因如图：
-![](https://i.loli.net/2020/11/25/JCEUuyXIS8KonQP.png)官方查看文档地址：[https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6260652](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6260652) ，问题在 Java 9 中被解决。
+![1608740202738](../../../images/1608740202738.png)官方查看文档地址：[https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6260652](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6260652) ，问题在 Java 9 中被解决。
 
 ### 2.2 新增和扩容实现
 新增就是往数组中添加元素，主要分成两步：
@@ -129,7 +129,7 @@ private void grow(int minCapacity) {
 - 源码在扩容的时候，有数组大小溢出意识，就是说扩容后数组的大小下界不能小于 0，上界不能大于 Integer 的最大值，这种意识我们可以学习。
 
 扩容完成之后，赋值是非常简单的，直接往数组上添加元素即可：elementData [size++] = e。也正是通过这种简单赋值，没有任何锁控制，所以这里的操作是线程不安全的，对于新增和扩容的实现，画了一个动图，如下：
-![](https://i.loli.net/2020/11/25/jdREeD5k7LSWTqf.gif)
+![](../../../images/jdREeD5k7LSWTqf.gif)
 
 ### 2.3 扩容的本质
 扩容是通过这行代码来实现的：`Arrays.copyOf(elementData, newCapacity);`，这行代码描述的本质是数组之间的拷贝，扩容是会先新建一个符合我们预期容量的新数组，然后把老数组的数据拷贝过去，我们通过 System.arraycopy 方法进行拷贝，此方法是 native 的方法，源码如下：
@@ -195,7 +195,7 @@ private void fastRemove(int index) {
 }
 ```
 从源码中，我们可以看出，某一个元素被删除后，为了维护数组结构，我们都会把数组后面的元素往前移动，下面动图也演示了其过程：
-![](https://i.loli.net/2020/11/25/jmL8ZepzT6MY4iH.gif)
+![](../../../images/jmL8ZepzT6MY4iH.gif)
 
 ### 2.5 迭代器
 如果要自己实现迭代器，实现 java.util.Iterator 类就好了，ArrayList 也是这样做的，我们来看下迭代器的几个总要的参数：

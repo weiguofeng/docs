@@ -96,7 +96,7 @@ Spring注意到AspectJ在AOP的实现方式上依赖于特殊编译器(ajc编译
 ### IOC：
 
 Spring IOC的初始化过程：
-![Spring IOC的初始化过程](https://user-gold-cdn.xitu.io/2018/5/22/16387903ee72c831?w=709&h=56&f=png&s=4673)
+![1608737541066](../../../images/1608737541066.png)
 
 [[Spring框架]Spring IOC的原理及详解。](https://www.cnblogs.com/wang-meng/p/5597490.html)
 

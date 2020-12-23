@@ -7,9 +7,8 @@ tags:
  - Java
 ---
 
+![1608739974875](../../../images/1608739974875.png)
 
-![](https://i.loli.net/2020/11/24/9bNOyzDIoBqjCf4.jpg)
-![](https://cdn.nlark.com/yuque/0/2020/png/1534454/1591251416099-9d381c57-93a7-48a3-956a-33a62a7334d9.png#align=left&display=inline&height=48&margin=%5Bobject%20Object%5D&originHeight=72&originWidth=90&size=0&status=done&style=none&width=60)![](https://cdn.nlark.com/yuque/0/2020/png/1534454/1591251416082-ba4649d8-ea66-4bd2-b6d3-413e623a3abc.png#align=left&display=inline&height=48&margin=%5Bobject%20Object%5D&originHeight=72&originWidth=90&size=0&status=done&style=none&width=60)
 读一本好书，就是和许多高尚的人谈话。
 ——歌德
 
@@ -67,7 +66,7 @@ public void testSort(){
 
 ### 2.1 二分查找法
 Arrays.binarySearch 方法主要用于快速从数组中查找出对应的值。其支持的入参类型非常多，如 byte、int、long 各种类型的数组。返回参数是查找到的对应数组下标的值，如果查询不到，则返回负数。
-![](https://i.loli.net/2020/11/24/oxFKGUEtvJg2nX6.png)我们写了一个 demo 如下：
+![1608740066244](../../../images/1608740066244.png)我们写了一个 demo 如下：
 
 ```java
 List<SortDTO> list = ImmutableList.of(
@@ -162,7 +161,7 @@ Collections 也提供了 sort 和 binarySearch 方法，sort 底层使用的就�
 
 ### 3.1 求集合中最大、小值
 提供了 max 方法来取得集合中的最大值，min 方法来取得集合中的最小值，max 和 min 方法很相似的，我们以 max 方法为例来说明一下，max 提供了两种类型的方法，一个需要传外部排序器，一个不需要传排序器，但需要集合中的元素强制实现 Comparable 接口，后者的泛型定义很有意思，我们来看下（从右往左看）：
-![](https://i.loli.net/2020/11/24/69LSR8ap1eyXdTz.png)从这段源码中，我们可以学习到两点：
+![1608740081593](../../../images/1608740081593.png)从这段源码中，我们可以学习到两点：
 
 1. max 方法泛型 T 定义得非常巧妙，意思是泛型必须继承 Object 并且实现 Comparable 的接口。一般让我们来定义的话，我们可以会在方法里面去判断有无实现 Comparable 的接口，这种是在运行时才能知道结果。而这里泛型直接定义了必须实现 Comparable 接口，在编译的时候就可告诉使用者，当前类没有实现 Comparable 接口，使用起来很友好；
 1. 给我们提供了实现两种排序机制的好示例：自定义类实现 Comparable 接口和传入外部排序器。两种排序实现原理类似，但实现有所差别，我们在工作中如果需要些排序的工具类时，可以效仿。
@@ -172,12 +171,12 @@ Collections 也提供了 sort 和 binarySearch 方法，sort 底层使用的就�
 Collections 对原始集合类进行了封装，提供了更好的集合类给我们，一种是线程安全的集合，一种是不可变的集合，针对 List、Map、Set 都有提供，我们先来看下线程安全的集合：
 #### 3.2.1 线程安全的集合
 线程安全的集合方法都是 synchronized 打头的，如下：
-![](https://i.loli.net/2020/11/24/iTWx6cJ7qptN4HI.png)从方法命名我们都可以看出来，底层是通过 synchronized 轻量锁来实现的，我们以 synchronizedList 为例来说明下底层的实现：
-![](https://i.loli.net/2020/11/24/jPGMpgICvVAOcnb.png)可以看到 List 的所有操作方法都被加上了 synchronized 锁，所以多线程对集合同时进行操作，是线程安全的。
+![1608740097060](../../../images/1608740097060.png)从方法命名我们都可以看出来，底层是通过 synchronized 轻量锁来实现的，我们以 synchronizedList 为例来说明下底层的实现：
+![1608740109627](../../../images/1608740109627.png)可以看到 List 的所有操作方法都被加上了 synchronized 锁，所以多线程对集合同时进行操作，是线程安全的。
 
 #### 3.2.1 不可变的集合
 得到不可变集合的方法都是以 unmodifiable 开头的。这类方法的意思是，我们会从原集合中，得到一个不可变的新集合，新集合只能访问，无法修改；一旦修改，就会抛出异常。这主要是因为只开放了查询方法，其余任何修改操作都会抛出异常，我们以 unmodifiableList 为例来看下底层实现机制：
-![](https://i.loli.net/2020/11/24/CwgOKjkrcu7iIS3.png)
+![1608740128503](../../../images/1608740128503.png)
 
 #### 3.2.2 小结
 以上两种 List 其实解决了工作中的一些困惑，比如说 ArrayList 是线程不安全的，然后其内部数组很容易被修改，有的时候，我们希望 List 一旦生成后，就不能被修改，Collections 对 List 重新进行了封装，提供了两种类型的集合封装形式，从而解决了工作中的一些烦恼，如果你平时使用 List 时有一些烦恼，也可以学习此种方式，自己对原始集合进行封装，来解决 List 使用过程中的不方便。
@@ -187,10 +186,10 @@ Collections 对原始集合类进行了封装，提供了更好的集合类给�
 
 ### 4.1 相等判断
 Objects 有提供 equals 和 deepEquals 两个方法来进行相等判断，前者是判断基本类型和自定义类的，后者是用来判断数组的，我们来看下底层的源码实现：
-![](https://i.loli.net/2020/11/24/q65SrGPdREQ9cYg.png)从源码中，可以看出 Objects 对基本类型和复杂类型的对象，都有着比较细粒度的判断，可以放心使用。
+![1608740137712](../../../images/1608740137712.png)从源码中，可以看出 Objects 对基本类型和复杂类型的对象，都有着比较细粒度的判断，可以放心使用。
 
 ### 4.2 为空判断
-![](https://i.loli.net/2020/11/24/a71vbWkdUCJDE8A.png)Objects 提供了各种关于空的一些判断，isNull 和 nonNull 对于对象是否为空返回 Boolean 值，requireNonNull 方法更加严格，如果一旦为空，会直接抛出异常，我们需要根据生活的场景选择使用。
+![1608740145210](../../../images/1608740145210.png)Objects 提供了各种关于空的一些判断，isNull 和 nonNull 对于对象是否为空返回 Boolean 值，requireNonNull 方法更加严格，如果一旦为空，会直接抛出异常，我们需要根据生活的场景选择使用。
 
 ## 5 面试题
 

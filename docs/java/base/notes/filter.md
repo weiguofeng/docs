@@ -23,7 +23,7 @@ Servlet中的过滤器Filter是**实现了javax.servlet.Filter接口**的服务�
 
 ​	**void doFilter(ServletRequest request, ServletResponse response,FilterChain chain) 实现过滤功能，该方法对每个请求增加额外的处理**
 
-```java
+```
 package com.cn.util;  
  
 import java.io.IOException;  
@@ -72,7 +72,7 @@ public class FilterUtil implements Filter{
 
 web.xml配置
 
-```xml
+```
 <filter> 
   <filter-name>encodingFilter</filter-name> 
   <!-- <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> --> 
@@ -102,7 +102,7 @@ Servlet的监听器Listener，它是实现了javax.servlet.ServletContextListene
 
 ​	**void contextDestroyed(ServletContextEvent sce) 监听器销毁**
 
-```java
+```
 package com.cn.util;  
  
 import javax.servlet.ServletContextEvent;  
@@ -134,7 +134,7 @@ public class ServletContextListenerUtil implements ServletContextListener{
 
 在springmvc中，定义拦截器要**实现HandlerInterceptor接口**，并实现该接口中提供的三个方法
 
-```java
+```
 package com.cn.util;  
 import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpServletResponse;  
@@ -189,7 +189,7 @@ public class InterceptorUtil implements HandlerInterceptor{
 
 spring-mvc.xml配置文件中：
 
-```xml
+```
  <!-- 拦截器配置 --> 
  <mvc:interceptors> 
      <!--多个拦截器,顺序执行 --> 
@@ -247,7 +247,7 @@ servlet：就是对request和response进行处理的容器，它在filter之后�
 
 index.jsp:
 
-```jsp
+```
 <%@ page language="java" import="com.mycompany.mvc.listener.*" contentType="text/html; charset=UTF-8" 
  pageEncoding="UTF-8"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
@@ -296,7 +296,7 @@ index.jsp:
 
 login.jsp
 
-```jsp
+```
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
@@ -319,7 +319,7 @@ login.jsp
 
 view.jsp
 
-```jsp
+```
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
  pageEncoding="UTF-8"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
@@ -344,7 +344,7 @@ view.jsp
 
 在配置完然后我们在web.xml中诸如下面的配置即可：
 
-```xml
+```
 <listener> 
     <listener-class> 
         com.mycompany.mvc.listener.myServletContextListener  
@@ -364,7 +364,7 @@ view.jsp
 
 ##### 4.2.1 获取当前在线人数
 
-```java
+```
 package com.mycompany.mvc.listener;  
  
 import javax.servlet.http.HttpSessionEvent;  
@@ -406,7 +406,7 @@ public class myHttpSessionListener implements HttpSessionListener{
 
 如下，获得绝对路径后保存到系统变量System中：
 
-```java
+```
 @Override 
 public void contextInitialized(ServletContextEvent servletContext) {  
     System.out.println("myServletContextListener.contextInitialized()");  
@@ -421,7 +421,7 @@ public void contextInitialized(ServletContextEvent servletContext) {
 
 #### 5.1  过滤器只需要继承javax.servlet.filter即可，一般来说我们只要添加tomcat运行时环境就能够包含javax.servlet的jar包，但是eclipse在tomcat8中没有找到，实际上tomcat8中确实没有，只有通过maven来添加了：
 
-```xml
+```
  <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api --> 
  <dependency> 
  	<groupId>javax.servlet</groupId> 
@@ -443,7 +443,7 @@ public void contextInitialized(ServletContextEvent servletContext) {
 
 ##### 5.2.1 请求编码转换
 
-```java
+```
 package com.mycompany.mvc.filter;  
  
 import java.io.IOException;  
@@ -490,7 +490,7 @@ public class urlEncodeFilter implements Filter{
 
 web.xml
 
-```xml
+```
  <filter> 
      <filter-name>urlEncodeFilter</filter-name> 
      <filter-class>com.mycompany.mvc.filter.urlEncodeFilter</filter-class> 
@@ -508,7 +508,7 @@ web.xml
 
 ##### 5.2.2 日志记录，比如记录所有对网站发起请求的地址
 
-```java
+```
 package com.mycompany.mvc.filter;  
  
 import java.io.IOException;  
@@ -564,7 +564,7 @@ web.xml
 
 ##### 5.2.3 对未登陆用户的判断
 
-```java
+```
 package com.mycompany.mvc.filter;  
  
 import java.io.IOException;  
@@ -625,7 +625,7 @@ public class loginFilter implements Filter{
 
 web.xml
 
-```xml
+```
 <filter> 
    <filter-name>loginFilter</filter-name> 
    <filter-class>com.mycompany.mvc.filter.loginFilter</filter-class> 
@@ -655,7 +655,7 @@ web.xml
 
 systemAction:
 
-```java
+```
 package com.mycompany.system.controller;  
  
 import javax.servlet.http.HttpServletRequest;  
@@ -694,7 +694,7 @@ public class systemAction {
 
 Constant.java
 
-```java
+```
 package com.mycompany.mvc.utils;  
  
 public class Constant {  
@@ -716,7 +716,7 @@ public class Constant {
 
 ##### 6.2.1 可以全局做日志
 
-```java
+```
 package com.mycompany.mvc.interceptor;  
  
 import java.lang.reflect.Method;  
@@ -757,7 +757,7 @@ public class logInterceptor implements HandlerInterceptor{
 
 ##### 6.2.2 记录部分调用的时间
 
-```java
+```
 package com.mycompany.mvc.interceptor;  
  
 import javax.servlet.http.HttpServletRequest;  
@@ -790,7 +790,7 @@ public class timeInterceptor implements HandlerInterceptor{
 
 springMvc.xml
 
-```xml
+```
 <!--     拦截器配置 --> 
 <mvc:interceptors> 
   <bean class="com.mycompany.mvc.interceptor.logInterceptor"></bean> 

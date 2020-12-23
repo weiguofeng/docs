@@ -7,6 +7,8 @@ tags:
  - 面试
 ---
 
+# AQS
+
 **目录：**
 <!-- MarkdownTOC -->
 
@@ -33,13 +35,13 @@ tags:
 
 **本节思维导图：**
 
-![并发编程面试必备：AQS 原理以及 AQS 同步组件总结](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-31/61115865.jpg)
+![1608739182474](../../../images/1608739182474.png)
 
 
 ### 1 AQS 简单介绍
 AQS的全称为（AbstractQueuedSynchronizer），这个类在java.util.concurrent.locks包下面。
 
-![enter image description here](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/Java%20%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/AQS.png)
+![1608739192645](../../../images/1608739192645.png)
 
 AQS是一个用来构建锁和同步器的框架，使用AQS能简单且高效地构造出应用广泛的大量的同步器，比如我们提到的ReentrantLock，Semaphore，其他的诸如ReentrantReadWriteLock，SynchronousQueue，FutureTask等等皆是基于AQS的。当然，我们自己也能利用AQS非常轻松容易地构造出符合我们自己需求的同步器。
 
@@ -58,7 +60,7 @@ AQS是一个用来构建锁和同步器的框架，使用AQS能简单且高效�
 看个AQS(AbstractQueuedSynchronizer)原理图：
 
 
-![enter image description here](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/Java%20%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/CLH.png)
+![1608739202525](../../../images/1608739202525.png)
 
 AQS使用一个int成员变量来表示同步状态，通过内置的FIFO队列来完成获取资源线程的排队工作。AQS使用CAS对该同步状态进行原子操作实现对其值的修改。
 

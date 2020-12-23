@@ -5,7 +5,12 @@ categories:
   - spring
 tags:
  - spring
+
 ---
+
+# SpringMVC工作原理详解
+
+
 
 > 本文整理自网络，原文出处暂不知，对原文做了较大的改动，在此说明！
 
@@ -15,7 +20,7 @@ MVC 是一种设计模式.
 
 **MVC 的原理图如下：**
 
-![](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/60679444.jpg)
+![1608737654987](../../../images/1608737654987.png)
 
 
 
@@ -60,7 +65,7 @@ SpringMVC 框架是以请求为驱动，围绕 Servlet 设计，将请求发给�
 
 
 **如下图所示：**
-![SpringMVC运行原理](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49790288.jpg)
+![1608737737244](../../../images/1608737737244.png)
 
 上图的一个笔误的小问题：Spring MVC 的入口函数也就是前端控制器 DispatcherServlet 的作用是接收请求，响应结果。
 
@@ -243,7 +248,7 @@ DispatcherServlet类中的属性beans：
 
 **HandlerMapping**
 
-![HandlerMapping](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/96666164.jpg)
+![1608737755601](../../../images/1608737755601.png)
 
 HandlerMapping接口处理请求的映射HandlerMapping接口的实现类：
 
@@ -253,7 +258,7 @@ HandlerMapping接口处理请求的映射HandlerMapping接口的实现类：
 **HandlerAdapter**
 
 
-![HandlerAdapter](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/91433100.jpg)
+![1608737763803](../../../images/1608737763803.png)
 
 HandlerAdapter接口-处理请求映射
 
@@ -262,7 +267,7 @@ AnnotationMethodHandlerAdapter：通过注解，把请求URL映射到Controller�
 **HandlerExceptionResolver**
 
 
-![HandlerExceptionResolver](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/50343885.jpg)
+![1608737773926](../../../images/1608737773926.png)
 
 HandlerExceptionResolver接口-异常处理接口
 
@@ -271,7 +276,7 @@ HandlerExceptionResolver接口-异常处理接口
 
 **ViewResolver**
 
-![ViewResolver](http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-11/49497279.jpg)
+![1608737783389](../../../images/1608737783389.png)
 
 ViewResolver接口解析View视图。
 

@@ -180,7 +180,7 @@ Redis可以通过创建快照来获得存储在内存里面的数据在某个时
 
 快照持久化是Redis默认采用的持久化方式，在redis.conf配置文件中默认有此下配置：
 
-```conf
+```
 
 save 900 1              #在900秒(15分钟)之后，如果至少有1个key发生变化，Redis就会自动触发BGSAVE命令创建快照。
 
@@ -194,7 +194,7 @@ save 60 10000        #在60秒(1分钟)之后，如果至少有10000个key发生
 
 与快照持久化相比，AOF持久化 的实时性更好，因此已成为主流的持久化方案。默认情况下Redis没有开启AOF（append only file）方式的持久化，可以通过appendonly参数开启：
 
-```conf
+```
 appendonly yes
 ```
 
@@ -202,7 +202,7 @@ appendonly yes
 
 在Redis的配置文件中存在三种不同的 AOF 持久化方式，它们分别是：
 
-```conf
+```
 appendfsync always     #每次有数据修改发生时都会写入AOF文件,这样会严重降低Redis的速度
 appendfsync everysec  #每秒钟同步一次，显示地将多个写命令同步到硬盘
 appendfsync no      #让操作系统决定何时进行同步

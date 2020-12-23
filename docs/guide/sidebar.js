@@ -40,5 +40,12 @@ module.exports = [
         children:[
             '/guide/notes/微信小程序'
         ]
+    },
+    {
+        title:'linux',
+        collapsable: true,
+        children:[
+            '/guide/notes/linux'
+        ]
     }
 ];

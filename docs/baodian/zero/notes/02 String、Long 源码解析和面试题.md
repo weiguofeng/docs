@@ -7,7 +7,7 @@ tags:
  - Java
 ---
 
-![](https://i.loli.net/2020/11/24/6rWPzvf29YjRDJw.jpg)
+![1608739804157](../../../images/1608739804157.png)
 =
 
 ## 引导语
@@ -22,7 +22,8 @@ String s ="hello";
 s ="world";
 ```
 从代码上来看，s 的值好像被修改了，但从 debug 的日志来看，其实是 s 的内存地址已经被修改了，也就说 s =“world” 这个看似简单的赋值，其实已经把 s 的引用指向了新的 String，debug 的截图显示内存地址已经被修改，两张截图如下：
-![](https://cdn.nlark.com/yuque/0/2020/jpeg/1534454/1591251281750-629c6b27-e701-454a-a0c9-a1d8a99dcc8d.jpeg#align=left&display=inline&height=96&margin=%5Bobject%20Object%5D&originHeight=96&originWidth=884&size=0&status=done&style=none&width=884)![](https://cdn.nlark.com/yuque/0/2020/jpeg/1534454/1591251281738-b7dd1324-818b-4698-9307-d418b0ea568f.jpeg#align=left&display=inline&height=90&margin=%5Bobject%20Object%5D&originHeight=90&originWidth=1054&size=0&status=done&style=none&width=1054)我们从源码上查看一下原因：
+![1608739837717](../../../images/1608739837717.png)![1608739878562](../../../images/1608739878562.png)我们从源码上查看一下原因：
+
 ```
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence {
