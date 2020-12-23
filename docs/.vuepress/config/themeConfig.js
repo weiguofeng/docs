@@ -37,22 +37,23 @@ module.exports = {
     //     clientSecret: 'YOUR_CLIENT_SECRET',
     // }
 
-    //友链
-    friendLink: [
-        {
-            title: 'vuepress-theme-reco',
-            desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-            logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-            link: 'https://vuepress-theme-reco.recoluan.com'
-        },
-        {
-            title: '午后南杂',
-            desc: 'Enjoy when you can, and endure when you must.',
-            email: 'recoluan@qq.com',
-            link: 'https://www.recoluan.com'
-        },
-        // ...
-    ],
+    //2020-12-23 注销
+    // //友链
+    // friendLink: [
+    //     {
+    //         title: 'vuepress-theme-reco',
+    //         desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+    //         logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+    //         link: 'https://vuepress-theme-reco.recoluan.com'
+    //     },
+    //     {
+    //         title: '午后南杂',
+    //         desc: 'Enjoy when you can, and endure when you must.',
+    //         email: 'recoluan@qq.com',
+    //         link: 'https://www.recoluan.com'
+    //     },
+    //     // ...
+    // ],
 
     //备案号
     record: '京ICP备2018019108号-1',
