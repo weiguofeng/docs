@@ -26,7 +26,7 @@ module.exports = [
     // 动态标题
     ["dynamic-title",
         {
-            showicon: "/favicon.ico",
+            showicon: "/feathersjs.svg",
             showtext: "欢迎帅哥美女！",
             hideicon: "/favicon.ico",
             hidetext: "(●—●)关注我哦！！",
