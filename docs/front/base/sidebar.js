@@ -6,22 +6,22 @@ module.exports = [
         title:'css',
         collapsable: true,
         children:[
-            '/base/notes/css',
+            '/font/base/notes/css',
         ]
     },
     {
         title:'js',
         collapsable: true,
         children:[
-            '/base/notes/js1',
-            '/base/notes/js2',
+            '/font/base/notes/js1',
+            '/font/base/notes/js2',
         ]
     },
     {
         title:'elementUI',
         collapsable: true,
         children:[
-            '/base/notes/ele'
+            '/font/base/notes/ele'
         ]
     },
 

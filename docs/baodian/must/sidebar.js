@@ -1,7 +1,7 @@
 module.exports = [
     {
         title:'面试必备1',
-        collapsable: true,
+        collapsable: false,
         children:[
             '/baodian/must/notes/books',
             '/baodian/must/notes/interviewPrepare',

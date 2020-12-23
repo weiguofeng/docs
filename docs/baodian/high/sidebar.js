@@ -1,7 +1,7 @@
 module.exports = [
     {
         title:'高级宝典',
-        collapsable: true,
+        collapsable: false,
         children:[
             '/baodian/high/notes/AQS',
             '/baodian/high/notes/Atomic',

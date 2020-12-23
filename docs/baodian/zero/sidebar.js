@@ -1,7 +1,7 @@
 module.exports = [
     {
         title:'初级宝典',
-        collapsable: true,
+        collapsable: false,
         children:[
             '/baodian/zero/notes/02 String、Long 源码解析和面试题',
             '/baodian/zero/notes/03 Java 常用关键字理解',
