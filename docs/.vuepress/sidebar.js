@@ -32,6 +32,8 @@ module.exports = {
     //前端系列
     '/front/vue': require('../front/vue/sidebar'),
     '/front/base': require('../front/base/sidebar'),
+    '/front/angular': require('../front/angular/sidebar'),
+    '/front/layui': require('../front/layui/sidebar'),
 
     //工具系列
     '/tools/tool': require('../tools/tool/sidebar'),

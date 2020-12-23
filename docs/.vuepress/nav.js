@@ -9,6 +9,7 @@ module.exports = [
             {text: '多线程', link: '/java/thread/'},
             {text: 'Spring系列', link: '/java/spring/'},
             {text: 'Mybatis系列', link: '/java/mybatis/'},
+            {text: 'zookeeper', link: '/java/zookeeper/'},
             {text: '其他', link: '/java/other/'},
         ]
     },
