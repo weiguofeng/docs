@@ -1,7 +1,7 @@
 # 关于数据库的一些知识点
 
 
-[oracle存储过程教程.pdf](/resource/oracle存储过程教程.pdf)
+[oracle存储过程教程.pdf](../../resource/oracle存储过程教程.pdf)
 
 - [Queue](#queue)
     - [什么是队列](#什么是队列)
