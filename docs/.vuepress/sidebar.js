@@ -34,6 +34,7 @@ module.exports = {
     '/front/base': require('../front/base/sidebar'),
     '/front/angular': require('../front/angular/sidebar'),
     '/front/layui': require('../front/layui/sidebar'),
+    '/front/react': require('../front/react/sidebar'),
 
     //工具系列
     '/tools/tool': require('../tools/tool/sidebar'),

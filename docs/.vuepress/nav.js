@@ -30,6 +30,7 @@ module.exports = [
             {text: 'Vue', link: '/front/vue/'},
             {text: 'AngularJs', link: '/front/angular/'},
             {text: 'LayUI', link: '/front/layui/'},
+            {text: 'React', link: '/front/react/'},
         ]
     },
     {
