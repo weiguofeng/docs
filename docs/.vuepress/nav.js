@@ -42,6 +42,12 @@ module.exports = [
         ]
     },
     {
+        text: '开发指南', link: '/guide/',icon: 'reco-blog',
+        items: [
+            {text: '开发指南', link: '/guide/'},
+        ]
+    },
+    {
         text: '问题', link: '/question/',icon: 'reco-blog',
         items: [
             {text: '问题', link: '/questions/question/'},

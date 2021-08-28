@@ -1,5 +1,18 @@
-# 各个不同知识点的记录
+# 1.React概述
 
-:::tip
-    前端React
-:::
+![1627905334482](../../.vuepress/public/images/1627905334482.png)
+
+![1627905408682](../../.vuepress/public/images/1627905408682.png)
+
+![1627905471630](../../.vuepress/public/images/1627905471630.png)
+
+
+
+![1627905523130](../../.vuepress/public/images/1627905523130.png)
+
+
+
+
+
+
+
