@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>好啊！那如何设计可以动态扩容缩容的分库分表方案? | 锋格blog</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/docs/favicon.ico">
+    <meta name="description" content="要么孤独、要么庸俗">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.0415235c.css" as="style"><link rel="preload" href="/docs/assets/js/app.641849c1.js" as="script"><link rel="preload" href="/docs/assets/js/4.b6c396a4.js" as="script"><link rel="preload" href="/docs/assets/js/1.4e993a40.js" as="script"><link rel="preload" href="/docs/assets/js/118.5133bcc1.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.756c0048.js"><link rel="prefetch" href="/docs/assets/js/100.a6dda3e5.js"><link rel="prefetch" href="/docs/assets/js/101.eb09ece5.js"><link rel="prefetch" href="/docs/assets/js/102.ab5e083f.js"><link rel="prefetch" href="/docs/assets/js/103.b41fc81c.js"><link rel="prefetch" href="/docs/assets/js/104.f2110105.js"><link rel="prefetch" href="/docs/assets/js/105.00364ef9.js"><link rel="prefetch" href="/docs/assets/js/106.be59f37d.js"><link rel="prefetch" href="/docs/assets/js/107.a5caac9a.js"><link rel="prefetch" href="/docs/assets/js/108.bcbf7a77.js"><link rel="prefetch" href="/docs/assets/js/109.316ff329.js"><link rel="prefetch" href="/docs/assets/js/11.1c8495f4.js"><link rel="prefetch" href="/docs/assets/js/110.d788c3d2.js"><link rel="prefetch" href="/docs/assets/js/111.b1dede79.js"><link rel="prefetch" href="/docs/assets/js/112.d821ff96.js"><link rel="prefetch" href="/docs/assets/js/113.2be4ebae.js"><link rel="prefetch" href="/docs/assets/js/114.a6f2f1cc.js"><link rel="prefetch" href="/docs/assets/js/115.07ab4f2d.js"><link rel="prefetch" href="/docs/assets/js/116.b8b470bb.js"><link rel="prefetch" href="/docs/assets/js/117.0e0bab51.js"><link rel="prefetch" href="/docs/assets/js/119.110c5dbb.js"><link rel="prefetch" href="/docs/assets/js/12.0089cc1e.js"><link rel="prefetch" href="/docs/assets/js/120.6b1765d4.js"><link rel="prefetch" href="/docs/assets/js/121.58c1c365.js"><link rel="prefetch" href="/docs/assets/js/122.e1a6609c.js"><link rel="prefetch" href="/docs/assets/js/123.a8fc49d2.js"><link rel="prefetch" href="/docs/assets/js/124.c164af4e.js"><link rel="prefetch" href="/docs/assets/js/125.dff7e90b.js"><link rel="prefetch" href="/docs/assets/js/126.1e5a6d35.js"><link rel="prefetch" href="/docs/assets/js/127.6e3751ed.js"><link rel="prefetch" href="/docs/assets/js/128.b6808470.js"><link rel="prefetch" href="/docs/assets/js/129.8e27c678.js"><link rel="prefetch" href="/docs/assets/js/13.276a3584.js"><link rel="prefetch" href="/docs/assets/js/130.6f93cf93.js"><link rel="prefetch" href="/docs/assets/js/131.b3f51290.js"><link rel="prefetch" href="/docs/assets/js/132.0274ba04.js"><link rel="prefetch" href="/docs/assets/js/133.3ae276da.js"><link rel="prefetch" href="/docs/assets/js/134.3794808a.js"><link rel="prefetch" href="/docs/assets/js/135.ec52babc.js"><link rel="prefetch" href="/docs/assets/js/136.ddd472ea.js"><link rel="prefetch" href="/docs/assets/js/137.0d423d31.js"><link rel="prefetch" href="/docs/assets/js/138.ba4aca05.js"><link rel="prefetch" href="/docs/assets/js/139.61b11d79.js"><link rel="prefetch" href="/docs/assets/js/14.d502a21b.js"><link rel="prefetch" href="/docs/assets/js/140.a828eacd.js"><link rel="prefetch" href="/docs/assets/js/141.edd8f343.js"><link rel="prefetch" href="/docs/assets/js/142.d06fd677.js"><link rel="prefetch" href="/docs/assets/js/143.4d9e9c3e.js"><link rel="prefetch" href="/docs/assets/js/144.38a03d4e.js"><link rel="prefetch" href="/docs/assets/js/145.93ad7982.js"><link rel="prefetch" href="/docs/assets/js/146.f21ce829.js"><link rel="prefetch" href="/docs/assets/js/147.4285fb8b.js"><link rel="prefetch" href="/docs/assets/js/148.32876b11.js"><link rel="prefetch" href="/docs/assets/js/149.e4a1f640.js"><link rel="prefetch" href="/docs/assets/js/15.f1a07745.js"><link rel="prefetch" href="/docs/assets/js/150.a9ec0678.js"><link rel="prefetch" href="/docs/assets/js/151.70c0934a.js"><link rel="prefetch" href="/docs/assets/js/152.0cd146a2.js"><link rel="prefetch" href="/docs/assets/js/153.4d476367.js"><link rel="prefetch" href="/docs/assets/js/154.c4c6a02f.js"><link rel="prefetch" href="/docs/assets/js/155.df3bcbcd.js"><link rel="prefetch" href="/docs/assets/js/156.7931977b.js"><link rel="prefetch" href="/docs/assets/js/157.390c6a59.js"><link rel="prefetch" href="/docs/assets/js/158.c340eba0.js"><link rel="prefetch" href="/docs/assets/js/159.5df0a5d5.js"><link rel="prefetch" href="/docs/assets/js/16.84b6842d.js"><link rel="prefetch" href="/docs/assets/js/160.038d67a3.js"><link rel="prefetch" href="/docs/assets/js/161.376362ba.js"><link rel="prefetch" href="/docs/assets/js/162.e727308c.js"><link rel="prefetch" href="/docs/assets/js/163.977b2632.js"><link rel="prefetch" href="/docs/assets/js/164.0775363b.js"><link rel="prefetch" href="/docs/assets/js/165.ab8fdf98.js"><link rel="prefetch" href="/docs/assets/js/166.62dce827.js"><link rel="prefetch" href="/docs/assets/js/167.814cb932.js"><link rel="prefetch" href="/docs/assets/js/168.b1008eba.js"><link rel="prefetch" href="/docs/assets/js/169.6ba1e418.js"><link rel="prefetch" href="/docs/assets/js/17.8d5c0754.js"><link rel="prefetch" href="/docs/assets/js/170.525721b0.js"><link rel="prefetch" href="/docs/assets/js/171.fc76182b.js"><link rel="prefetch" href="/docs/assets/js/172.ab0909ee.js"><link rel="prefetch" href="/docs/assets/js/173.06587fb3.js"><link rel="prefetch" href="/docs/assets/js/174.65ab323d.js"><link rel="prefetch" href="/docs/assets/js/175.04f46cc7.js"><link rel="prefetch" href="/docs/assets/js/176.b7a21646.js"><link rel="prefetch" href="/docs/assets/js/177.c4966f8d.js"><link rel="prefetch" href="/docs/assets/js/178.e563546c.js"><link rel="prefetch" href="/docs/assets/js/179.4ecc8e92.js"><link rel="prefetch" href="/docs/assets/js/18.5e6825eb.js"><link rel="prefetch" href="/docs/assets/js/180.23aad532.js"><link rel="prefetch" href="/docs/assets/js/181.15ab55d7.js"><link rel="prefetch" href="/docs/assets/js/182.9e485269.js"><link rel="prefetch" href="/docs/assets/js/183.9b04298a.js"><link rel="prefetch" href="/docs/assets/js/184.dc5ee0f4.js"><link rel="prefetch" href="/docs/assets/js/185.d9a94c1b.js"><link rel="prefetch" href="/docs/assets/js/186.e89c6cdd.js"><link rel="prefetch" href="/docs/assets/js/187.985bc18d.js"><link rel="prefetch" href="/docs/assets/js/188.d14f6deb.js"><link rel="prefetch" href="/docs/assets/js/189.9f32a855.js"><link rel="prefetch" href="/docs/assets/js/19.2b34c1fb.js"><link rel="prefetch" href="/docs/assets/js/190.0263e0c3.js"><link rel="prefetch" href="/docs/assets/js/191.037ba330.js"><link rel="prefetch" href="/docs/assets/js/192.6aaef325.js"><link rel="prefetch" href="/docs/assets/js/193.d9d8b98e.js"><link rel="prefetch" href="/docs/assets/js/194.dc0ff283.js"><link rel="prefetch" href="/docs/assets/js/195.b8054c4c.js"><link rel="prefetch" href="/docs/assets/js/196.35cdfa62.js"><link rel="prefetch" href="/docs/assets/js/197.195a7cf7.js"><link rel="prefetch" href="/docs/assets/js/198.1871bfed.js"><link rel="prefetch" href="/docs/assets/js/199.2e504d64.js"><link rel="prefetch" href="/docs/assets/js/20.2d993b12.js"><link rel="prefetch" href="/docs/assets/js/200.fcd3c75a.js"><link rel="prefetch" href="/docs/assets/js/201.7e5d2554.js"><link rel="prefetch" href="/docs/assets/js/202.d7e732b4.js"><link rel="prefetch" href="/docs/assets/js/203.1ade8168.js"><link rel="prefetch" href="/docs/assets/js/204.317f3785.js"><link rel="prefetch" href="/docs/assets/js/205.e4a84a48.js"><link rel="prefetch" href="/docs/assets/js/206.f359e753.js"><link rel="prefetch" href="/docs/assets/js/207.9db1d583.js"><link rel="prefetch" href="/docs/assets/js/208.51fe67f3.js"><link rel="prefetch" href="/docs/assets/js/209.7c26a172.js"><link rel="prefetch" href="/docs/assets/js/21.c94a301d.js"><link rel="prefetch" href="/docs/assets/js/210.848b217a.js"><link rel="prefetch" href="/docs/assets/js/211.b6ab9909.js"><link rel="prefetch" href="/docs/assets/js/212.f44716fb.js"><link rel="prefetch" href="/docs/assets/js/213.a73988d4.js"><link rel="prefetch" href="/docs/assets/js/214.dfa6adfc.js"><link rel="prefetch" href="/docs/assets/js/215.f7c26ccd.js"><link rel="prefetch" href="/docs/assets/js/216.cadb502c.js"><link rel="prefetch" href="/docs/assets/js/217.b2ce84a9.js"><link rel="prefetch" href="/docs/assets/js/218.d581ee98.js"><link rel="prefetch" href="/docs/assets/js/22.ec8db626.js"><link rel="prefetch" href="/docs/assets/js/23.cc501c34.js"><link rel="prefetch" href="/docs/assets/js/24.2a6c4946.js"><link rel="prefetch" href="/docs/assets/js/25.c04cb7ef.js"><link rel="prefetch" href="/docs/assets/js/26.1c9465d1.js"><link rel="prefetch" href="/docs/assets/js/27.a11d758e.js"><link rel="prefetch" href="/docs/assets/js/28.a8b86f6e.js"><link rel="prefetch" href="/docs/assets/js/29.e4c5c5da.js"><link rel="prefetch" href="/docs/assets/js/3.d7e1b5bd.js"><link rel="prefetch" href="/docs/assets/js/30.88a34e69.js"><link rel="prefetch" href="/docs/assets/js/31.e885e9c3.js"><link rel="prefetch" href="/docs/assets/js/32.3495fad7.js"><link rel="prefetch" href="/docs/assets/js/33.016d7cb5.js"><link rel="prefetch" href="/docs/assets/js/34.1307a3de.js"><link rel="prefetch" href="/docs/assets/js/35.b6fee198.js"><link rel="prefetch" href="/docs/assets/js/36.8da7119a.js"><link rel="prefetch" href="/docs/assets/js/37.ba6c4468.js"><link rel="prefetch" href="/docs/assets/js/38.d38f3ee3.js"><link rel="prefetch" href="/docs/assets/js/39.4cb89dcc.js"><link rel="prefetch" href="/docs/assets/js/40.9aca25ac.js"><link rel="prefetch" href="/docs/assets/js/41.491f9fc8.js"><link rel="prefetch" href="/docs/assets/js/42.4d1f0b4c.js"><link rel="prefetch" href="/docs/assets/js/43.4f6ba230.js"><link rel="prefetch" href="/docs/assets/js/44.c6ef9557.js"><link rel="prefetch" href="/docs/assets/js/45.dc68fd30.js"><link rel="prefetch" href="/docs/assets/js/46.10b8004a.js"><link rel="prefetch" href="/docs/assets/js/47.7d6c84dc.js"><link rel="prefetch" href="/docs/assets/js/48.b6c23f90.js"><link rel="prefetch" href="/docs/assets/js/49.2fc36740.js"><link rel="prefetch" href="/docs/assets/js/5.460113b7.js"><link rel="prefetch" href="/docs/assets/js/50.0b8c44ea.js"><link rel="prefetch" href="/docs/assets/js/51.d3c6c680.js"><link rel="prefetch" href="/docs/assets/js/52.78fb5099.js"><link rel="prefetch" href="/docs/assets/js/53.ff311df6.js"><link rel="prefetch" href="/docs/assets/js/54.2f7d6b3e.js"><link rel="prefetch" href="/docs/assets/js/55.887ab90f.js"><link rel="prefetch" href="/docs/assets/js/56.4a07291e.js"><link rel="prefetch" href="/docs/assets/js/57.a200dfad.js"><link rel="prefetch" href="/docs/assets/js/58.e64c280e.js"><link rel="prefetch" href="/docs/assets/js/59.da8cf313.js"><link rel="prefetch" href="/docs/assets/js/6.cfd19cb7.js"><link rel="prefetch" href="/docs/assets/js/60.7d41917b.js"><link rel="prefetch" href="/docs/assets/js/61.81151ae8.js"><link rel="prefetch" href="/docs/assets/js/62.87457de2.js"><link rel="prefetch" href="/docs/assets/js/63.6c05302c.js"><link rel="prefetch" href="/docs/assets/js/64.944ba34d.js"><link rel="prefetch" href="/docs/assets/js/65.833c3a73.js"><link rel="prefetch" href="/docs/assets/js/66.036c06ce.js"><link rel="prefetch" href="/docs/assets/js/67.84425659.js"><link rel="prefetch" href="/docs/assets/js/68.037508e5.js"><link rel="prefetch" href="/docs/assets/js/69.0b231077.js"><link rel="prefetch" href="/docs/assets/js/7.44611396.js"><link rel="prefetch" href="/docs/assets/js/70.3aeafb8f.js"><link rel="prefetch" href="/docs/assets/js/71.8059cee4.js"><link rel="prefetch" href="/docs/assets/js/72.18f46922.js"><link rel="prefetch" href="/docs/assets/js/73.01b39559.js"><link rel="prefetch" href="/docs/assets/js/74.aef1a97d.js"><link rel="prefetch" href="/docs/assets/js/75.4e5cf5d4.js"><link rel="prefetch" href="/docs/assets/js/76.7d996c76.js"><link rel="prefetch" href="/docs/assets/js/77.178bd689.js"><link rel="prefetch" href="/docs/assets/js/78.cae8451e.js"><link rel="prefetch" href="/docs/assets/js/79.0946b317.js"><link rel="prefetch" href="/docs/assets/js/8.35bb608b.js"><link rel="prefetch" href="/docs/assets/js/80.8cf735d3.js"><link rel="prefetch" href="/docs/assets/js/81.c8c32042.js"><link rel="prefetch" href="/docs/assets/js/82.8761be75.js"><link rel="prefetch" href="/docs/assets/js/83.cf069596.js"><link rel="prefetch" href="/docs/assets/js/84.368c6b43.js"><link rel="prefetch" href="/docs/assets/js/85.d01c119e.js"><link rel="prefetch" href="/docs/assets/js/86.a40f5d00.js"><link rel="prefetch" href="/docs/assets/js/87.6b38c62b.js"><link rel="prefetch" href="/docs/assets/js/88.9e52beaa.js"><link rel="prefetch" href="/docs/assets/js/89.7c8f792d.js"><link rel="prefetch" href="/docs/assets/js/9.6a205308.js"><link rel="prefetch" href="/docs/assets/js/90.4c133c22.js"><link rel="prefetch" href="/docs/assets/js/91.6db02d06.js"><link rel="prefetch" href="/docs/assets/js/92.4a7e49aa.js"><link rel="prefetch" href="/docs/assets/js/93.95f56b98.js"><link rel="prefetch" href="/docs/assets/js/94.e9b712f1.js"><link rel="prefetch" href="/docs/assets/js/95.eba3125d.js"><link rel="prefetch" href="/docs/assets/js/96.9c3dd0e1.js"><link rel="prefetch" href="/docs/assets/js/97.59e3393a.js"><link rel="prefetch" href="/docs/assets/js/98.338da4c1.js"><link rel="prefetch" href="/docs/assets/js/99.2b54e552.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.0415235c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>锋格blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>锋格blog</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><img src="/docs/feathersjs.svg" alt="锋格blog" class="logo"> <span class="site-name">锋格blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/base/" class="nav-link"><i class="iconfont undefined"></i>
+  基础部分
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/thread/" class="nav-link"><i class="iconfont undefined"></i>
+  多线程
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/mybatis/" class="nav-link"><i class="iconfont undefined"></i>
+  Mybatis系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/zookeeper/" class="nav-link"><i class="iconfont undefined"></i>
+  zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/other/" class="nav-link"><i class="iconfont undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      数据库
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/db/mysql/" class="nav-link"><i class="iconfont undefined"></i>
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/oracle/" class="nav-link"><i class="iconfont undefined"></i>
+  Oracle
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/mongo/" class="nav-link"><i class="iconfont undefined"></i>
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/dataStructure/" class="nav-link"><i class="iconfont undefined"></i>
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-tag"></i>
+      前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/front/base/" class="nav-link"><i class="iconfont undefined"></i>
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/angular/" class="nav-link"><i class="iconfont undefined"></i>
+  AngularJs
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/layui/" class="nav-link"><i class="iconfont undefined"></i>
+  LayUI
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/react/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      面试宝典
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/baodian/zero/" class="nav-link"><i class="iconfont undefined"></i>
+  初级开发篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/high/" class="nav-link"><i class="iconfont undefined"></i>
+  中高进阶篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/must/" class="nav-link"><i class="iconfont undefined"></i>
+  面试必备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      开发指南
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/guide/" class="nav-link router-link-active"><i class="iconfont undefined"></i>
+  开发指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      问题
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/questions/question/" class="nav-link"><i class="iconfont undefined"></i>
+  问题
+</a></li><li class="dropdown-item"><!----> <a href="/docs/questions/talk/" class="nav-link"><i class="iconfont undefined"></i>
+  闲谈
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Tools
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/tools/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/docs/tools/computerNetwork/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络与数据通信
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>在线编辑</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  图片压缩
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>在线服务</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.aliyun.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  阿里云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://cloud.tencent.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  腾讯云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>博客指南</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://juejin.im/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://blog.csdn.net/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="/docs/fenggelogo.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    锋格blog
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>53</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>15</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Java
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/java/base/" class="nav-link"><i class="iconfont undefined"></i>
+  基础部分
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/thread/" class="nav-link"><i class="iconfont undefined"></i>
+  多线程
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/spring/" class="nav-link"><i class="iconfont undefined"></i>
+  Spring系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/mybatis/" class="nav-link"><i class="iconfont undefined"></i>
+  Mybatis系列
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/zookeeper/" class="nav-link"><i class="iconfont undefined"></i>
+  zookeeper
+</a></li><li class="dropdown-item"><!----> <a href="/docs/java/other/" class="nav-link"><i class="iconfont undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      数据库
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/db/mysql/" class="nav-link"><i class="iconfont undefined"></i>
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/oracle/" class="nav-link"><i class="iconfont undefined"></i>
+  Oracle
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  Redis
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/mongo/" class="nav-link"><i class="iconfont undefined"></i>
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/docs/db/dataStructure/" class="nav-link"><i class="iconfont undefined"></i>
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-tag"></i>
+      前端
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/front/base/" class="nav-link"><i class="iconfont undefined"></i>
+  前端基础
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/angular/" class="nav-link"><i class="iconfont undefined"></i>
+  AngularJs
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/layui/" class="nav-link"><i class="iconfont undefined"></i>
+  LayUI
+</a></li><li class="dropdown-item"><!----> <a href="/docs/front/react/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      面试宝典
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/baodian/zero/" class="nav-link"><i class="iconfont undefined"></i>
+  初级开发篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/high/" class="nav-link"><i class="iconfont undefined"></i>
+  中高进阶篇
+</a></li><li class="dropdown-item"><!----> <a href="/docs/baodian/must/" class="nav-link"><i class="iconfont undefined"></i>
+  面试必备
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      开发指南
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/guide/" class="nav-link router-link-active"><i class="iconfont undefined"></i>
+  开发指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      问题
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/questions/question/" class="nav-link"><i class="iconfont undefined"></i>
+  问题
+</a></li><li class="dropdown-item"><!----> <a href="/docs/questions/talk/" class="nav-link"><i class="iconfont undefined"></i>
+  闲谈
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-blog"></i>
+      Tools
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/tools/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  Tools
+</a></li><li class="dropdown-item"><!----> <a href="/docs/tools/computerNetwork/" class="nav-link"><i class="iconfont undefined"></i>
+  计算机网络与数据通信
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>在线编辑</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  图片压缩
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>在线服务</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.aliyun.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  阿里云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://cloud.tencent.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  腾讯云
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>博客指南</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://juejin.im/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://blog.csdn.net/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>首页</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>互联网面试突击第一季</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Dubbo</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>hystrix设计高可用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mybatis原理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Swagger</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Redis</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>zookeeper</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>分布式搜索</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>分库分表</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/guide/notes/互联网面试突击第一季/分库分表/01体验一下面试官对于分库分表这个事儿的一个连环炮.html" class="sidebar-link">体验一下面试官对于分库分表这个事儿的一个连环炮</a></li><li><a href="/docs/guide/notes/互联网面试突击第一季/分库分表/02来来来！咱们聊一下你们公司是怎么玩儿分库分表的？.html" class="sidebar-link">来来来！咱们聊一下你们公司是怎么玩儿分库分表的？</a></li><li><a href="/docs/guide/notes/互联网面试突击第一季/分库分表/03你们当时是如何把系统不停机迁移到分库分表的.html" class="sidebar-link">你们当时是如何把系统不停机迁移到分库分表的？</a></li><li><a href="/docs/guide/notes/互联网面试突击第一季/分库分表/04那如何设计可以动态扩容缩容的分库分表方案.html" class="active sidebar-link">好啊！那如何设计可以动态扩容缩容的分库分表方案?</a></li><li><a href="/docs/guide/notes/互联网面试突击第一季/分库分表/05一个关键的问题！分库分表之后全局id咋生成.html" class="sidebar-link">一个关键的问题！分库分表之后全局id咋生成？</a></li><li><a href="/docs/guide/notes/互联网面试突击第一季/分库分表/06说说MySQL读写分离的原理？主从同步延时咋解决.html" class="sidebar-link">说说MySQL读写分离的原理？主从同步延时咋解决？</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>大佬总结</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>消息队列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vuePress搭建过程</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>微信小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>linux</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e></h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>锋格blog</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-2d5f533b><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">好啊！那如何设计可以动态扩容缩容的分库分表方案?</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>锋格blog</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="好啊-那如何设计可以动态扩容缩容的分库分表方案"><a href="#好啊-那如何设计可以动态扩容缩容的分库分表方案" class="header-anchor">#</a> 好啊！那如何设计可以动态扩容缩容的分库分表方案?</h1> <h4 id="_1-面试题"><a href="#_1-面试题" class="header-anchor">#</a> 1.面试题</h4> <p>​		<strong>如何设计可以动态扩容缩容的分库分表方案？</strong></p> <h4 id="_2-面试题剖析"><a href="#_2-面试题剖析" class="header-anchor">#</a> 2.面试题剖析</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>	（1）选择一个数据库中间件，调研、学习、测试
+    （2）设计你的分库分表的一个方案，你要分成多少个库，每个库分成多少个表，3个库每个库4个表
+    （3）基于选择好的数据库中间件，以及在测试环境建立好的分库分表的环境，然后测试一下能否正常进行分库分表的读写
+    （4）完成单库单表到分库分表的迁移，双写方案
+    （5）线上系统开始基于分库分表对外提供服务
+    （6）扩容了，扩容成6个库，每个库需要12个表，你怎么来增加更多库和表呢？
+
+    这个是你必须面对的一个事儿，就是你已经弄好分库分表方案了，然后一堆库和表都建好了，基于分库分表中间件的代码开发啥的都好了，测试都ok了，数据能均匀分布到各个库和各个表里去，而且接着你还通过双写的方案咔嚓一下上了系统，已经直接基于分库分表方案在搞了。
+
+    那么现在问题来了，你现在这些库和表又支撑不住了，要继续扩容咋办？这个可能就是说你的每个库的容量又快满了，或者是你的表数据量又太大了，也可能是你每个库的写并发太高了，你得继续扩容。
+
+    这都是玩儿分库分表线上必须经历的事儿
+    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="_3-面试题剖析"><a href="#_3-面试题剖析" class="header-anchor">#</a> 3.面试题剖析</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code>	（1）停机扩容
+
+这个方案就跟停机迁移一样，步骤几乎一致，唯一的一点就是那个导数的工具，是把现有库表的数据抽出来慢慢倒入到新的库和表里去。但是最好别这么玩儿，有点不太靠谱，因为既然分库分表就说明数据量实在是太大了，可能多达几亿条，甚至几十亿，你这么玩儿，可能会出问题。
+
+从单库单表迁移到分库分表的时候，数据量并不是很大，单表最大也就两三千万
+
+写个工具，多弄几台机器并行跑，1小时数据就导完了
+
+3个库+12个表，跑了一段时间了，数据量都1亿~2亿了。光是导2亿数据，都要导个几个小时，6点，刚刚导完数据，还要搞后续的修改配置，重启系统，测试验证，10点才可以搞完
+
+（2）优化后的方案
+
+一开始上来就是32个库，每个库32个表，1024张表
+
+我可以告诉各位同学说，这个分法，第一，基本上国内的互联网肯定都是够用了，第二，无论是并发支撑还是数据量支撑都没问题
+
+每个库正常承载的写入并发量是1000，那么32个库就可以承载32 * 1000 = 32000的写并发，如果每个库承载1500的写并发，32 * 1500 = 48000的写并发，接近5万/s的写入并发，前面再加一个MQ，削峰，每秒写入MQ 8万条数据，每秒消费5万条数据。
+
+有些除非是国内排名非常靠前的这些公司，他们的最核心的系统的数据库，可能会出现几百台数据库的这么一个规模，128个库，256个库，512个库
+
+1024张表，假设每个表放500万数据，在MySQL里可以放50亿条数据
+
+每秒的5万写并发，总共50亿条数据，对于国内大部分的互联网公司来说，其实一般来说都够了
+
+谈分库分表的扩容，第一次分库分表，就一次性给他分个够，32个库，1024张表，可能对大部分的中小型互联网公司来说，已经可以支撑好几年了
+
+一个实践是利用32 * 32来分库分表，即分为32个库，每个库里一个表分为32张表。一共就是1024张表。根据某个id先根据32取模路由到库，再根据32取模路由到库里的表。
+
+刚开始的时候，这个库可能就是逻辑库，建在一个数据库上的，就是一个mysql服务器可能建了n个库，比如16个库。后面如果要拆分，就是不断在库和mysql服务器之间做迁移就可以了。然后系统配合改一下配置即可。
+
+比如说最多可以扩展到32个数据库服务器，每个数据库服务器是一个库。如果还是不够？最多可以扩展到1024个数据库服务器，每个数据库服务器上面一个库一个表。因为最多是1024个表么。
+
+这么搞，是不用自己写代码做数据迁移的，都交给dba来搞好了，但是dba确实是需要做一些库表迁移的工作，但是总比你自己写代码，抽数据导数据来的效率高得多了。
+
+哪怕是要减少库的数量，也很简单，其实说白了就是按倍数缩容就可以了，然后修改一下路由规则。
+
+对2 ^ n取模
+
+orderId 模 32 = 库
+orderId / 32 模 32 = 表
+
+259		3		8
+1189	5		5
+352		0		11
+4593 	17		15
+
+1、设定好几台数据库服务器，每台服务器上几个库，每个库多少个表，推荐是32库 * 32表，对于大部分公司来说，可能几年都够了
+
+2、路由的规则，orderId 模 32 = 库，orderId / 32 模 32 = 表
+
+3、扩容的时候，申请增加更多的数据库服务器，装好mysql，倍数扩容，4台服务器，扩到8台服务器，16台服务器
+
+4、由dba负责将原先数据库服务器的库，迁移到新的数据库服务器上去，很多工具，库迁移，比较便捷
+
+5、我们这边就是修改一下配置，调整迁移的库所在数据库服务器的地址
+
+6、重新发布系统，上线，原先的路由规则变都不用变，直接可以基于2倍的数据库服务器的资源，继续进行线上系统的提供服务
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><p><strong>分库分表扩容方案</strong></p> <p><img src="/docs/assets/img/1625930897523.a09b117b.png" alt="1625930897523"></p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2021/8/28 上午3:08:15</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div></div><canvas id="vuepress-canvas-cursor"></canvas><canvas id="vuepress-canvas-ribbon"></canvas><div></div><APlayer audio="" fixed="true" mini="true" autoplay="autoplay" theme="#f9bcdd" loop="loop" order="random" preload="auto" volume="0.3" mutex="true" lrc-type="0" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 锋格blog
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/docs/assets/js/app.641849c1.js" defer></script><script src="/docs/assets/js/4.b6c396a4.js" defer></script><script src="/docs/assets/js/1.4e993a40.js" defer></script><script src="/docs/assets/js/118.5133bcc1.js" defer></script>
+  </body>
+</html>
