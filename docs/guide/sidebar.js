@@ -131,6 +131,16 @@ module.exports = [
     },
 
     {
+        title:'路线图',
+        collapsable: true,
+        children:[
+            '/guide/notes/路线图/前端路线图',
+            '/guide/notes/路线图/后端路线图',
+            '/guide/notes/路线图/运维路线图',
+        ]
+    },
+
+    {
         title:'vuePress搭建过程',
         collapsable: true,
         children:[
