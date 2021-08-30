@@ -7,5 +7,14 @@ module.exports = [
             '/java/spring/notes/SpringMVC工作原理详解',
             '/java/spring/notes/Spring学习与面试',
         ]
-    }
+    },
+    {
+        title:'SpringData-JPA',
+        collapsable: true,
+        children:[
+            '/java/spring/notes/1.springData-JPA介绍',
+            '/java/spring/notes/2.springdata-JPA进阶',
+            '/java/spring/notes/3.SpringData-JPA',
+        ]
+    },
 ]
