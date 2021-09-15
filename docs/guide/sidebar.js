@@ -142,6 +142,7 @@ module.exports = [
             '/guide/notes/idea/Intellij IDEA编写高质量代码',
             '/guide/notes/idea/Intellij IDEA Git集成',
             '/guide/notes/idea/IntelliJ IDEA Git版本冲突解决方法',
+            '/guide/notes/idea/Intellij IDEA从git克隆及提交代码',
             '/guide/notes/idea/Intellij IDEA关联Spring',
             '/guide/notes/idea/Intellij IDEA断点调试',
             '/guide/notes/idea/Intellij IDEA其他操作',
