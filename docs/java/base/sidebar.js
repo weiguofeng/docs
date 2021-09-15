@@ -28,5 +28,23 @@ module.exports = [
             '/java/base/notes/多线程系列',
             '/java/base/notes/搞定JVM垃圾回收就是这么简单',
         ]
-    }
+    },
+    {
+        title:'工具包',
+        collapsable: true,
+        children:[
+            '/java/base/notes/工具包/1.commons-lang3常用的工具包API',
+            '/java/base/notes/工具包/2.hutool工具包API',
+            '/java/base/notes/工具包/3.guava工具包API',
+            '/java/base/notes/工具包/4.FastJson的使用心得',
+        ]
+    },
+    {
+        title:'建行培训',
+        collapsable: true,
+        children:[
+            '/java/base/notes/3.建行培训并发编程',
+            '/java/base/notes/4.建行Excel培训',
+        ]
+    },
 ];
