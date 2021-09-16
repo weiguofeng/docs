@@ -146,6 +146,7 @@ module.exports = [
             '/guide/notes/idea/Intellij IDEA关联Spring',
             '/guide/notes/idea/Intellij IDEA断点调试',
             '/guide/notes/idea/Intellij IDEA其他操作',
+            '/guide/notes/idea/idea的超实用技巧分享',
         ]
     },
 
