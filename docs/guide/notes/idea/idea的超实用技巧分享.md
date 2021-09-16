@@ -1,6 +1,6 @@
 ---
-title: IntelliJ IDEA Git版本冲突解决方法
-date: 2021-09-02 
+title: idea的超实用技巧分享
+date: 2021-09-16 
 categories:
  - IDEA
 tags:
