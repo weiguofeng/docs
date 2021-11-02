@@ -15,6 +15,7 @@ module.exports = {
 
     //java系列
     '/java/base': require('../java/base/sidebar'),
+    '/java/lambda-stream': require('../java/lambda-stream/sidebar'),
     '/java/spring': require('../java/spring/sidebar'),
     '/java/mybatis': require('../java/mybatis/sidebar'),
     '/java/thread': require('../java/thread/sidebar'),

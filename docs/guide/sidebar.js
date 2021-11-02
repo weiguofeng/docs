@@ -149,6 +149,18 @@ module.exports = [
             '/guide/notes/idea/idea的超实用技巧分享',
         ]
     },
+    {
+        title:'Apollo',
+        collapsable: true,
+        children:[
+            '/guide/notes/apollo/1.apollo分布式配置中心介绍',
+            '/guide/notes/apollo/2.apollo的快速入门',
+            '/guide/notes/apollo/3.apollo应用配置',
+            '/guide/notes/apollo/4.apollo配置发布原理',
+            '/guide/notes/apollo/5.apollo整合springboot开发',
+            '/guide/notes/apollo/6.apollo的灰度发布',
+        ]
+    },
 
     {
         title:'路线图',

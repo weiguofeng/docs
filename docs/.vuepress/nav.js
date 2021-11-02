@@ -6,6 +6,7 @@ module.exports = [
         text: 'Java', link: '/java/',icon: 'reco-blog',
         items: [
             {text: '基础部分', link: '/java/base/'},
+            {text: 'lambda-stream', link: '/java/lambda-stream/'},
             {text: '多线程', link: '/java/thread/'},
             {text: 'Spring系列', link: '/java/spring/'},
             {text: 'Mybatis系列', link: '/java/mybatis/'},

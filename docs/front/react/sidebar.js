@@ -3,6 +3,13 @@ module.exports = [
         title:'首页'
     },
     {
+        title:'idea创建react项目',
+        collapsable: true,
+        children:[
+            '/front/react/idea创建react项目/1.idea创建react项目',
+        ]
+    },
+    {
         title:'react基础',
         collapsable: true,
         children:[
@@ -91,6 +98,12 @@ module.exports = [
             '/front/react/好客租房移动Web1/18.H5中地理位置的API',
             '/front/react/好客租房移动Web1/19.百度地图API',
             '/front/react/好客租房移动Web1/20.申请百度账户和秘钥',
+            '/front/react/好客租房移动Web1/21.百度地图API使用',
+            '/front/react/好客租房移动Web1/22.城市选择模块',
+            '/front/react/好客租房移动Web1/23.获取并处理城市列表数据',
+            '/front/react/好客租房移动Web1/24.长列表性能优化',
+            '/front/react/好客租房移动Web1/25.渲染城市列表展示索引下的城市',
+            '/front/react/好客租房移动Web1/26.城市索引列表',
         ]
     },
 
