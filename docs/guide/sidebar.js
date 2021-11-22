@@ -78,6 +78,9 @@ module.exports = [
             '/guide/notes/互联网面试突击第一季/zookeeper/03说说你们的分布式session方案是啥？怎么做的？.md',
             '/guide/notes/互联网面试突击第一季/zookeeper/04了解分布式事务方案吗？你们都咋做的？有啥坑？',
             '/guide/notes/互联网面试突击第一季/zookeeper/05说说一般如何设计一个高并发的系统架构？',
+            '/guide/notes/互联网面试突击第一季/zookeeper/蚂蚁-1为什么要使用Zookeeper',
+            '/guide/notes/互联网面试突击第一季/zookeeper/蚂蚁-2zookeeper实现Dubbo的负载均衡原理',
+            '/guide/notes/互联网面试突击第一季/zookeeper/蚂蚁-3zookeeper实现分布式锁',
         ]
     },
     {
@@ -169,6 +172,15 @@ module.exports = [
             '/guide/notes/路线图/前端路线图',
             '/guide/notes/路线图/后端路线图',
             '/guide/notes/路线图/运维路线图',
+        ]
+    },
+    {
+        title:'建行龙舟项目',
+        collapsable: true,
+        children:[
+            '/guide/notes/龙舟项目/1.龙舟脚手架前端代码',
+            '/guide/notes/龙舟项目/2.龙舟开发过程中需要注意的问题',
+            '/guide/notes/龙舟项目/3.龙舟开发中心主要开发流程',
         ]
     },
 
