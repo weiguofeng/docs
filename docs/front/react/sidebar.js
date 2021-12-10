@@ -104,6 +104,63 @@ module.exports = [
             '/front/react/好客租房移动Web1/24.长列表性能优化',
             '/front/react/好客租房移动Web1/25.渲染城市列表展示索引下的城市',
             '/front/react/好客租房移动Web1/26.城市索引列表',
+            '/front/react/好客租房移动Web1/27.点击索引置顶该索引城市',
+            '/front/react/好客租房移动Web1/28.切换城市及总结',
+            '/front/react/好客租房移动Web1/29.好客租房移动Web项目上总结',
+        ]
+    },
+    {
+        title:'好客租房移动Web2',
+        collapsable: true,
+        children:[
+            '/front/react/好客租房移动Web2/1.学习目标',
+            '/front/react/好客租房移动Web2/2.地图找房模块',
+            '/front/react/好客租房移动Web2/3.封装顶部导航栏组件3',
+            '/front/react/好客租房移动Web2/4.封装顶部导航栏-添加校验',
+            '/front/react/好客租房移动Web2/5.在城市页面使用NAVHeard组件',
+            '/front/react/好客租房移动Web2/6.组件间样式覆盖的问题',
+            '/front/react/好客租房移动Web2/7.CSS-IN-JS',
+            '/front/react/好客租房移动Web2/8.Mudules在项目中的使用',
+            '/front/react/好客租房移动Web2/9.应用CSS-Mudules',
+            '/front/react/好客租房移动Web2/10.地图找房顶部导航栏处理',
+        ]
+    },
+
+    {
+        title:'react新闻发布项目',
+        collapsable: true,
+        children:[
+            '/front/react/千峰实战新闻发布项目/第一阶段/1.项目介绍',
+            '/front/react/千峰实战新闻发布项目/第一阶段/2.项目演示',
+            '/front/react/千峰实战新闻发布项目/第一阶段/3.项目启动与配置',
+            '/front/react/千峰实战新闻发布项目/第一阶段/4.项目路由架构',
+            '/front/react/千峰实战新闻发布项目/第一阶段/5.项目路由搭建-2',
+            '/front/react/千峰实战新闻发布项目/第一阶段/6.引入Antd组件库',
+            '/front/react/千峰实战新闻发布项目/第一阶段/7.layout布局',
+            '/front/react/千峰实战新闻发布项目/第一阶段/8.topHeader组件',
+            '/front/react/千峰实战新闻发布项目/第一阶段/9.sideMenu组件',
+            '/front/react/千峰实战新闻发布项目/第一阶段/10.sideMenu动态实现',
+            '/front/react/千峰实战新闻发布项目/第一阶段/11.JsonServer-1',
+            '/front/react/千峰实战新闻发布项目/第一阶段/12.JsonServer-2',
+            '/front/react/千峰实战新闻发布项目/第一阶段/13.后端SideMenu',
+            '/front/react/千峰实战新闻发布项目/第一阶段/14.SideMenu杀青',
+            '/front/react/千峰实战新闻发布项目/第一阶段/15.权限列表引入',
+            '/front/react/千峰实战新闻发布项目/第一阶段/16.权限列表-树形表格',
+            '/front/react/千峰实战新闻发布项目/第一阶段/17.权限列表-删除',
+            '/front/react/千峰实战新闻发布项目/第一阶段/18.权限列表-配置',
+            '/front/react/千峰实战新闻发布项目/第一阶段/19.角色列表-引入',
+            '/front/react/千峰实战新闻发布项目/第一阶段/20.角色列表-树形控件',
+            '/front/react/千峰实战新闻发布项目/第一阶段/21.角色列表-权限分配',
+            '/front/react/千峰实战新闻发布项目/第一阶段/22.用户列表-引入',
+            '/front/react/千峰实战新闻发布项目/第一阶段/23.用户列表-表单组件',
+        ]
+    },
+
+    {
+        title:'遇到的问题',
+        collapsable: true,
+        children:[
+            '/front/react/遇到的问题/1.依赖包已经安装完毕但是无法编译',
         ]
     },
 
