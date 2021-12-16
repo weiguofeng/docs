@@ -45,6 +45,7 @@ module.exports = [
         collapsable: true,
         children:[
             '/guide/notes/互联网面试突击第一季/swagger/Swagger介绍',
+            '/guide/notes/互联网面试突击第一季/swagger/Swagger-editor',
         ]
     },
     {
