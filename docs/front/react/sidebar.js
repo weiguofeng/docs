@@ -127,7 +127,7 @@ module.exports = [
     },
 
     {
-        title:'react新闻发布项目',
+        title:'react新闻发布项目阶段一',
         collapsable: true,
         children:[
             '/front/react/千峰实战新闻发布项目/第一阶段/1.项目介绍',
@@ -153,6 +153,19 @@ module.exports = [
             '/front/react/千峰实战新闻发布项目/第一阶段/21.角色列表-权限分配',
             '/front/react/千峰实战新闻发布项目/第一阶段/22.用户列表-引入',
             '/front/react/千峰实战新闻发布项目/第一阶段/23.用户列表-表单组件',
+            '/front/react/千峰实战新闻发布项目/第一阶段/24.用户列表-添加用户',
+            '/front/react/千峰实战新闻发布项目/第一阶段/25.用户列表-删除用户',
+            '/front/react/千峰实战新闻发布项目/第一阶段/26.用户列表-编辑用户',
+            '/front/react/千峰实战新闻发布项目/第一阶段/27.用户列表-筛选功能',
+        ]
+    },
+    {
+        title:'react新闻发布项目阶段二',
+        collapsable: true,
+        children:[
+            '/front/react/千峰实战新闻发布项目/第二阶段/1.登录页面-登录表单',
+            '/front/react/千峰实战新闻发布项目/第二阶段/2.登录页面-粒子效果',
+            '/front/react/千峰实战新闻发布项目/第二阶段/3.登录页面-权限校验',
         ]
     },
 
