@@ -43,6 +43,12 @@ module.exports = [
         ]
     },
     {
+        text: 'Git', link: '/git/',icon: 'reco-blog',
+        items: [
+            {text: 'Git持续集成', link: '/git/'},
+        ]
+    },
+    {
         text: '开发指南', link: '/guide/',icon: 'reco-blog',
         items: [
             {text: '开发指南', link: '/guide/'},

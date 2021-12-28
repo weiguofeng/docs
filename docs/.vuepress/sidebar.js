@@ -3,6 +3,9 @@ module.exports = {
     //指南
     '/guide/': require('../guide/sidebar'),
 
+    //git
+    '/git/': require('../git/sidebar'),
+
     //面试宝典初级
     '/baodian/zero': require('../baodian/zero/sidebar'),
 
