@@ -10,3 +10,4 @@ docs/.vuepress/dist
 docs/.vuepress/dist/
 .temp
 docs.iml
+.DS_Store
