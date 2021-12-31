@@ -34,13 +34,17 @@ module.exports = {
     '/db/dataStructure': require('../db/dataStructure/sidebar'),
 
     //前端系列
+    //    React学习文档
+    '/front/react': require('../front/react/sidebar'),
     '/front/vue': require('../front/vue/sidebar'),
     '/front/base': require('../front/base/sidebar'),
     '/front/angular': require('../front/angular/sidebar'),
     '/front/layui': require('../front/layui/sidebar'),
-    '/front/react': require('../front/react/sidebar'),
+
 
     //工具系列
+    //    mac的使用文档
+    '/mac': require('../mac/sidebar'),
     '/tools/tool': require('../tools/tool/sidebar'),
     '/tools/computerNetwork': require('../tools/computerNetwork/sidebar'),
 

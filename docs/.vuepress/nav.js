@@ -27,11 +27,11 @@ module.exports = [
     {
         text: '前端', link: '/front/',icon: 'reco-tag',
         items: [
+            {text: 'React', link: '/front/react/'},
             {text: '前端基础', link: '/front/base/'},
             {text: 'Vue', link: '/front/vue/'},
             {text: 'AngularJs', link: '/front/angular/'},
             {text: 'LayUI', link: '/front/layui/'},
-            {text: 'React', link: '/front/react/'},
         ]
     },
     {
@@ -64,6 +64,7 @@ module.exports = [
     {
         text: 'Tools', link: '/tools/',icon: 'reco-blog',
         items: [
+            {text: 'Mac', link: '/mac/'},
             {text: 'Tools', link: '/tools/tool/'},
             {text: '计算机网络与数据通信', link: '/tools/computerNetwork/'}
         ]
