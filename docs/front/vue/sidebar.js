@@ -6,7 +6,7 @@ module.exports = [
         title:'vue开发去哪儿网',
         collapsable: true,
         children:[
-            '/vue/notes/vue',
+            'front/vue/notes/vue',
         ]
     },
 
