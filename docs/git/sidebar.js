@@ -56,7 +56,7 @@ module.exports = [
             '/git/Jenkins持续集成/21.Jenkins集成钉钉-实现项目部署通知钉钉',
             '/git/Jenkins持续集成/22.Jenkins-pipeine流水线实践',
             '/git/Jenkins持续集成/23.Jenkins-pipeine实现代码自动化部署',
-            '/git/Jenkins持续集成/24.Jenkins-pipeine-Bule可视化插件',
+            '/git/Jenkins持续集成/24.Jenkins-pipeine-Bule可视化插件'
         ]
     },
 
