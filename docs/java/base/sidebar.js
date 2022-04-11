@@ -43,8 +43,8 @@ module.exports = [
         title:'建行培训',
         collapsable: true,
         children:[
-            '/java/base/notes/3.建行培训并发编程',
-            '/java/base/notes/4.建行Excel培训',
+            '/java/base/notes/建行-培训并发编程',
+            '/java/base/notes/建行-Excel培训',
         ]
     },
 ];
