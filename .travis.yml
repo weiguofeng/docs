@@ -4,8 +4,8 @@ language: node_js
 node_js:
   - lts/*
 # 安装依赖
-install:
-  - npm install
+#install:
+#  - npm install
 
 # 代码编译
 script:
