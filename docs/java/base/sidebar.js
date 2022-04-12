@@ -22,7 +22,6 @@ module.exports = [
             '/java/base/notes/Java IO与NIO',
             '/java/base/notes/Java虚拟机（jvm）',
             '/java/base/notes/Java集合框架常见面试题总结',
-            '/java/base/notes/LinkedList',
             '/java/base/notes/synchronized',
             '/java/base/notes/可能是把Java内存区域讲的最清楚的一篇文章',
             '/java/base/notes/多线程系列',
