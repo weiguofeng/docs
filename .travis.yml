@@ -1,8 +1,15 @@
-language: node_js  # node环境
+# 编译环境
+language: node_js
+# Node 版本
 node_js:
   - lts/*
+# 安装依赖
+install:
+  - npm install
+
+# 代码编译
 script:
-  - export NODE_OPTIONS=--max_old_space_size=4096
+# - export NODE_OPTIONS=--max_old_space_size=4096
   - npm run docs:build # yarn docs:build 部署构建命令
 deploy:
   provider: pages
