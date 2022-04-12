@@ -6,8 +6,8 @@ node_modules/
 
 # 取消临时文件及编译文件
 # secretKeyConf.js
-docs/.vuepress/dist
-docs/.vuepress/dist/
+*/.vuepress/dist
+*/.vuepress/dist/*
 .temp
 docs.iml
 .DS_Store
