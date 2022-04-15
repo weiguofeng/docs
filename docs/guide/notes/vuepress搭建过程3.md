@@ -13,7 +13,7 @@ tags:
 
 #### 主要使用的插件package.json
 
-​```json
+```json
 {
   "name": "vuepressBlog",
   "version": "1.0.0",
@@ -49,6 +49,7 @@ tags:
   },
   "description": ""
 }
+```
 
 ```
 
@@ -64,7 +65,7 @@ tags:
 
 	用于自动构建 将构建完成的静态资源 发布到gh-pages分支
 
-```sh
+​```sh
 #!/usr/bin/env sh
 
 # 确保脚本抛出遇到的错误
