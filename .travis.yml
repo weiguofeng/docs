@@ -10,7 +10,7 @@ script:
 deploy:
   provider: pages
   # V2的版本使用的是cleanup，v1的版本使用的是skip_cleanup地址是这个https://docs.travis-ci.com/user/deployment-v2
-  # cleanup: true  # 确保您已skip_cleanup设置为true，否则 Travis CI 将删除构建期间创建的所有文件，这可能会删除您尝试上传的内容。
+  skip_cleanup: true  # 确保您已skip_cleanup设置为true，否则 Travis CI 将删除构建期间创建的所有文件，这可能会删除您尝试上传的内容。
   local_dir: docs/.vuepress/dist # 推送到 GitHub Pages 的目录，默认为当前目录。可以指定为绝对路径或当前目录的相对路径。
   github-token: $GITHUB_TOKEN     # travis服务上的token变量
   # target-branch: gh-pages # 分支到（强制，参见keep_history：）将内容推local_dir 送到，默认为gh-pages.
