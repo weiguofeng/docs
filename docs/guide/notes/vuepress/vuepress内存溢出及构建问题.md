@@ -19,7 +19,7 @@ script:
 
 ​		我们需要加一个参数--max-concurrency  这个参数的作用就是添加并发的去进行构建，防止内存溢出
 
-​	![1650008315143](../../.vuepress/public/images/1650008315143.png)
+​	![1650008315143](../../../.vuepress/public/images/1650008315143.png)
 
 
 
@@ -31,7 +31,7 @@ script:
 
 ​	解决方法：原因是一个参数导致的问题，就是Travis.xml中的 cleanup导致的，我们使用这个参数会导致分支上的内容被清空，而我们使用skip_cleanup是跳过清空，这样就可以完整的将编译文件推送到我们的分支上了
 
-![1650008514401](../../.vuepress/public/images/1650008514401.png)
+![1650008514401](../../../.vuepress/public/images/1650008514401.png)
 
 ​	推送分支可以使用target_branch参数，默认不选的话就是推送到gh_page分支上去了
 
@@ -47,7 +47,7 @@ script:
 
 ​		我们可以在github上进行查看--先进入到你的页面分支上gh_page
 
-![1650008937841](../../.vuepress/public/images/1650008937841.png)
+![1650008937841](../../../.vuepress/public/images/1650008937841.png)
 
 
 
@@ -55,13 +55,13 @@ script:
 
 然后到右下角--的github-page进入
 
-![1650008990558](../../.vuepress/public/images/1650008990558.png)
+![1650008990558](../../../.vuepress/public/images/1650008990558.png)
 
 
 
 我们可以看到这个绿色的火箭就是当前的发布状态，也属于活动的发布，我们点击Deployed进入里面可以查看发布的详情
 
-![1650009044244](../../.vuepress/public/images/1650009044244.png)
+![1650009044244](../../../.vuepress/public/images/1650009044244.png)
 
 
 
@@ -71,7 +71,7 @@ script:
 
 只要一上流水线都执行成功了---再次访问就成功了
 
-![1650010653371](../../.vuepress/public/images/1650010653371.png)
+![1650010653371](../../../.vuepress/public/images/1650010653371.png)
 
 
 

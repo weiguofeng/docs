@@ -189,10 +189,11 @@ module.exports = [
         title:'vuePress搭建过程',
         collapsable: true,
         children:[
-            '/guide/notes/vuepress搭建过程1',
-            '/guide/notes/vuepress搭建过程2',
-            '/guide/notes/vuepress搭建过程3',
-            '/guide/notes/vuepress插件及优化',
+            '/guide/notes/vuepress/vuepress搭建过程1',
+            '/guide/notes/vuepress/vuepress搭建过程2',
+            '/guide/notes/vuepress/vuepress搭建过程3',
+            '/guide/notes/vuepress/vuepress插件及优化',
+            '/guide/notes/vuepress/vuepress内存溢出及构建问题'
         ]
     },
     {

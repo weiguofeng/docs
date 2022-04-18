@@ -3,7 +3,7 @@ module.exports = [
         title:'Mybatis知识',
         collapsable: true,
         children:[
-            '/java/base/notes/filter',
+            '/frame/base/notes/filter',
         ]
     }
 ]

@@ -26,7 +26,8 @@ module.exports = [
             '/git/git-gitlab基本操作/18.gitLab用户-组-项目-配置实践',
             '/git/git-gitlab基本操作/19.gitLab-多用户协同工作',
             '/git/git-gitlab基本操作/20.gitLab-分支-Tag的使用',
-            '/git/git-gitlab基本操作/21.gitLab-基本运维-备份恢复'
+            '/git/git-gitlab基本操作/21.gitLab-基本运维-备份恢复',
+            '/git/git-gitlab基本操作/github秘钥配置'
         ]
     },
     {
