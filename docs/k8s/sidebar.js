@@ -1,8 +1,5 @@
 module.exports = [
     {
-        title:'首页'
-    },
-    {
         title:'云平台介绍',
         collapsable: true,
         children:[
