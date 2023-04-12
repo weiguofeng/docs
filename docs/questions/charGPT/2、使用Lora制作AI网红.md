@@ -172,6 +172,16 @@ ok--汉化完成
 
 
 
+​	有这个就是安装成功了	
+
+![1680099806136](../../.vuepress/public/images/1680099806136.png)
+
+
+
+
+
+
+
 ## 4、生成图片
 
 ​	点击Lora 选择每个Lora模型，配置权重
@@ -220,7 +230,7 @@ ok--汉化完成
 
 
 
-
+​	
 
 
 
@@ -235,6 +245,152 @@ ok--汉化完成
 #### 	2、可以把生成批量 设置为9
 
 ![1679849259837](../../.vuepress/public/images/1679849259837.png)
+
+
+
+
+
+
+
+
+
+#### 3、设置关键词--提示词
+
+
+
+​	正向词
+
+```
+realistic,portrit of a girt,Al language model,silver halr,question answering,smart,kind,energetic,cheerful,creative,with sparkling eyes and a contagious smile,,information providing,conversation engaging,wide range of topics,accurate responses,helpful responses, knowledgeable,reliable,friendly,inteligent,sleek and futuristic design elements, and a complex network of circuits and processors.Others may imagine me as a friendly and approachable virtual assistant, with a smiling avatar or animated character representing me on thelr screen,Still, others may envision me as a disembodied volce,speaking from an unseen source,providing helpful and informative responses with a calm and reassuring tone
+
+# 代表的含义
+写实的，一个女孩的肖像，Al语言模型，银色哈尔，问题回答，聪明，善良，精力充沛，开朗，有创造力，与闪闪发光的眼睛和传染性的微笑，信息提供，对话参与，广泛的话题，准确的反应，有用的反应，知识渊博，可靠，友好，智能，圆滑和未来的设计元素，电路和处理器的复杂网络。其他人可能会把我想象成一个友好而平易近人的虚拟助手，在屏幕上有一个微笑的化身或动画角色代表我。还有一些人可能会把我想象成一个脱离实体的volce，从一个看不见的来源说话，用平静和令人安心的语气提供有用的和有信息的回答
+
+# 修改后的正向提示词
+full body shot(全身)
+cowboy shot ( 半身)
+close-up shot (接近)
+
+
+realistic,full body shot,portrit of a girt,Al language model,silver halr,question answering,smart,kind,energetic,cheerful,creative,with sparkling eyes and a contagious smile,,information providing,conversation engaging,wide range of topics,accurate responses,helpful responses, knowledgeable,reliable,friendly,inteligent,sleek and futuristic design elements, and a complex network of circuits and processors.Others may imagine me as a friendly and approachable virtual assistant, with a smiling avatar or animated character representing me on thelr screen,Still, others may envision me as a disembodied volce,speaking from an unseen source,providing helpful and informative responses with a calm and reassuring tone
+
+
+
+```
+
+
+
+
+
+反向提示词---就是不要的点
+
+```
+(((sexy))),paintings,loli,big head,sketches,(worst quality:2),(low quality:2), (normal quality:2),lowres,normal quality,((monochrome)), ((grayscaleI), skin spots, acnes, skin blemishes, age spot, glans, nsfw, nipples,extra fingers,(lextra arms)), (extra legs),mutated hands,(fused fingers),(too many fingers),(long neck:1.3)
+
+
+#含义
+(((性感)))，绘画，洛利，大头，素描，(最差质量:2)，(低质量:2)，(正常质量:2)，低分辨率，正常质量，((单色))，((灰度)，皮肤斑点，痤疮，皮肤瑕疵，老年斑，龟头，nsfw，乳头，多余的手指，(多余的手臂))，(多余的腿)，变异的手，(粘连的手指)，(太多的手指)，(长脖子:1.3)
+```
+
+
+
+
+
+
+
+#### 4、图形大小分辨率
+
+​	抖音竖屏尺寸为宽高9:16的比例,分辨率为540*960。这也是目前大部分的视频尺寸;
+
+​		此外,也可以使用720/1280、1080/1920等分辨率。
+
+
+
+
+
+## 5、图像优化
+
+#### 1、选择图像
+
+![1680102518964](../../.vuepress/public/images/1680102518964.png)
+
+
+
+​	
+
+​	解析度栏位--  宽度405  * 高度720
+
+​	设置生成批次为 4
+
+​	设置生成方法 DPM++ SDE karras
+
+![1680102804599](../../.vuepress/public/images/1680102804599.png)
+
+
+
+​	生成好了4张照片
+
+![1680103249561](../../.vuepress/public/images/1680103249561.png)
+
+
+
+#### 	2、选择一个比较好的照片
+
+​			按下 Send to inpaint -- 发送到inpaint
+
+![1680103315447](../../.vuepress/public/images/1680103315447.png)
+
+
+
+​	使用笔刷--修改想要修改的地方--然后按下生成
+
+​			比如她后面的这个灯有点暗---重复这个步骤生成直到满意为止
+
+![1680103542851](../../.vuepress/public/images/1680103542851.png)
+
+
+
+
+
+#### 	3、调整眼袋
+
+​	按下Send to extras -- 发送到临时
+
+​			![1680103654335](../../.vuepress/public/images/1680103654335.png)
+
+
+
+
+
+​	选择想要放大的取样方式
+
+![1680103748454](../../.vuepress/public/images/1680103748454.png)
+
+
+
+![1680103762345](../../.vuepress/public/images/1680103762345.png)
+
+
+
+
+
+![1680103787579](../../.vuepress/public/images/1680103787579.png)
+
+
+
+调整后的图，可以再放到send to inpaint 中修正
+
+
+
+#### 	4、即将完成--调整参数
+
+​		都调整为0.1--然后点击生成
+
+​			这样就得到一张合适的AI网红照片
+
+![1680103925225](../../.vuepress/public/images/1680103925225.png)
+
+
 
 
 
