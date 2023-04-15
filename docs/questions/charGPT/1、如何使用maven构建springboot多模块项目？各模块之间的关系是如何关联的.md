@@ -8,7 +8,7 @@
 2. 在父项目中，创建子模块的 Maven 模块。可以通过以下命令创建：
 
 ```
-javascriptCopy codemvn archetype:generate -DgroupId=com.example -DartifactId=my-module -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.example -DartifactId=my-module -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
 其中，`com.example` 是项目的 GroupId，`my-module` 是模块的 ArtifactId，`maven-archetype-quickstart` 是 Maven 的模板。
@@ -32,6 +32,10 @@ phpCopy code<modules>
 </modules>
 ```
 
+
+
+
+
 这样 Maven 就会将这个模块作为父项目的子模块来处理。
 
 1. 配置子模块之间的依赖关系。如果一个子模块需要依赖另一个子模块，可以在 `pom.xml` 文件中添加以下内容：
@@ -52,8 +56,12 @@ phpCopy code<dependencies>
 2. 构建项目。在父项目的根目录下运行以下命令：
 
 ```
-Copy codemvn clean install
+mvn clean install
 ```
+
+
+
+
 
 这样 Maven 就会自动构建整个项目，并将所有的子模块打包成 jar 文件。你可以在每个子模块的 `target` 目录下找到对应的 jar 文件。
 
