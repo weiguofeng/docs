@@ -88,6 +88,158 @@ https://www.bilibili.com/video/BV12R4y157Be/?p=22&spm_id_from=pageDriver&vd_sour
 
 
 
+### 3、@TableId的value属性
+
+​			mybatis默认将id为主键，使用TableId注解是将属性设置为主键
+
+
+
+​		如果实体类属性名称和数据库属性匹配不上的情况下，可以使用@Table的Value属性指定数据库的字段名称
+
+
+
+​	比如数据库是uid属性，会报错---在字段列表中没有找到id列
+
+![1700274950418](../../.vuepress/public/images/1700274950418.png)
+
+
+
+​	设置字段名称为uid就可以了
+
+![1700275029715](../../.vuepress/public/images/1700275029715.png)
+
+
+
+​	@TableId的value属性用于指定数据库表字段的主键属性
+
+
+
+
+
+### 4、@TableId的Type
+
+​			id默认的主键生成策略是雪花算法
+
+​		比如我们现在不想使用雪花算法，想使用mysql的自动递增，该如何操作呢
+
+​		首先数据库表设置主键为自动递增
+
+​		然后设置@TableId的type属性 
+
+
+
+![1700275487515](../../.vuepress/public/images/1700275487515.png)
+
+
+
+
+
+![1700275528975](../../.vuepress/public/images/1700275528975.png)
+
+​		如果我们在代码中设置了id，那么就不会自增了，或者是雪花算法，没有id的情况下会自动生成
+
+
+
+### 5、全局配置主键生成策略
+
+​	可以通过全局配置文件来进行主键的生成策略配置
+
+![1700275977930](../../.vuepress/public/images/1700275977930.png)
+
+
+
+
+
+
+
+### 6、@TableField
+
+​		字段名称与数据库不一致的情况就可以使用@TableField
+
+![1700276925384](../../.vuepress/public/images/1700276925384.png)
+
+
+
+
+
+### 7、@TableLogic 逻辑删除
+
+![1700277034113](../../.vuepress/public/images/1700277034113.png)
+
+
+
+​	设置逻辑删除的字段
+
+![1700277143160](../../.vuepress/public/images/1700277143160.png)
+
+
+
+​	我们进行一个删除的操作--看看有什么效果
+
+![1700277188658](../../.vuepress/public/images/1700277188658.png)
+
+​	
+
+​	我们发现之前的删除功能变为修改了
+
+![1700277245788](../../.vuepress/public/images/1700277245788.png)
+
+
+
+
+
+​		那么对于我们删除的数据用户是看不到的，我们现在执行查询看看效果
+
+
+
+​	我们发现查询也是查询不到的
+
+![1700277390904](../../.vuepress/public/images/1700277390904.png)
+
+
+
+
+
+
+
+https://www.bilibili.com/video/BV12R4y157Be/?p=28&spm_id_from=pageDriver&vd_source=243ad3a9b323313aa1441e5dd414a4ef
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+​		
+
 
 
 
