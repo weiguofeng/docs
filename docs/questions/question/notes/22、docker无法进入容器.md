@@ -49,7 +49,6 @@ df -h
 docker inspect 容器id
 ```
 
-![Docker容器导致磁盘空间不足无法访问怎么解决](../../../.vuepress/public/images/lazy.gif)
 
 查看宿主机的日志路径通过 cd 日志路径进入到命令下,通过命令 ls -lh 查看文件大小
 
