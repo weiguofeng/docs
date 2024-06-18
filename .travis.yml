@@ -1,14 +1,19 @@
-language: node_js  # node环境
+# 编译环境
+language: node_js
+# Node 版本
 node_js:
   - lts/*
+
+# 代码编译
 script:
-  - npm run docs:build  # 执行命令
+  - npm run docs:build # yarn docs:build 部署构建命令
 deploy:
   provider: pages
-  skip-cleanup: true
-  local_dir: docs/.vuepress/dist # 部署的文件夹文件
+  # V2的版本使用的是cleanup，v1的版本使用的是skip_cleanup地址是这个https://docs.travis-ci.com/user/deployment-v2
+  skip_cleanup: true  # 确保您已skip_cleanup设置为true，否则 Travis CI 将删除构建期间创建的所有文件，这可能会删除您尝试上传的内容。
+  local_dir: docs/.vuepress/dist # 推送到 GitHub Pages 的目录，默认为当前目录。可以指定为绝对路径或当前目录的相对路径。
   github-token: $GITHUB_TOKEN     # travis服务上的token变量
-  # target-branch: gh-pages # 集成发布到gh-pages上
-  keep-history: true
+  # target-branch: gh-pages # 分支到（强制，参见keep_history：）将内容推local_dir 送到，默认为gh-pages.
+  keep-history: true   # 这个是用于禁用强制推送的，可选，创建增量提交而不是强制推送，默认为false.
   on:
     branch: feature-1  #这里指的是部署前的源文件分支

@@ -19,12 +19,16 @@ module.exports = {
     //java系列
     '/java/base': require('../java/base/sidebar'),
     '/java/lambda-stream': require('../java/lambda-stream/sidebar'),
-    '/java/spring': require('../java/spring/sidebar'),
-    '/java/mybatis': require('../java/mybatis/sidebar'),
     '/java/thread': require('../java/thread/sidebar'),
     '/java/other': require('../java/other/sidebar'),
     '/java/zookeeper': require('../java/zookeeper/sidebar'),
 
+    //框架系列
+    '/frame/spring': require('../frame/spring/sidebar'),
+    '/frame/mybatis': require('../frame/mybatis/sidebar'),
+
+    //k8s 及容器化
+    '/k8s': require('../k8s/sidebar'),
 
     //数据库系列
     '/db/mysql': require('../db/mysql/sidebar'),

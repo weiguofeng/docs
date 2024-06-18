@@ -1,0 +1,40 @@
+```
+title: 4、TSX在idea中报错处理
+date: 2024-06-13
+```
+
+
+
+#  4、TSX在idea中报错处理
+
+​	在idea中开发react，tsx报红色波浪线TS2307: Cannot find module react/jsx-runtime or its corresponding type declarations.
+
+
+
+这个错误通常表示TypeScript找不到React的JSX运行时模块。这可能是因为项目中的依赖包配置有问题或者TypeScript配置有误。以下是解决此问题的步骤：
+
+### 1. 检查依赖包
+
+确保你安装了必要的依赖包，特别是 `react`, `react-dom` 和 `@types/react`。运行以下命令来安装这些包：
+
+```
+bash复制代码npm install react react-dom
+npm install --save-dev @types/react @types/react-dom
+```
+
+### 2. 更新 TypeScript 版本
+
+确保你使用的是最新版本的 TypeScript。你可以通过以下命令更新 TypeScript：
+
+```
+bash
+复制代码
+npm install --save-dev typescript
+```
+
+
+
+
+
+
+

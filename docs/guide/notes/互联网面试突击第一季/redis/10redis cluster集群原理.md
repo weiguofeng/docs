@@ -36,7 +36,7 @@
 
 **redis单master架构的容量瓶颈问题**
 
-![1624987384765](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\1624987384765.png)
+![1624987384765](../../../../.vuepress/public/images/1624987384765.png)
 
 
 
@@ -46,7 +46,7 @@
 
 **redis如何通过master横向扩容支撑1T+数据量（多个master）**
 
-![1624987615292](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\1624987615292.png)
+![1624987615292](../../../../.vuepress/public/images/1624987615292.png)
 
 
 

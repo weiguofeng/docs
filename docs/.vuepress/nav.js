@@ -8,10 +8,15 @@ module.exports = [
             {text: '基础部分', link: '/java/base/'},
             {text: 'lambda-stream', link: '/java/lambda-stream/'},
             {text: '多线程', link: '/java/thread/'},
-            {text: 'Spring系列', link: '/java/spring/'},
-            {text: 'Mybatis系列', link: '/java/mybatis/'},
             {text: 'zookeeper', link: '/java/zookeeper/'},
             {text: '其他', link: '/java/other/'},
+        ]
+    },
+    {
+        text: 'frame', link: '/frame/',icon: 'reco-blog',
+        items: [
+            {text: 'spring', link: '/frame/spring/'},
+            {text: 'Mybatis', link: '/frame/mybatis/'}
         ]
     },
     {
@@ -46,6 +51,12 @@ module.exports = [
         text: 'Git', link: '/git/',icon: 'reco-blog',
         items: [
             {text: 'Git持续集成', link: '/git/'},
+        ]
+    },
+    {
+        text: 'K8S', link: '/k8s/',icon: 'reco-blog',
+        items: [
+            {text: 'k8s基础', link: '/k8s/'},
         ]
     },
     {

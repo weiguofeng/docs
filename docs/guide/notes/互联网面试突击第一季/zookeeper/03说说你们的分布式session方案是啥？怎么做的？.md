@@ -65,7 +65,6 @@
 
 所以现在比较好的还是基于java一站式解决方案，spring了。人家spring基本上包掉了大部分的我们需要使用的框架了，spirng cloud做微服务了，spring boot做脚手架了，所以用sping session是一个很好的选择。
 
-pom.xml
 
 <dependency>
   <groupId>org.springframework.session</groupId>
