@@ -1,5 +1,5 @@
 # .github > workflows > deploy.yml
-name: Deploy docs
+name: deploy docs
 
 on:
   push:
