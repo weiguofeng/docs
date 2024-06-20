@@ -1,3 +1,14 @@
+```
+title: 1、scratch
+date: 2024-06-19
+categories:
+ - cs50
+tags:
+ - cs50
+```
+
+
+
 # 1、scratch
 
 ​		python是一种更现代，更高级的语言，python的流行源于它的相对可读性，最终我们将看到它的生态系统多么强大充实。
