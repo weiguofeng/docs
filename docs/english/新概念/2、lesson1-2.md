@@ -1,3 +1,13 @@
+---
+title: 2、lesson1-2
+date: 2024-06-13
+categories: 
+ - 新概念
+tags: 
+ - 新概念
+---
+
+
 # 2、lesson1-2
 
 ​		
