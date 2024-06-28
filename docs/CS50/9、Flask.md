@@ -127,6 +127,55 @@ tags:
 
 
 
+#### 	结合SQLite
+
+![image-20240620223508787](./../.vuepress/public/images/image-20240620223508787.png)
+
+
+
+
+
+​	删除
+
+![image-20240620223744894](./../.vuepress/public/images/image-20240620223744894.png)
+
+
+
+​		![image-20240620223815463](./../.vuepress/public/images/image-20240620223815463.png)
+
+​		
+
+​	数据被清空了
+
+![image-20240620223838660](./../.vuepress/public/images/image-20240620223838660.png)
+
+
+
+
+
+#### 	cookie
+
+​			我们一般登录web一次之后，就会记住我们的一些信息---保持会话
+
+![image-20240620224715795](./../.vuepress/public/images/image-20240620224715795.png)
+
+
+
+​			登录
+
+![image-20240620225319052](./../.vuepress/public/images/image-20240620225319052.png)
+
+
+
+![image-20240620225749241](./../.vuepress/public/images/image-20240620225749241.png)
+
+
+
+
+
+​		清除session
+
+![image-20240620225951498](./../.vuepress/public/images/image-20240620225951498.png)
 
 
 
@@ -142,6 +191,7 @@ tags:
 
 
 
+https://www.youtube.com/watch?v=4o1SCMICZzo
 
 
 
