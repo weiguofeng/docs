@@ -1,3 +1,14 @@
+---
+title: 47、lesson87-88-Have you..yet
+date: 2024-12-06
+categories:
+ - 新概念
+tags:
+ - 新概念
+---
+
+
+
 # 47、lesson87-88-Have you..yet
 
 
@@ -103,6 +114,7 @@
  	4、He tries to repair it every week -- 他每周都尝试去修理它
 
  
+
 
 
 ![image-20241105210827160](./../../.vuepress/public/images/image-20241105210827160.png)

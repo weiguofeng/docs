@@ -15,7 +15,7 @@ module.exports = [
     {
         text: 'frame', link: '/frame/',icon: 'reco-blog',
         items: [
-            {text: 'spring', link: '/frame/spring/'},
+            {text: 'Spring', link: '/frame/spring/'},
             {text: 'Mybatis', link: '/frame/mybatis/'}
         ]
     },

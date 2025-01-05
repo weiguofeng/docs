@@ -1,3 +1,14 @@
+---
+title: 39、lesson71-72-一般过去式did
+date: 2024-11-28
+categories:
+ - 新概念
+tags:
+ - 新概念
+---
+
+
+
 # 39、lesson71-72-一般过去式did
 
 

@@ -1,3 +1,14 @@
+---
+title: 38、lesson69-70-There was/were
+date: 2024-11-27
+categories:
+ - 新概念
+tags:
+ - 新概念
+---
+
+
+
 # 38、lesson69-70-There was/were
 
 

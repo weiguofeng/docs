@@ -1,3 +1,14 @@
+---
+title: 44、lesson81-82-have用法
+date: 2024-12-03
+categories:
+ - 新概念
+tags:
+ - 新概念
+---
+
+
+
 # 44、lesson81-82-have用法
 
 
